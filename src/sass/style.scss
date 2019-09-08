@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Capezza Hill
 Author: Kevin Garubba Design & Development
@@ -7,4 +8,17 @@ Requires at least: WordPress 4.9.6
 Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
-*/body{background:red}
+*/
+
+// Config
+@import "vars/*";
+// @import "functions/*";
+// @import "mixins/*";
+
+// Vendor Components
+// @import "../vendor/normalize-scss/_normalize"
+
+
+body{
+    background: $lightblue;
+}
