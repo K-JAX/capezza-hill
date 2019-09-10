@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-<p>hello</p>
+<p>Front page</p>
 <?php get_footer(); ?>

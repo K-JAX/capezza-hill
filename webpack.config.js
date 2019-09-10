@@ -4,7 +4,11 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const env = process.env.NODE_ENV || 'development'
+const mode = env === 'production' ? 'production' : 'development'
+
 module.exports = {
+    mode: env,
     entry: {
         script: './src/js/script.js',
     },
@@ -31,14 +35,6 @@ module.exports = {
                     'css-loader',
                     {
                         loader: 'postcss-loader',
-                        options: {
-                          plugins: [
-                            require('cssnano')({
-                                preset: 'default',
-                            }),
-                            require('autoprefixer')({})
-                          ]
-                        },
                     },
                     'sass-loader',
                     'import-glob-loader',
@@ -47,6 +43,7 @@ module.exports = {
             }
         ],
     },
+    devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
