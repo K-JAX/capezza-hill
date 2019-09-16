@@ -17,9 +17,9 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
 
         register_nav_menus(
             array(
-                'header' => __( 'Primary', 'capezzahill'),
-                'footer' => __( 'Footer Menu', 'capezzahill'),
-                'social' => __( 'Social Links Menu', 'capezzahill'),
+                'top-right' => __( 'Header Area', 'capezzahill'),
+                'footer'    => __( 'Footer Menu', 'capezzahill'),
+                'social'    => __( 'Social Links Menu', 'capezzahill'),
             )
         );
         
@@ -46,7 +46,7 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
         );
         
         // Allows for live refresh when updating widgets in customizer I think
-        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support( 'customize-selective-refresh-widgets' );
 
         // Allow user to decide full with options for editor
         add_theme_support( 'align-wide' );
@@ -91,16 +91,16 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
              'editor-color-palette',
              array(
                 //  Come back to this when you add customizer support for colors ;)
-				// array(
-				// 	'name'  => 'default' === get_theme_mod( 'primary_color' ) ? __( 'Blue', 'capezzahill' ) : null,
-				// 	'slug'  => 'primary',
-				// 	'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
-				// ),
-				// array(
-				// 	'name'  => 'default' === get_theme_mod( 'primary_color' ) ? __( 'Dark Blue', 'capezzahill' ) : null,
-				// 	'slug'  => 'secondary',
-                //     'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
-                // ),
+				array(
+					'name'  => 'default' === get_theme_mod( 'primarytop_colortop-right' ) ? __( 'Blue', 'capezzahill' ) : null,
+					'slug'  => 'primary',
+					'color' => capezzahill_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
+				),
+				array(
+					'name'  => 'default' === get_theme_mod( 'primary_color' ) ? __( 'Dark Blue', 'capezzahill' ) : null,
+					'slug'  => 'secondary',
+                    'color' => capezzahill_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
+                ),
                 array(
                     'name'  =>  __( 'Ligh Blue', 'capezzahill'),
                     'slug'  =>  'light-blue',
@@ -147,7 +147,7 @@ function custom_titles( $title, $sep ) {
     //Check if custom titles are enabled from your option framework
     if ( ot_get_option( 'enable_custom_titles' ) === 'on' ) {
         //Some silly example
-        $title = "Some other title" . $title;;
+        $title = "Some other title" . $title;
     }
 
     return $title;
@@ -176,36 +176,63 @@ function capezzahill_content_width(){
 }
 add_action( 'after_setup_theme', 'capezzahill_content_width', 0);
 
+
 function capezzahill_skip_link_focus_fix() {
 	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
 	?>
 	<script>
-	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 	</script>
 	<?php
 }
 add_action( 'wp_print_footer_scripts', 'capezzahill_skip_link_focus_fix' );
 
-// Display custom color CSS in customizer and on frontend (from twentynineteen)
-function capezzahill_colors_css_wrap() {
-    // Only include custom colors in customizer or frontend.
-    if (( ! is_customize_preview() && 'default' === get_theme_mod( 'primary_color', 'default' ) ) || is_admin() ){
-        return;
-    }
-
-    require_once get_parent_theme_file_path('/inc/color-patterns.php');
-    $primary_color = 199;
-    if( 'default' !== get_theme_mod( 'primary_color', 'default' ) ){
-        $primary_color = get_theme_mod( 'primary_color_hue', 199);
-    }
-    ?>
-    <style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
-        <?php echo capezzahill_colors_css_wrap(); ?>
-    </style>
-    <?php 
+/**
+ * Enqueue supplemental block editor styles.
+ */
+function capezzahill_editor_customizer_styles() {
+	wp_enqueue_style( 'capezzahill-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
+	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
+		// Include color patterns.
+		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
+		wp_add_inline_style( 'capezzahill-editor-customizer-styles', capezzahill_custom_colors_css() );
+	}
 }
-add_action('wp_head', 'capezzahill_colors_css_wrap');
+add_action( 'enqueue_block_editor_assets', 'capezzahill_editor_customizer_styles' );
+
+
+// Display custom color CSS in customizer and on frontend (from capezzahill)
+function capezzahill_colors_css_wrap() {
+	// Only include custom colors in customizer or frontend.
+	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'primary_color', 'default' ) ) || is_admin() ) {
+		return;
+	}
+	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
+	$primary_color = 199;
+	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
+		$primary_color = get_theme_mod( 'primary_color_hue', 199 );
+	}
+	?>
+
+	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
+		<?php echo capezzahill_custom_colors_css(); ?>
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'capezzahill_colors_css_wrap' );
+
+require get_template_directory() . '/inc/wp-enqueue.php';
 
 require get_template_directory() . '/inc/custom-post-types.php';
 
-require get_template_directory() . '/inc/wp-enqueue.php';
+require get_template_directory() . '/classes/class-capezzahill-svg-icons.php';
+
+require get_template_directory() . '/classes/class-capezzahill-walker-comment.php';
+
+require get_template_directory() . '/inc/template-functions.php';
+
+require get_template_directory() . '/inc/icon-functions.php';
+
+require get_template_directory() . '/inc/template-tags.php';
+
+require get_template_directory() . '/inc/customizer.php';

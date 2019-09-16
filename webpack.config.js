@@ -45,7 +45,9 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['script-min-*'],
+        }),
         new MiniCssExtractPlugin({
             filename: '../../style.css'
           }),

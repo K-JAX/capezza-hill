@@ -9,5 +9,11 @@
     <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
         <header class="site-header">
-            <h1>Header fun!</h1>
+
+            <div class="site-branding-container">
+                <?php get_template_part( 'template-parts/header/site', 'branding'); ?>
+            </div>
+            <div class="search-area">
+            <?php get_search_form( ); ?>
+            </div><!-- /.search-area -->
         </header>
