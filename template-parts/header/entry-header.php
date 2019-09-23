@@ -13,7 +13,7 @@ $discussion = ! is_page() && capezzahill_can_show_post_thumbnail() ? capezzahill
     <?php capezzahill_posted_on(); ?>
     <span class="comment-count">
         <?php
-        if ( ! empty ( $discussion ) ) {
+        if ( ! empty ( $discusion ) ) {
             capezzahill_discussion_avatars_list( $discussion->authors );
         }
         ?>

@@ -1,3 +1,9 @@
 <?php get_header(); ?>
-<p>Front page</p>
+
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
+        <p>Front page</p>
+    </main>
+</div>
+
 <?php get_footer(); ?>

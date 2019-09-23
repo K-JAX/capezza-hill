@@ -9,11 +9,12 @@
     <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
         <header class="site-header">
-
-            <div class="site-branding-container">
-                <?php get_template_part( 'template-parts/header/site', 'branding'); ?>
+            <div class="site-header-inner">
+                <div class="site-branding-container">
+                    <?php get_template_part( 'template-parts/header/site', 'branding'); ?>
+                </div>
+                <div class="site-header-nav-container">
+                    <?php get_template_part( 'template-parts/header/site', 'nav'); ?>
+                </div>
             </div>
-            <div class="search-area">
-            <?php get_search_form( ); ?>
-            </div><!-- /.search-area -->
         </header>

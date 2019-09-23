@@ -1,0 +1,45 @@
+// site navigation styles
+
+.site-header-nav-container{
+    display: grid;
+    height: 100px;
+    grid-template-columns: 1fr auto;
+    justify-items: right;
+    align-items: center;
+    .search-area{
+        margin: 0 10px;
+        .search-field{
+            border: none;
+            color: $wht;
+            border-bottom: 2px solid $wht;
+            background: transparent;
+            transition: 0.25s;
+            &::placeholder{
+                color: white;
+            }
+            &:active, &:focus {
+                outline: none;
+                box-shadow: 0 -1px 0 0 $navy inset;
+            }
+        }
+        .search-submit{
+            // background: resolve("search.png");
+            background: url("http://capezza-hill.local/wp-content/themes/capezza-hill/assets/images/search.png");
+            text-indent: -9999px;
+            background: transparent;
+        }
+    }
+}
+
+#menu-primary.main-menu { 
+    li{
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
+
+.main-menu-more{
+    @media all and (min-width: 992px){
+        display: none;
+    }
+}

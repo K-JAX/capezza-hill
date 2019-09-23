@@ -1,0 +1,55 @@
+// header style
+
+.home{
+    .site-header{
+    }
+}
+
+.site-header{
+    grid-area: head;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(45,45,45,0.2) 60%,rgba(0,0,0,0.5) 100%);
+    .site-header-inner{
+        display: grid;
+        position: relative;
+        z-index: 5;
+        grid-template-columns: auto 1fr;
+        max-width: 1260px;
+        align-items: end;
+        margin: auto;
+        margin-bottom: -50px;
+        color: $wht;
+        .site-branding-container{
+            height: 100px;
+            .site-branding{
+                display: flex;
+                align-self: center;
+                .site-logo{
+                    display: inline-block;
+                    height: 97px;
+                    img{
+                        width:auto;
+                        height:auto;
+                        max-height:100%;
+                    }
+                }
+                .site-title{
+                    display: inline-block;
+                    margin: auto;
+                    font-size: 32px;
+                    font-weight: 100;
+                    font-variant: small-caps;
+                    span{
+                        font-size: 20px;
+                    }
+                }
+            }
+        } 
+        a{
+            color: $wht;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

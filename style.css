@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400&display=swap);
 /*!
 Theme Name: Capezza Hill
 Author: Kevin Garubba Design & Development
@@ -8,6 +9,111 @@ Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 */
+.has-small-font-size {
+  font-size: 19.5px; }
+
+.has-normal-font-size {
+  font-size: 22px; }
+
+.has-large-font-size {
+  font-size: 36.5px; }
+
+.has-huge-font-size {
+  font-size: 49.5px; }
+
+.formal {
+  font-family: "Cinzel", serif; }
+
+.screen-reader-text {
+  display: none; }
+
+html, body {
+  font-family: 'Work Sans', sans-serif; }
+
+.site-footer {
+  grid-area: footer;
+  color: #fff;
+  background-color: #10153F; }
+
+.site-header {
+  grid-area: head;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(45, 45, 45, 0.2) 60%, rgba(0, 0, 0, 0.5) 100%); }
+  .site-header .site-header-inner {
+    display: grid;
+    position: relative;
+    z-index: 5;
+    grid-template-columns: auto 1fr;
+    max-width: 1260px;
+    align-items: end;
+    margin: auto;
+    margin-bottom: -50px;
+    color: #fff; }
+    .site-header .site-header-inner .site-branding-container {
+      height: 100px; }
+      .site-header .site-header-inner .site-branding-container .site-branding {
+        display: flex;
+        align-self: center; }
+        .site-header .site-header-inner .site-branding-container .site-branding .site-logo {
+          display: inline-block;
+          height: 97px; }
+          .site-header .site-header-inner .site-branding-container .site-branding .site-logo img {
+            width: auto;
+            height: auto;
+            max-height: 100%; }
+        .site-header .site-header-inner .site-branding-container .site-branding .site-title {
+          display: inline-block;
+          margin: auto;
+          font-size: 32px;
+          font-weight: 100;
+          font-variant: small-caps; }
+          .site-header .site-header-inner .site-branding-container .site-branding .site-title span {
+            font-size: 20px; }
+    .site-header .site-header-inner a {
+      color: #fff;
+      text-decoration: none; }
+      .site-header .site-header-inner a:hover {
+        text-decoration: underline; }
+
+#primary {
+  grid-area: body;
+  background-color: pink; }
+
+.site-header-nav-container {
+  display: grid;
+  height: 100px;
+  grid-template-columns: 1fr auto;
+  justify-items: right;
+  align-items: center; }
+  .site-header-nav-container .search-area {
+    margin: 0 10px; }
+    .site-header-nav-container .search-area .search-field {
+      border: none;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      background: transparent;
+      transition: 0.25s; }
+      .site-header-nav-container .search-area .search-field::placeholder {
+        color: white; }
+      .site-header-nav-container .search-area .search-field:active, .site-header-nav-container .search-area .search-field:focus {
+        outline: none;
+        box-shadow: 0 -1px 0 0 #10153F inset; }
+    .site-header-nav-container .search-area .search-submit {
+      background: resolve("search.png");
+      text-indent: -9999px;
+      background: transparent; }
+
+#menu-primary.main-menu li {
+  display: inline-block;
+  margin: 0 10px; }
+
+@media all and (min-width: 992px) {
+  .main-menu-more {
+    display: none; } }
+
+body {
+  display: grid;
+  grid-template-areas: 'head' 'body'  'footer'; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -117,7 +223,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**

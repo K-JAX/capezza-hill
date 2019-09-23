@@ -12,11 +12,16 @@ License URI: LICENSE
 
 // Config
 @import "vars/*";
-// @import "functions/*";
-// @import "mixins/*";
+@import "mixins/*";
+@import "typography/*";
+@import "components/*";
 
-// Vendor Components
+// // Vendor Components
 @import "vendor/normalize-scss/normalize";
+
+body{
+	background: resolve("search.png");
+}
 
 
 .alignfull {

@@ -1,0 +1,3 @@
+// vendor scripts
+
+import 'jquery';

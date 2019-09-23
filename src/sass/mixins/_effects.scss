@@ -1,0 +1,10 @@
+//  Quick Mixins to create site effects
+
+@mixin light-theme {
+
+}
+
+@mixin dark-theme($lightColor: $wht, $darkColor: $navy) {
+    color: $lightColor;    
+    background-color: $darkColor;
+}

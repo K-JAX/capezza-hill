@@ -1,0 +1,6 @@
+// footer style
+
+.site-footer{
+    grid-area: footer;
+    @include dark-theme;
+}

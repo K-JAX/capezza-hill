@@ -1,9 +1,17 @@
 module.exports = ({ file, options, env }) => {
-    console.log('env:', env, 'process.env.NODE_ENV:', process.env.NODE_ENV )
     return {
       plugins: {
+        'postcss-import': {},
         'autoprefixer': env === 'production' ? options.autoprefixer : false,
-        'cssnano': env === 'production' ? options.cssnano : false
-      }
+        'cssnano': env === 'production' ? options.cssnano : false,
+        'postcss-assets': {
+          options:{
+            // basePath: '../../wp-content/themes/',
+            // baseUrl: '//wp-content/themes/',
+            loadPaths: ['capezza-hill/assets/images/'],
+            relative: true,
+          }
+        },
+      },
     }
   }
