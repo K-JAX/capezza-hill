@@ -20,7 +20,9 @@ module.exports = {
     },
     output: {
         filename: '[name].min.js',
-        path: path.resolve(__dirname, './assets/js/')
+        path: path.resolve(__dirname, './assets/js/'),
+        hotUpdateChunkFilename: 'hot/[hash]-hot-update.js',
+        hotUpdateMainFilename: 'hot/[hash]-hot-update.json'
     },
     module: {
         rules: [
@@ -83,7 +85,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin({
             vervose: true,
-            cleanOnceBeforeBuildPatterns: ['script-min-*', './capezza-hill/style.css'],
+            cleanOnceBeforeBuildPatterns: ['./capezza-hill/assets/js/hot', 'script-min-*', './capezza-hill/style.css'],
         }),
         new MiniCssExtractPlugin({
             filename: '../../style.css'

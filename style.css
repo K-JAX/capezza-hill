@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400&display=swap);
+
 /*!
 Theme Name: Capezza Hill
 Author: Kevin Garubba Design & Development
@@ -11,34 +12,26 @@ License URI: LICENSE
 */
 .has-small-font-size {
   font-size: 19.5px; }
-
 .has-normal-font-size {
   font-size: 22px; }
-
 .has-large-font-size {
   font-size: 36.5px; }
-
 .has-huge-font-size {
   font-size: 49.5px; }
-
 .formal {
   font-family: "Cinzel", serif; }
-
 .screen-reader-text {
   display: none; }
-
 html, body {
   font-family: 'Work Sans', sans-serif; }
-
 .site-footer {
   grid-area: footer;
   color: #fff;
   background-color: #10153F; }
-
 .site-header {
   grid-area: head;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(45, 45, 45, 0.2) 60%, rgba(0, 0, 0, 0.5) 100%); }
-  .site-header .site-header-inner {
+.site-header .site-header-inner {
     display: grid;
     position: relative;
     z-index: 5;
@@ -48,72 +41,66 @@ html, body {
     margin: auto;
     margin-bottom: -50px;
     color: #fff; }
-    .site-header .site-header-inner .site-branding-container {
+.site-header .site-header-inner .site-branding-container {
       height: 100px; }
-      .site-header .site-header-inner .site-branding-container .site-branding {
+.site-header .site-header-inner .site-branding-container .site-branding {
         display: flex;
         align-self: center; }
-        .site-header .site-header-inner .site-branding-container .site-branding .site-logo {
+.site-header .site-header-inner .site-branding-container .site-branding .site-logo {
           display: inline-block;
           height: 97px; }
-          .site-header .site-header-inner .site-branding-container .site-branding .site-logo img {
+.site-header .site-header-inner .site-branding-container .site-branding .site-logo img {
             width: auto;
             height: auto;
             max-height: 100%; }
-        .site-header .site-header-inner .site-branding-container .site-branding .site-title {
+.site-header .site-header-inner .site-branding-container .site-branding .site-title {
           display: inline-block;
           margin: auto;
           font-size: 32px;
           font-weight: 100;
           font-variant: small-caps; }
-          .site-header .site-header-inner .site-branding-container .site-branding .site-title span {
+.site-header .site-header-inner .site-branding-container .site-branding .site-title span {
             font-size: 20px; }
-    .site-header .site-header-inner a {
+.site-header .site-header-inner a {
       color: #fff;
       text-decoration: none; }
-      .site-header .site-header-inner a:hover {
+.site-header .site-header-inner a:hover {
         text-decoration: underline; }
-
 #primary {
   grid-area: body;
   background-color: pink; }
-
 .site-header-nav-container {
   display: grid;
   height: 100px;
   grid-template-columns: 1fr auto;
   justify-items: right;
   align-items: center; }
-  .site-header-nav-container .search-area {
+.site-header-nav-container .search-area {
     margin: 0 10px; }
-    .site-header-nav-container .search-area .search-field {
+.site-header-nav-container .search-area .search-field {
       border: none;
       color: #fff;
       border-bottom: 2px solid #fff;
       background: transparent;
       transition: 0.25s; }
-      .site-header-nav-container .search-area .search-field::placeholder {
+.site-header-nav-container .search-area .search-field::placeholder {
         color: white; }
-      .site-header-nav-container .search-area .search-field:active, .site-header-nav-container .search-area .search-field:focus {
+.site-header-nav-container .search-area .search-field:active, .site-header-nav-container .search-area .search-field:focus {
         outline: none;
         box-shadow: 0 -1px 0 0 #10153F inset; }
-    .site-header-nav-container .search-area .search-submit {
-      background: resolve("search.png");
+.site-header-nav-container .search-area .search-submit {
+      background: url("http://capezza-hill.local/wp-content/themes/capezza-hill/assets/images/search.png");
       text-indent: -9999px;
       background: transparent; }
-
 #menu-primary.main-menu li {
   display: inline-block;
   margin: 0 10px; }
-
 @media all and (min-width: 992px) {
   .main-menu-more {
     display: none; } }
-
 body {
   display: grid;
   grid-template-areas: 'head' 'body'  'footer'; }
-
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -129,7 +116,6 @@ html {
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
-
 /* Sections
        ========================================================================== */
 /**
@@ -137,7 +123,6 @@ html {
      */
 body {
   margin: 0; }
-
 /**
      * Add the correct display in IE 9-.
      */
@@ -148,7 +133,6 @@ header,
 nav,
 section {
   display: block; }
-
 /**
      * Correct the font size and margin on `h1` elements within `section` and
      * `article` contexts in Chrome, Firefox, and Safari.
@@ -156,7 +140,6 @@ section {
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
-
 /* Grouping content
        ========================================================================== */
 /**
@@ -165,13 +148,11 @@ h1 {
 figcaption,
 figure {
   display: block; }
-
 /**
      * Add the correct margin in IE 8.
      */
 figure {
   margin: 1em 40px; }
-
 /**
      * 1. Add the correct box sizing in Firefox.
      * 2. Show the overflow in Edge and IE.
@@ -183,13 +164,11 @@ hr {
   /* 1 */
   overflow: visible;
   /* 2 */ }
-
 /**
      * Add the correct display in IE.
      */
 main {
   display: block; }
-
 /**
      * 1. Correct the inheritance and scaling of font size in all browsers.
      * 2. Correct the odd `em` font sizing in all browsers.
@@ -199,7 +178,6 @@ pre {
   /* 1 */
   font-size: 1em;
   /* 2 */ }
-
 /* Links
        ========================================================================== */
 /**
@@ -211,7 +189,6 @@ a {
   /* 1 */
   -webkit-text-decoration-skip: objects;
   /* 2 */ }
-
 /* Text-level semantics
        ========================================================================== */
 /**
@@ -223,24 +200,20 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
-
 /**
      * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
      */
 b,
 strong {
   font-weight: inherit; }
-
 /**
      * Add the correct font weight in Chrome, Edge, and Safari.
      */
 b,
 strong {
   font-weight: bolder; }
-
 /**
      * 1. Correct the inheritance and scaling of font size in all browsers.
      * 2. Correct the odd `em` font sizing in all browsers.
@@ -252,26 +225,22 @@ samp {
   /* 1 */
   font-size: 1em;
   /* 2 */ }
-
 /**
      * Add the correct font style in Android 4.3-.
      */
 dfn {
   font-style: italic; }
-
 /**
      * Add the correct background and color in IE 9-.
      */
 mark {
   background-color: #ff0;
   color: #000; }
-
 /**
      * Add the correct font size in all browsers.
      */
 small {
   font-size: 80%; }
-
 /**
      * Prevent `sub` and `sup` elements from affecting the line height in
      * all browsers.
@@ -282,13 +251,10 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
-
 sub {
   bottom: -0.25em; }
-
 sup {
   top: -0.5em; }
-
 /* Embedded content
        ========================================================================== */
 /**
@@ -297,26 +263,22 @@ sup {
 audio,
 video {
   display: inline-block; }
-
 /**
      * Add the correct display in iOS 4-7.
      */
 audio:not([controls]) {
   display: none;
   height: 0; }
-
 /**
      * Remove the border on images inside links in IE 10-.
      */
 img {
   border-style: none; }
-
 /**
      * Hide the overflow in IE.
      */
 svg:not(:root) {
   overflow: hidden; }
-
 /* Forms
        ========================================================================== */
 /**
@@ -336,13 +298,11 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */ }
-
 /**
      * Show the overflow in IE.
      */
 button {
   overflow: visible; }
-
 /**
      * Remove the inheritance of text transform in Edge, Firefox, and IE.
      * 1. Remove the inheritance of text transform in Firefox.
@@ -351,7 +311,6 @@ button,
 select {
   /* 1 */
   text-transform: none; }
-
 /**
      * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
      *    controls in Android 4.
@@ -363,7 +322,6 @@ html [type="button"],
 [type="submit"] {
   -webkit-appearance: button;
   /* 2 */ }
-
 button,
 [type="button"],
 [type="reset"],
@@ -374,24 +332,22 @@ button,
   /**
        * Restore the focus styles unset by the previous rule.
        */ }
-  button::-moz-focus-inner,
+button::-moz-focus-inner,
   [type="button"]::-moz-focus-inner,
   [type="reset"]::-moz-focus-inner,
   [type="submit"]::-moz-focus-inner {
     border-style: none;
     padding: 0; }
-  button:-moz-focusring,
+button:-moz-focusring,
   [type="button"]:-moz-focusring,
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring {
     outline: 1px dotted ButtonText; }
-
 /**
      * Show the overflow in Edge.
      */
 input {
   overflow: visible; }
-
 /**
      * 1. Add the correct box sizing in IE 10-.
      * 2. Remove the padding in IE 10-.
@@ -402,14 +358,12 @@ input {
   /* 1 */
   padding: 0;
   /* 2 */ }
-
 /**
      * Correct the cursor style of increment and decrement buttons in Chrome.
      */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
-
 /**
      * 1. Correct the odd appearance in Chrome and Safari.
      * 2. Correct the outline style in Safari.
@@ -422,9 +376,8 @@ input {
   /**
        * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
        */ }
-  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; }
-
 /**
      * 1. Correct the inability to style clickable types in iOS and Safari.
      * 2. Change font properties to `inherit` in Safari.
@@ -434,13 +387,11 @@ input {
   /* 1 */
   font: inherit;
   /* 2 */ }
-
 /**
      * Correct the padding in Firefox.
      */
 fieldset {
   padding: 0.35em 0.75em 0.625em; }
-
 /**
      * 1. Correct the text wrapping in Edge and IE.
      * 2. Correct the color inheritance from `fieldset` elements in IE.
@@ -460,7 +411,6 @@ legend {
   /* 2 */
   white-space: normal;
   /* 1 */ }
-
 /**
      * 1. Add the correct display in IE 9-.
      * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -470,13 +420,11 @@ progress {
   /* 1 */
   vertical-align: baseline;
   /* 2 */ }
-
 /**
      * Remove the default vertical scrollbar in IE.
      */
 textarea {
   overflow: auto; }
-
 /* Interactive
        ========================================================================== */
 /*
@@ -484,19 +432,16 @@ textarea {
      */
 details {
   display: block; }
-
 /*
      * Add the correct display in all browsers.
      */
 summary {
   display: list-item; }
-
 /*
      * Add the correct display in IE 9-.
      */
 menu {
   display: block; }
-
 /* Scripting
        ========================================================================== */
 /**
@@ -504,13 +449,11 @@ menu {
      */
 canvas {
   display: inline-block; }
-
 /**
      * Add the correct display in IE.
      */
 template {
   display: none; }
-
 /* Hidden
        ========================================================================== */
 /**
@@ -518,12 +461,10 @@ template {
      */
 [hidden] {
   display: none; }
-
 .alignfull {
   margin: 32px calc(50% - 50vw);
   max-width: 100vw;
   width: 100vw; }
-
 .alignwide {
   margin: 32px calc(25% - 25vw);
   max-width: 100vw;

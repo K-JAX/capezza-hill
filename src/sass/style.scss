@@ -19,17 +19,12 @@ License URI: LICENSE
 // // Vendor Components
 @import "vendor/normalize-scss/normalize";
 
-body{
-	background: resolve("search.png");
-}
-
-
 .alignfull {
 	margin: 32px calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
 }
-
+ 
 .alignwide {
 	margin: 32px calc(25% - 25vw);
 	max-width: 100vw;
