@@ -15,12 +15,12 @@ module.exports = {
     },
     resolve: {
         alias: {
-            jquery: 'jquery/src/jquery'
+            jquery: 'jquery/src/jquery',
         }
     },
     output: {
-        filename: '[name].min.js',
-        path: path.resolve(__dirname, './assets/js/'),
+        filename: './assets/js/[name].min.js',
+        path: path.resolve(__dirname, './'),
         hotUpdateChunkFilename: 'hot/[hash]-hot-update.js',
         hotUpdateMainFilename: 'hot/[hash]-hot-update.json'
     },
@@ -88,7 +88,8 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['./capezza-hill/assets/js/hot', 'script-min-*', './capezza-hill/style.css'],
         }),
         new MiniCssExtractPlugin({
-            filename: '../../style.css'
+            filename: './style.css',
+            chunkFilename: './[id].css'
           }),
         new webpack.DefinePlugin({
             APP_BASE: JSON.stringify(path.resolve(__dirname, './package.json')),

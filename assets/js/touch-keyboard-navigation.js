@@ -105,12 +105,13 @@
 	 */
 	function openSubMenu( currentSubMenu ) {
 		'use strict';
-
 		// Update classes
 		// classList.add is not supported in IE11
 		currentSubMenu.parentElement.className += ' off-canvas';
 		currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
-
+		var menuItem     = getCurrentParent( currentSubMenu, '.menu-item' );
+		var menuItemAria = menuItem.querySelector('button[aria-expanded]');
+		menuItemAria.className += ' submenu-expanded';
 		// Update aria-expanded state
 		toggleAriaExpandedState( currentSubMenu );
 	}
@@ -124,7 +125,8 @@
 		'use strict';
 
 		var menuItem     = getCurrentParent( currentSubMenu, '.menu-item' ); // this.parentNode
-		var menuItemAria = menuItem.querySelector('a[aria-expanded]');
+		var menuItemAria = menuItem.querySelector('button[aria-expanded]');
+
 		var subMenu      = currentSubMenu.closest('.sub-menu');
 
 		// If this is in a sub-sub-menu, go back to parent sub-menu
@@ -134,6 +136,7 @@
 			// classList.remove is not supported in IE11
 			menuItem.className = menuItem.className.replace( 'off-canvas', '' );
 			subMenu.className  = subMenu.className.replace( 'expanded-true', '' );
+			menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
 
 			// Update aria-expanded and :focus states
 			toggleAriaExpandedState( menuItemAria );
@@ -213,43 +216,84 @@
 	 */
 	function toggleSubmenuDisplay() {
 
-		document.addEventListener('touchstart', function(event) {
-
+		// function to be called whether touch event or click event
+		function handleInteraction ( event ) {
+			
 			if ( event.target.matches('a') ) {
 
 				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
 
 				// Open submenu if url is #
 				if ( '#' === url && event.target.nextSibling.matches('.submenu-expand') ) {
+					
 					openSubMenu( event.target );
 				}
 			}
 
+			var simulateClick = function (elem) {
+				// Create our event (with options)
+				var evt = new MouseEvent('click', {
+					bubbles: true,
+					cancelable: true,
+					view: window
+				});
+				// If cancelled, don't dispatch our event
+				var canceled = !elem.dispatchEvent(evt);
+			};
+			
+			if ( event.target.matches('.mobile-search') ){
+					// prevent default function
+					event.preventDefault();
+
+					// grab the form elements
+					searchform = getCurrentParent( event.target, '.search-form');
+					label = event.target.previousElementSibling;
+					searchInput = label.lastElementChild ;
+					
+					
+					// add active class to the field for user interaction if its the first click
+					if (!searchform.matches('.active')){
+						searchform.className += ' active';
+						return;
+					} else if ( searchInput.value == ''){
+						return;
+					}
+					
+					// then trigger the click
+					simulateClick( event.target )
+					
+					
+			// conditional to remove class if user clicks elsewhere
+			} else if (!event.target.matches('.search-field')) {
+				searchform = document.querySelector('.search-form');
+				searchform.className = searchform.className.replace('active', '');
+			};
+
 			// Check if .submenu-expand is touched
-			if ( event.target.matches('.submenu-expand') ) {
+			if ( event.target.matches('.submenu-expand')  ) {
 				openSubMenu(event.target);
 
 			// Check if child of .submenu-expand is touched
 			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) &&
-								getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
+								getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) && !getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expanded' ) ) {
 				openSubMenu( getCurrentParent( event.target, '.submenu-expand' ) );
 
-			// Check if .menu-item-link-return is touched
-			} else if ( event.target.matches('.menu-item-link-return') ) {
-				closeSubMenu( event.target );
-
-			// Check if child of .menu-item-link-return is touched
-			} else if ( null != getCurrentParent( event.target, '.menu-item-link-return' ) && getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
+			} else if ( null !== getCurrentParent( event.target, '.submenu-expand' ) && 
+								getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expanded' ) ) {
+				deleteClass(getCurrentParent( event.target, '.submenu-expand' ), 'submenu-expanded');
 				closeSubMenu( event.target );
 			}
 
 			// Prevent default mouse/focus events
 			removeAllFocusStates();
-
-		}, false);
+		}
+		
+		document.addEventListener('touchstart', handleInteraction, false);
+		document.addEventListener('click', handleInteraction, false);
 
 		document.addEventListener('touchend', function(event) {
 
+			
 			var mainNav = getCurrentParent( event.target, '.main-navigation' );
 
 			if ( null != mainNav && hasClass( mainNav, '.main-navigation' ) ) {
@@ -259,10 +303,7 @@
 			} else if (
 				event.target.matches('.submenu-expand') ||
 				null != getCurrentParent( event.target, '.submenu-expand' ) &&
-				getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ||
-				event.target.matches('.menu-item-link-return') ||
-				null != getCurrentParent( event.target, '.menu-item-link-return' ) &&
-				getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
+				getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
 					// Prevent default mouse events
 					event.preventDefault();
 			}
@@ -351,4 +392,26 @@
 		}, 150 );
 	} );
 
+
+
+// tweak the expansion behavior of search on mobile menus
+
+		// init function
+		function activateSearch( event ){
+	
+			// query select the search
+			// var search = document.querySelectorAll('.is-mobile');
+			// event.preventDefault();
+			
+			// check condition for the is-mobile class based on resize
+				// prevent default function
+					// add active class to the field for user interaction
+
+					// conditional to remove class if user clicks elsewhere
+
+					// then trigger the click
+				}
+	
+		// call the function
+		activateSearch();
 })();

@@ -125,7 +125,20 @@ class CapezzaHill_SVG_Icons {
 	s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
 	c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
 	s-17-7.626-17-17S14.61,6,23.984,6z"/>
-</svg>'
+</svg>',
+		'burger'	=>
+'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:none;stroke:#FFFFFF;stroke-width:40;stroke-linecap:round;stroke-miterlimit:10;}
+	</style>
+	<g>
+		<line class="st0" x1="97.3" y1="127.9" x2="514.7" y2="127.9"/>
+		<line class="st0" x1="97.3" y1="306" x2="514.7" y2="306"/>
+		<line class="st0" x1="97.3" y1="484.1" x2="514.7" y2="484.1"/>
+	</g>
+</svg>
+'
     );
 };
 

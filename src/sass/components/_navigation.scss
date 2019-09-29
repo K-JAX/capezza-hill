@@ -1,45 +1,71 @@
 // site navigation styles
 
 .site-header-nav-container{
-    display: grid;
-    height: 100px;
+    display: flex;
     grid-template-columns: 1fr auto;
-    justify-items: right;
+    justify-content: flex-end;
     align-items: center;
-    .search-area{
-        margin: 0 10px;
-        .search-field{
-            border: none;
-            color: $wht;
-            border-bottom: 2px solid $wht;
-            background: transparent;
-            transition: 0.25s;
-            &::placeholder{
-                color: white;
+    height: 100px;
+    padding-bottom: 6px;
+    @media all and (min-width: 768px){
+    }
+    .main-navigation{
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100px;
+        @media all and (min-width: 768px){
+            width: 100%;
+            
+        }
+        .menu-primary-container{
+            @media all and (min-width: 768px){
+                height: auto;
             }
-            &:active, &:focus {
-                outline: none;
-                box-shadow: 0 -1px 0 0 $navy inset;
+            .main-menu{
+                display: inline-block;
+                list-style: none;
+                li{
+                    display: inline-block;
+                    margin: 0 14px;
+                }
+                .sub-menu{
+                    list-style: none;
+                }
             }
         }
-        .search-submit{
-            // background: resolve("search.png");
-            background: url("http://capezza-hill.local/wp-content/themes/capezza-hill/assets/images/search.png");
-            text-indent: -9999px;
-            background: transparent;
+        .main-menu-more{
+            display: inline-block;
+            .main-menu{
+                list-style: none;
+                .is-empty{
+                    display: none;
+                }
+                li{
+                    list-style: none;
+                }
+                .sub-menu{
+                    position: absolute;
+                    overflow: hidden;
+                    background-color: rgba(0,0,0,0.25);
+                    margin-left: -55px;
+                    padding: 0 10px;
+                    transition: 0.25s;
+                    &.hidden-links{
+                        max-height:0;
+                        &.expanded-true{
+                            padding: 5px 10px;
+                            max-height: 100%;
+                        }
+                    }
+                }
+            }
         }
     }
+ 
 }
 
-#menu-primary.main-menu { 
-    li{
-        display: inline-block;
-        margin: 0 10px;
-    }
-}
 
-.main-menu-more{
-    @media all and (min-width: 992px){
-        display: none;
-    }
-}
+
+

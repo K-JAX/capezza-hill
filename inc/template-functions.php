@@ -182,33 +182,31 @@ function capezzahill_get_discussion_data() {
  /**
   * Add an extra menu to our nav for our priority+ navigation to use
   */
-  function capezzahill_add_ellipses_to_nav( $nav_menu, $args) {
-
-    if( 'top-right' === $args->theme_location) :
-
+  function capezzahill_add_ellipses_to_nav( $nav_menu, $args ) {
+	if ( 'top-right' === $args->theme_location ) :
 		$nav_menu .= '<div class="main-menu-more">';
 		$nav_menu .= '<ul class="main-menu">';
 		$nav_menu .= '<li class="menu-item menu-item-has-children">';
-		$nav_menu .= '<button class="submenu-expand main-menu-more-toggle is-empty" tabindex="-1" aria-label="More" aria-haspopup="true" aria-expanded="false">';
+		$nav_menu .= '<button class="submenu-expand main-menu-more-toggle reset-btn is-empty" tabindex="-1" aria-label="More" aria-haspopup="true" aria-expanded="false">';
 		$nav_menu .= '<span class="screen-reader-text">' . esc_html__( 'More', 'twentynineteen' ) . '</span>';
-		$nav_menu .= capezzahill_get_icon_svg( 'arrow_drop_down_ellipsis' );
+		$nav_menu .= capezzahill_get_icon_svg( 'burger' );
 		$nav_menu .= '</button>';
 		$nav_menu .= '<ul class="sub-menu hidden-links">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
-		$nav_menu .= '<button class="menu-item-link-return">';
-		$nav_menu .= capezzahill_get_icon_svg( 'chevron_left' );
-		$nav_menu .= esc_html__( 'Back', 'twentynineteen' );
-		$nav_menu .= '</button>';
+	// this will only be included if I want an explicit button for exiting out of nav menu other than the main toggle button
+		// $nav_menu .= '<button class="menu-item-link-return">';
+		// $nav_menu .= capezzahill_get_icon_svg( 'chevron_left' );
+		// $nav_menu .= esc_html__( 'Back', 'twentynineteen' );
+		// $nav_menu .= '</button>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</div>';
-    endif;
-
-    return $nav_menu;
-  }
-  add_filter( 'wp_nav_menu', 'capezzahill_add_ellipses_to_nav', 10, 2 );
+	endif;
+	return $nav_menu;
+}
+add_filter( 'wp_nav_menu', 'capezzahill_add_ellipses_to_nav', 10, 2 );
 
 
   /**
@@ -232,20 +230,18 @@ add_filter( 'nav_menu_link_attributes', 'capezzahill_nav_menu_link_attributes', 
  * Add a dropdown icon to top-level menu items
  */
 
- function capezzahill_add_dropdown_icons( $output, $item, $depth, $args ) {
-
-    // Only add class to 'top level' items on the 'primary' menu.
-    if ( ! isset( $args->theme_location ) || 'top-right' !== $args->theme_location ) {
-        return $output;
-    }
-
-    if( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) && isset( $item->original_id ) ) {
+function capezzahill_add_dropdown_icons( $output, $item, $depth, $args ) {
+	// Only add class to 'top level' items on the 'primary' menu.
+	if ( ! isset( $args->theme_location ) || 'top-right' !== $args->theme_location ) {
+		return $output;
+	}
+	if ( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) && isset( $item->original_id ) ) {
 		// Inject the keyboard_arrow_left SVG inside the parent nav menu item, and let the item link to the parent item.
 		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
-		$link = sprintf(
-			'<button class="menu-item-link-return" tabindex="-1">%s',
-			twentynineteen_get_icon_svg( 'chevron_left', 24 )
-		);
+		// $link = sprintf(
+		// 	'<button class="menu-item-link-return" tabindex="-1">%s',
+		// 	capezzahill_get_icon_svg( 'chevron_left', 24 )
+		// );
 		// replace opening <a> with <button>
 		$output = preg_replace(
 			'/<a\s.*?>/',
@@ -260,19 +256,17 @@ add_filter( 'nav_menu_link_attributes', 'capezzahill_nav_menu_link_attributes', 
 			$output,
 			1 // Limit.
 		);
-    } elseif ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
-
-        // Add SVG icon to parent items.
-        $icons = capezzahill_get_icon_svg( 'keyboard_arrow_down', 24);
-
-        $output .= sprinf(
-            '<button class="submenu-expand" tabindex="-1">%s</button>',
-            $icon
-        );
-    }
-    return $output;
- }
- add_filter( 'walker_nav_menu_start_el', 'capezzahill_add_dropdown_icons', 10, 4);
+	} elseif ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		// Add SVG icon to parent items.
+		$icon = capezzahill_get_icon_svg( 'keyboard_arrow_down', 24 );
+		$output .= sprintf(
+			'<button class="submenu-expand reset-btn" tabindex="-1" aria-haspopup="true" aria-expanded="false">%s</button>',
+			$icon
+		);
+	}
+	return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'capezzahill_add_dropdown_icons', 10, 4 );
 
  /**
   * Create a nav menu item to be displayed on mobile to navigate from submenu back to the parent
@@ -280,28 +274,26 @@ add_filter( 'nav_menu_link_attributes', 'capezzahill_nav_menu_link_attributes', 
   */
 
   function capezzahill_add_mobile_parent_nav_menu_items( $sorted_menu_items, $args ) {
-      static $pseudo_id = 0;
-      if ( ! isset( $args->theme_location ) || 'top-right' !== $args->theme_location ) {
-          return $sorted_menu_items;
-      }
-
-      $amended_menu_items = array();
-      foreach ( $sorted_menu_items as $nav_menu_item ) {
-          $amended_menu_items[] = $nav_menu_item;
-          if ( in_array( 'menu-item-has-children', $nav_menu_item->classes, true ) ) {
+	static $pseudo_id = 0;
+	if ( ! isset( $args->theme_location ) || 'top-right' !== $args->theme_location ) {
+		return $sorted_menu_items;
+	}
+	$amended_menu_items = array();
+	foreach ( $sorted_menu_items as $nav_menu_item ) {
+		$amended_menu_items[] = $nav_menu_item;
+		if ( in_array( 'menu-item-has-children', $nav_menu_item->classes, true ) ) {
 			$parent_menu_item                   = clone $nav_menu_item;
 			$parent_menu_item->original_id      = $nav_menu_item->ID;
 			$parent_menu_item->ID               = --$pseudo_id;
 			$parent_menu_item->db_id            = $parent_menu_item->ID;
 			$parent_menu_item->object_id        = $parent_menu_item->ID;
 			$parent_menu_item->classes          = array( 'mobile-parent-nav-menu-item' );
-            $parent_menu_item->menu_item_parent = $nav_menu_item->ID;
-            
-			$amended_menu_items[] = $parent_menu_item;   
-          }
-      }
-      return $amended_menu_items;
-  }
+			$parent_menu_item->menu_item_parent = $nav_menu_item->ID;
+			$amended_menu_items[] = $parent_menu_item;
+		}
+	}
+	return $amended_menu_items;
+}
 add_filter( 'wp_nav_menu_objects', 'capezzahill_add_mobile_parent_nav_menu_items', 10, 2 );
 
 /**

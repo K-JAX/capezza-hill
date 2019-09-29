@@ -7,3 +7,18 @@
 .screen-reader-text{
     display: none;
 }
+
+.reset-input{
+    border: none;
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
+.reset-btn{
+    background: transparent;
+    border: none;
+    &:active, &:focus {
+        outline: none;
+    }
+}

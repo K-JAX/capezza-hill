@@ -18,33 +18,56 @@ License URI: LICENSE
   font-size: 36.5px; }
 .has-huge-font-size {
   font-size: 49.5px; }
+.submenu-expand .svg-icon line {
+  transition: 0.2s;
+  transform-origin: center; }
+.submenu-expand.submenu-expanded .svg-icon line:first-of-type {
+  transform: translateX(-20%) translateY(20%) rotate(45deg); }
+.submenu-expand.submenu-expanded .svg-icon line:nth-of-type(2) {
+  opacity: 0; }
+.submenu-expand.submenu-expanded .svg-icon line:last-of-type {
+  transform: translateX(-20%) translateY(-20%) rotate(-45deg); }
 .formal {
   font-family: "Cinzel", serif; }
 .screen-reader-text {
   display: none; }
+.reset-input {
+  border: none; }
+.reset-input:active, .reset-input:focus {
+    outline: none; }
+.reset-btn {
+  background: transparent;
+  border: none; }
+.reset-btn:active, .reset-btn:focus {
+    outline: none; }
 html, body {
   font-family: 'Work Sans', sans-serif; }
 .site-footer {
   grid-area: footer;
   color: #fff;
   background-color: #10153F; }
+body {
+  background: #cdcdcd; }
 .site-header {
   grid-area: head;
+  width: 100%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(45, 45, 45, 0.2) 60%, rgba(0, 0, 0, 0.5) 100%); }
 .site-header .site-header-inner {
+    z-index: 5;
     display: grid;
     position: relative;
-    z-index: 5;
     grid-template-columns: auto 1fr;
     max-width: 1260px;
     align-items: end;
     margin: auto;
-    margin-bottom: -50px;
+    margin-bottom: -35px;
     color: #fff; }
+@media all and (min-width: 767px) {
+      .site-header .site-header-inner {
+        height: 187px; } }
 .site-header .site-header-inner .site-branding-container {
       height: 100px; }
 .site-header .site-header-inner .site-branding-container .site-branding {
-        display: flex;
         align-self: center; }
 .site-header .site-header-inner .site-branding-container .site-branding .site-logo {
           display: inline-block;
@@ -70,34 +93,105 @@ html, body {
   grid-area: body;
   background-color: pink; }
 .site-header-nav-container {
-  display: grid;
-  height: 100px;
+  display: flex;
   grid-template-columns: 1fr auto;
-  justify-items: right;
-  align-items: center; }
-.site-header-nav-container .search-area {
-    margin: 0 10px; }
-.site-header-nav-container .search-area .search-field {
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  padding-bottom: 6px; }
+.site-header-nav-container .main-navigation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100px; }
+@media all and (min-width: 768px) {
+      .site-header-nav-container .main-navigation {
+        width: 100%; } }
+@media all and (min-width: 768px) {
+      .site-header-nav-container .main-navigation .menu-primary-container {
+        height: auto; } }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu {
+      display: inline-block;
+      list-style: none; }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu li {
+        display: inline-block;
+        margin: 0 14px; }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu .sub-menu {
+        list-style: none; }
+.site-header-nav-container .main-navigation .main-menu-more {
+      display: inline-block; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu {
+        list-style: none; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu .is-empty {
+          display: none; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu li {
+          list-style: none; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu .sub-menu {
+          position: absolute;
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, 0.25);
+          margin-left: -55px;
+          padding: 0 10px;
+          transition: 0.25s; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu .sub-menu.hidden-links {
+            max-height: 0; }
+.site-header-nav-container .main-navigation .main-menu-more .main-menu .sub-menu.hidden-links.expanded-true {
+              padding: 5px 10px;
+              max-height: 100%; }
+.search-area {
+  position: absolute;
+  width: 40px;
+  bottom: 41%;
+  right: -30px;
+  display: flex;
+  margin: 0 15px 4px; }
+@media all and (min-width: 768px) {
+    .search-area {
+      position: relative;
+      width: auto;
+      bottom: auto;
+      bottom: initial;
+      right: auto;
+      right: initial; } }
+.search-area .search-form {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 10px; }
+@media all and (min-width: 768px) {
+      .search-area .search-form {
+        width: auto; } }
+.search-area .search-form .search-field {
+      display: flex;
+      align-items: center;
+      width: 0;
       border: none;
       color: #fff;
       border-bottom: 2px solid #fff;
       background: transparent;
+      padding: 0;
       transition: 0.25s; }
-.site-header-nav-container .search-area .search-field::placeholder {
+@media all and (min-width: 768px) {
+        .search-area .search-form .search-field {
+          width: auto; } }
+.search-area .search-form .search-field::placeholder {
         color: white; }
-.site-header-nav-container .search-area .search-field:active, .site-header-nav-container .search-area .search-field:focus {
+.search-area .search-form .search-field:active, .search-area .search-form .search-field:focus {
         outline: none;
         box-shadow: 0 -1px 0 0 #10153F inset; }
-.site-header-nav-container .search-area .search-submit {
-      background: url("http://capezza-hill.local/wp-content/themes/capezza-hill/assets/images/search.png");
+.search-area .search-form .search-submit {
+      background: url('/wp-content/themes/capezza-hill/assets/images/search.png') no-repeat center/contain;
       text-indent: -9999px;
-      background: transparent; }
-#menu-primary.main-menu li {
-  display: inline-block;
-  margin: 0 10px; }
-@media all and (min-width: 992px) {
-  .main-menu-more {
-    display: none; } }
+      border: none; }
+.search-area .search-form.active .search-field {
+      width: 150px;
+      padding: 1px; }
+.search-placeholder {
+  display: flex;
+  margin: 0 15px 4px; }
+@media all and (min-width: 768px) {
+    .search-placeholder {
+      display: none; } }
 body {
   display: grid;
   grid-template-areas: 'head' 'body'  'footer'; }

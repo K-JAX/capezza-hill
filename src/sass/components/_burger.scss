@@ -1,0 +1,24 @@
+// menu burger
+.submenu-expand {
+    .svg-icon {
+        line {
+            transition: 0.2s;
+            transform-origin: center;
+        }
+    }
+    &.submenu-expanded {
+        .svg-icon {
+            line {
+                &:first-of-type {
+                    transform: translateX(-20%) translateY(20%) rotate(45deg);
+                }
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+                &:last-of-type {
+                    transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+                }
+            }
+        }
+    }
+}

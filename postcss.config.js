@@ -5,8 +5,8 @@ module.exports = ({ file, options, env }) => {
         'autoprefixer': env === 'production' ? options.autoprefixer : false,
         'cssnano': env === 'production' ? options.cssnano : false,
         'postcss-assets': {
-            baseUrl: '//wp-content/themes/capezza-hill/assets/',
-            loadPaths: ['images/'],
+            baseUrl: '//wp-content/themes/capezza-hill/',
+            loadPaths: ['./assets/images/'],
         },
       },
     }
