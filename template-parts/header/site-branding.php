@@ -11,9 +11,9 @@
     <?php $blog_info = get_bloginfo( 'name' ); ?>
     <?php if ( ! empty( $blog_info ) ) : ?>
         <?php if ( is_front_page() || is_home() ) : ?>
-            <h1 class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <span>LLC</span></a></h1>
+            <h1 class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <sub class="llc">LLC</sub></a></h1>
         <?php else : ?>
-            <p class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?php echo is_home(); ?> <span>LLC</span></a></p>
+            <p class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?php echo is_home(); ?> <sub class="llc">LLC</sub></a></p>
         <?php endif; ?>
     <?php endif; ?>
 

@@ -24,6 +24,7 @@ function capezzahill_body_classes( $classes ) {
         $classes[] = 'image-filters-enabled';
     }
 
+	
     return $classes;
     
 }

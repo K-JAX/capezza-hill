@@ -1,0 +1,9 @@
+// sections
+
+.half-height{
+    @media all and (min-width: 768px){
+        min-height: 50vh;
+    }
+}
+
+

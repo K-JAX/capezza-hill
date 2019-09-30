@@ -1,8 +1,6 @@
 // Helper classes
 
-.formal{
-    font-family: "Cinzel", serif;
-}
+
 
 .screen-reader-text{
     display: none;
@@ -21,4 +19,12 @@
     &:active, &:focus {
         outline: none;
     }
+}
+
+
+
+hr.short-blue{
+    border: none;
+    border-bottom: 1px solid $lightblue;
+    width: 94px;
 }

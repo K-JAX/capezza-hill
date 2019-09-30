@@ -3,6 +3,41 @@
 // Google font imports
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400&display=swap');
 
+// elements
+h1{}
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+// //elememet
+
+
+// custom font classes
+
+.text-center    { text-align: center;   }
+.text-left      { text-align: left;     }
+.text-right     { text-align: right;    }
+
+.formal{
+    font-family: "Cinzel", serif;
+}
+
+.light{
+    font-weight: 100;
+}
+
+.llc{
+    font-size: 0.5em;
+    bottom: 0;
+}
+
+.site-footer address{
+    color: $lightgray;
+    font-style: normal;
+}
+
 .has-small-font-size{
     font-size: 19.5px;
 }
@@ -15,3 +50,4 @@
 .has-huge-font-size{
     font-size: 49.5px;
 }
+// //custom font classes
