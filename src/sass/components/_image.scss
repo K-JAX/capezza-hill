@@ -1,0 +1,45 @@
+// image related classes & components
+
+.case-figure {
+    &:before {
+        z-index: 1;
+        top: -18px;
+        left: -18px;
+        width: 37px;
+        height: 37px;
+        background-color: $lightblue;
+        opacity: 0.75
+    }
+    &:after {
+        z-index: 1;
+        top: 330px;
+        left: 380px;
+        width: 68px;
+        height: 68px;
+        border: 6px solid $lightblue;
+        opacity: 0.75
+
+    }
+
+    img {
+        width: 416px;
+    }
+    
+    figcaption {
+        position: relative;
+        width: 84%;
+        padding-left: 20px;
+        font-size: 26px;
+        color: #747583;
+        :before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-left: 1px solid $lightblue;
+        }
+    }
+    
+}
+

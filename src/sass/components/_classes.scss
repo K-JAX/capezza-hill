@@ -1,6 +1,14 @@
 // Helper classes
 
 
+// creates pseudo elements
+.beforeafter{
+    position: relative;
+    &:before, &:after{
+        position: absolute;
+        content: '';
+    }
+}
 
 .screen-reader-text{
     display: none;
@@ -21,10 +29,78 @@
     }
 }
 
-
-
-hr.short-blue{
-    border: none;
-    border-bottom: 1px solid $lightblue;
-    width: 94px;
+a {
+    &.rst{
+        text-transform: initial;
+        color: initial;
+        text-decoration: none;
+        &.hover-underline:hover{
+            text-decoration: underline;
+        }
+    }
+    &.informal{
+        text-transform: initial;
+    }
 }
+
+a .svg-icon{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin: auto;
+}
+
+hr{
+    &.short{
+        border: none;
+        width: 94px
+    }
+    &.shorter{
+        border: none;
+        width: 58px
+    }
+    &.blue{
+        border-bottom: 1px solid $lightblue;
+    }
+    &.white{
+        border-bottom: 1px solid $wht;
+    }
+    &.black{
+        border-bottom: 1px solid $blk;
+    }
+}
+
+.announcement-title-banner{
+    font-weight: 100;
+    width: 100%;
+    padding: 00px 0;
+    margin: 0;
+    text-align: center;
+    h2{
+        font-size: 1.75em;
+    }
+}
+
+
+// Inbox classing. Build now categorize later
+.feature-case {
+    position: relative;
+    &:first-of-type{
+        background: #F8F5F5;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 50%;
+            margin: auto 0;
+            border-right: 1px solid $lightblue;
+        }
+    }    
+    &:last-of-type{
+        background: #F4F7F9;
+
+    }    
+}
+

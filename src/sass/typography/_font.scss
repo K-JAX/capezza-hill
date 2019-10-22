@@ -4,31 +4,49 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400&display=swap');
 
 // elements
-h1{}
-h2{}
-h3{}
-h4{}
-h5{}
-h6{}
+h1, .h1 { font-size: 2.5em;     }
+h2, .h2 { font-size: 2.25em;    }
+h3, .h3 { font-size: 2em;       }
+h4, .h4 { font-size: 1.75em;    }
+h5, .h5 { font-size: 1.5em;     }
+h6, .h6 { font-size: 1.25em;    }
 
-// //elememet
+// //element
 
 
 // custom font classes
+
+// font sizes
+ 
+
+
+// formatting
 
 .text-center    { text-align: center;   }
 .text-left      { text-align: left;     }
 .text-right     { text-align: right;    }
 
+.all-caps       { text-transform: uppercase }
+
 .formal{
     font-family: "Cinzel", serif;
+}
+
+.informal{
+    font-family: "Work Sans", serif;
 }
 
 .light{
     font-weight: 100;
 }
 
-.llc{
+.site-title {
+    font-variant: small-caps;
+    font-weight: 100;
+}
+
+
+.llp{
     font-size: 0.5em;
     bottom: 0;
 }
@@ -50,4 +68,9 @@ h6{}
 .has-huge-font-size{
     font-size: 49.5px;
 }
+
+.spaced{
+    letter-spacing: 0.2em;
+}
+
 // //custom font classes

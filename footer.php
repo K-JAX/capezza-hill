@@ -1,12 +1,12 @@
         <footer id="colophon" class="site-footer">
             <div class="site-footer text-center">
 
-                <h2 class="formal light"><?php echo bloginfo( 'name' ) ?><sub class="llc"> LLC</sub></h2>
+                <h2 class="formal light"><?php echo bloginfo( 'name' ) ?><sub class="llp"> LLP</sub></h2>
 
-                <hr class="short-blue" />
+                <hr class="short blue" />
                 <address>30 South Pearl Street, Suite P-110,  Albany, New York 12207</address>
 
-                <small><?php echo bloginfo( 'name' ) ?><sub class="llc"> LLC</sub> &copy; <?php print date("Y"); ?></small>
+                <small><?php echo bloginfo( 'name' ) ?><sub class="llp"> LLC</sub> &copy; <?php print date("Y"); ?></small>
 
                 <?php 
                 if ( function_exists( 'the_privacy_policy_link' ) ) {

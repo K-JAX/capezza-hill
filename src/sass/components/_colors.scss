@@ -1,0 +1,92 @@
+// Color Classes
+
+// text
+.white-txt{
+    color: $wht !important;
+}
+.black-txt{
+    color: $blk !important;
+}
+.darkgray-txt{
+    color: $darkgray !important;
+}
+.lightgray-txt{
+    color: $lightgray !important;
+}
+.lightergray-txt{
+    color: $lightergray !important;
+}
+.lightblue-txt{
+    color: $lightblue !important;
+}
+.lightlink-txt{
+    color: $lighterblue !important;
+    .svg-icon {
+        fill: $lighterblue;
+    }
+}
+.navy-txt{
+    color: $navy !important;
+}
+
+// backgrounds
+.white-bg {
+    background-color: $wht;
+    &:before{
+        background-color: inherit;
+    }
+}
+.black-bg{
+    background-color: $blk;
+    &:before{
+        background-color: inherit;
+    }
+}
+.darkgray-bg{
+    background-color: $darkgray;
+    &:before{
+        background-color: inherit;
+    }
+}
+.lightgray-bg{
+    background-color: $lightgray;
+    &:before{
+        background-color: inherit;
+    }
+}
+.lightergray-bg{
+    background-color: $lightergray;
+    &:before{
+        background-color: inherit;
+    }
+}
+.lightblue-bg{
+    background-color: $lightblue;
+    &:before{
+        background-color: inherit;
+    }
+}
+.navy-bg{
+    background-color: $navy;
+    &:before{
+        background-color: inherit;
+    }
+}
+
+.overtint {
+    position: relative;
+    &:before {
+        content: '';
+        z-index: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.75;
+    }
+    *{
+        position: relative;
+        z-index: 2;
+    }
+}

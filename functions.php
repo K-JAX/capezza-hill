@@ -57,6 +57,9 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
         add_theme_support( 'editor-styles' );
         add_editor_style( 'custom-editor-style.css' );
 
+        // Add excerpts to page
+        add_post_type_support( 'page', 'excerpt' );
+        
         add_theme_support( 
             'editor-font-sizes',
             array(
@@ -236,3 +239,26 @@ require get_template_directory() . '/inc/icon-functions.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 require get_template_directory() . '/inc/customizer.php';
+
+require get_template_directory() . '/inc/meta-boxes.php';
+
+/**
+ * Custom controller
+ * See http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
+ */
+if ( class_exists('WP_Customize_Control') ) {
+    class Example_Customize_Textarea_Control extends WP_Customize_Control {
+        public $type = 'checkbox';
+
+        public function render_content() {
+            ?>
+            <label>
+            <span class="customize-control-select"><?php echo esc_html( $this->label ); ?></span>
+            <input <?php $this->link(); ?> type="checkbox" value="1" class="code" <?php checked( 1, $this->value() ); ?> />
+            </label>
+            <?php
+        }
+    }
+}
+
+

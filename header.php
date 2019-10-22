@@ -35,4 +35,19 @@
 				</div>
 			<?php endif; */ ?> 
 			</div>
+			<?php if ( is_front_page() || is_home() ) : ?>
+			<div class="center">
+      	      	<h1 class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <sub class="llp">LLP</sub></a></h1>
+				<?php
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) :
+					?>
+						<hr class="short blue">
+						<p class="site-description formal">
+							<?php echo $description; ?>
+						</p>
+				<?php endif; ?>
+				<a href="#primary"><?php echo capezzahill_get_icon_svg('chevron_down', 32); ?></a>
+			</div>
+			<?php endif; ?>
         </header>

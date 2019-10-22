@@ -86,6 +86,15 @@ class CapezzaHill_SVG_Icons {
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
     <path d="M0 0h24v24H0z" fill="none"></path>
 </svg>',
+		'chevron_down'			=> /* kevin's hand-made down chevron arrow */'
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<polyline class="st0" points="50.4,192.3 306,467.3 561.6,192.3 "/>
+</svg>
+',
 		'check'                  => /* material-design – check */ '
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M0 0h24v24H0z" fill="none"></path>

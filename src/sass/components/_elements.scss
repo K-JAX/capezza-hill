@@ -1,13 +1,31 @@
 // global html elements
 
+*{
+    box-sizing: border-box;
+}
+
+
 html, body{
     font-family: 'Work Sans', sans-serif;
 }
 
 html{
+    scroll-behavior: smooth;
     background: $navy;
 }
 
 body{
     background: $wht;
 }
+
+a {
+    color: $lightblue;
+    text-transform: uppercase;
+    &:hover{
+        opacity: 0.85;
+    }
+    svg{
+        fill: $lightblue;
+    }
+}
+
