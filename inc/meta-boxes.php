@@ -4,7 +4,6 @@
  */
 
 add_action( 'add_meta_boxes', 'capezzahill_add_meta_box' );
-
 if ( ! function_exists( 'capezzahill_add_meta_box' ) ) {
     /**
      * Add meta box to page screen
@@ -12,9 +11,18 @@ if ( ! function_exists( 'capezzahill_add_meta_box' ) ) {
      */
     function capezzahill_add_meta_box() {
         add_meta_box( 'additional-page-metabox-options', esc_html__( 'Feature', 'capezzahill' ), 'capezzahill_metabox_controls', 'page', 'side', 'low' );
+        add_meta_box( 
+            'capezzahill_custom_attachment', 
+            esc_html__( 'Custom Attachment', 'capezzahill' ), 
+            'capezzahill_custom_attachment', 
+            'attorney', 
+            'side', 
+            'low' 
+        );
     }
 }
 
+add_action( 'save_post', 'capezzahill_save_metaboxes' );
 if ( ! function_exists( 'capezzahill_metabox_controls' ) ) {
     /**
      * Meta box render function
@@ -43,7 +51,21 @@ if ( ! function_exists( 'capezzahill_metabox_controls' ) ) {
     }
 }
 
-add_action( 'save_post', 'capezzahill_save_metaboxes' );
+
+if ( ! function_exists( 'capezzahill_custom_attachment' ) ) {
+
+    function capezzahill_custom_attachment() {
+        
+        wp_nonce_field('capezzahill_custom_attachment_meta_box', 'capezzahill_custom_attachment_meta_box_nonce');
+        
+        $html = '<p class="description">';
+            $html .= 'Upload your PDF here.';
+        $html .= '</p>';
+        $html .= '<input type="file" id="wp_custom_attachment" name="wp_custom_attachment" value="" size="25" />';
+        
+        echo $html;
+    } // end wp_custom_attachment
+}
 
 if ( ! function_exists( 'capezzahill_save_metaboxes' ) ) {
     /**
@@ -88,4 +110,44 @@ if ( ! function_exists( 'capezzahill_save_metaboxes' ) ) {
         }
 
     }
+}
+
+add_action('save_post', 'capezzahill_custom_attachment_meta_save');
+if ( ! function_exists( 'capezzahill_custom_attachment_meta_save' ) ) {
+
+    function capezzahill_custom_attachment_meta_save($id) {
+
+        /* security validation */
+        if(!wp_verify_nonce($_POST['capezzahill_custom_attachment_nonce'], plugin_basename(__FILE__))) {
+            return $id;
+        } // end if
+    }
+
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
+        return $id;
+    }
+
+    if('attorney' == $_POST['post_type']) {
+        if(!current_user_can('edit_page', $id)) {
+            return $id;
+        }
+    } else {
+        if(!current_user_can('edit_page', $id)){
+            return $id;
+        }
+    }
+
+    // Make sure the file array isn't empty
+    if(!empty($_FILES['capezzahill_custom_attachment']['name'])){
+
+        // Use the WordPress API to upload the file
+        $upload = wp_upload_bits($_FILES['wp_custom_attachment']['name'], null, file_get_contents($_FILES['capezzahill_custom_attachment']['tmp_name']));
+        
+        if(isset($upload['error']) && $upload['error'] != 0) {
+            wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
+        }
+    } else{
+        wp_die("The file type that you've uploaded is not a vCard.");
+    }
+
 }

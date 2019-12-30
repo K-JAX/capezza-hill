@@ -9,7 +9,7 @@
      */
     function capezzahill_posted_on() {
         if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-            $time_string = '<time class="entry-date published updated" datetime="%1$s">$2%s</time<time class="updated" datetime="$3%s">%4$s</time>';
+            $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time<time class="updated" datetime="$3%s">%4$s</time>';
         }
 
         $time_string = sprintf(
@@ -226,3 +226,42 @@ endif;
         );
     }
  endif;
+
+ function endsWith($string, $endString) 
+ { 
+     $len = strlen($endString); 
+     if ($len == 0) { 
+         return true; 
+     } 
+     return (substr($string, -$len) === $endString); 
+ } 
+   
+//  // Driver code 
+//  if(endsWith("abcde","de")) 
+//      echo "True"; 
+//  else
+//      echo "False"; 
+
+// Code for looping through all of the meta for a post type template
+if ( ! function_exists( 'capezzahill_attorney_title_meta')){
+    function capezzahill_attorney_title_meta( $meta ) {
+        foreach (array_slice($meta, 1) as $key=>$val){
+            if( endsWith($key, 'title') ){
+                // echo $key . ' : ' . $val[0] . '<br/>';
+                echo '<h2>' . $val[0] . '</h2><br/>';
+
+            }
+        }
+    }
+}
+
+// Code for looping through all of the meta for a post type template
+if ( ! function_exists( 'capezzahill_all_the_meta')){
+    function capezzahill_all_the_meta( $meta ) {
+        $cleanedMeta = array_slice($meta, 1);
+        
+        foreach ($cleanedMeta as $key=>$val){
+            echo $key . ' : ' . $val[0] . '<br/>';
+        }
+    }
+}

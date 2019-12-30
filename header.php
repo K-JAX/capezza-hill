@@ -16,24 +16,7 @@
 				<div class="site-header-nav-container">
 					<?php get_template_part( 'template-parts/header/site', 'nav'); ?>
 				</div>
-            <!-- <div class="featured-img"></div> -->
-			<?php /* if ( is_singular() && capezzahill_can_show_post_thumbnail() ) : ?>
-				<div class="site-featured-image">
-					<?php
-						capezzahill_post_thumbnail();
-						the_post();
-						$discussion = ! is_page() && capezzahill_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null;
-						$classes = 'entry-header';
-						if ( ! empty( $discussion ) && absint( $discussion->responses ) > 0 ) {
-							$classes = 'entry-header has-discussion';
-						}
-					?> 
-					<div class="<?php echo $classes; ?>">
-						<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
-					</div><!-- .entry-header -->
-					<?php rewind_posts(); ?>
-				</div>
-			<?php endif; */ ?> 
+
 			</div>
 			<?php if ( is_front_page() || is_home() ) : ?>
 			<div class="center">
@@ -47,7 +30,7 @@
 							<?php echo $description; ?>
 						</p>
 				<?php endif; ?>
-				<a href="#primary"><?php echo capezzahill_get_icon_svg('chevron_down', 32); ?></a>
+				<a href="#primary" class="position-relative" ><?php echo capezzahill_get_icon_svg('chevron_down', 32); ?></a>
 			</div>
 			<?php endif; ?>
         </header>

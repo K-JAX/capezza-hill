@@ -9,7 +9,6 @@
 
         <section id="primary" class="content-area">
             <main id="main" class="site-main">
-
                 <?php
                     /* Start the Loop */
                     while ( have_posts() ) :

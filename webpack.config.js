@@ -11,6 +11,9 @@ module.exports = {
     mode: env,
     entry: {
         script: './src/js/script.js',
+        blocks: './src/js/blocks.js',
+        style: './src/sass/style.scss',
+        styleeditor: './src/sass/style-editor.scss'
         // vendor: './src/js/vendor.js',
     },
     resolve: {
@@ -29,12 +32,20 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            babelrc: true,
+                            extends: path.join(__dirname, '/.babelrc'),
+                            cacheDirectory: true,
+                        }
+                    },
+                    {
+                        loader: 'webpack-import-glob-loader',
                     }
-                }
+                    
+                ]
             },
             {
                 test: /\.(sa|sc|c)ss$/i,
@@ -88,8 +99,9 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['./capezza-hill/assets/js/hot', 'script-min-*', './capezza-hill/style.css'],
         }),
         new MiniCssExtractPlugin({
-            filename: './style.css',
-            chunkFilename: './[id].css'
+            // filename: './style.css',
+            moduleFilename: ({ name }) => `${name.replace('/js/', '/css/')}.css`,
+            chunkFilename: './[id].css',
           }),
         new webpack.DefinePlugin({
             APP_BASE: JSON.stringify(path.resolve(__dirname, './package.json')),

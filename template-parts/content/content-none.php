@@ -37,7 +37,7 @@
             else :
                 ?>
                 
-                <p><?php _e( 'It seems we can&rsqui;t find what you&rsquo;re looking for. Perhaps searching can help.', 'capezzahill' ); ?></p>
+                <p><?php _e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'capezzahill' ); ?></p>
                 <?php
                 get_search_form();
             

@@ -242,6 +242,9 @@ require get_template_directory() . '/inc/customizer.php';
 
 require get_template_directory() . '/inc/meta-boxes.php';
 
+require get_template_directory() . '/inc/block-register.php';
+
+
 /**
  * Custom controller
  * See http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/

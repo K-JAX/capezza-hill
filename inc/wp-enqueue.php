@@ -15,3 +15,10 @@ function capezzahill_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'capezzahill_scripts' );
+
+
+// lets make sure this is also loaded in the admin panel as well
+function admin_style() {
+	wp_enqueue_style( 'capezzahill-style', get_bloginfo('stylesheet_directory') . '/styleeditor.css', array(), wp_get_theme()->get( 'Version' ) );
+  }
+  add_action('admin_enqueue_scripts', 'admin_style');

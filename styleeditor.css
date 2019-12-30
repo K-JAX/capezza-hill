@@ -1,0 +1,35 @@
+/**
+* CSS for the Admin editor only
+*/
+.block-panel {
+  background-color: #f9fafb;
+  padding: 5px 10px;
+  padding-right: 0;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.25); }
+.block-panel .block-label {
+    color: #10153F;
+    font-style: italic;
+    margin: 0 !important;
+    font-size: 0.5em; }
+.block-panel .changeable-txt {
+    margin: 0.3em 0; }
+.block-panel .changeable-txt i {
+      opacity: 0.25; }
+.block-panel input {
+    max-width: 98%; }
+.block-panel .big input {
+    font-size: 2.0em;
+    padding: 0.5em;
+    border: none;
+    border-bottom: 1px solid #10153F;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.25) inset; }
+.block-panel .big input:focus {
+      border: none;
+      border-bottom: 4px solid #10153F; }
+.block-panel .half {
+    display: inline-block;
+    width: 48%;
+    margin-right: 1%; }
+
+
+/*# sourceMappingURL=styleeditor.css.map*/

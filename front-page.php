@@ -26,7 +26,7 @@
         
         <?php while ($page_query->have_posts()) : $page_query->the_post(); 
             $linkText = get_post_meta(get_the_ID(), 'capezzahill_feature_link_text', true) !== '' ? get_post_meta(get_the_ID(), 'capezzahill_feature_link_text', true) : 'See more';
-            $count++ 
+            $count++; 
         ?> 
         
             <section class="page-section-link <?php echo $count == 1 ? 'white-txt lightblue-bg' : 'darkgray-txt white-bg' ?> overtint" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover;">
@@ -65,12 +65,10 @@
                     </figure>
                 </section>
             <?php endforeach;
-            wp_reset_postdata();
-        ?>
+                wp_reset_postdata();
+            ?>
         </section>
     </section>
-
-
     
     </main><!-- #main -->
 </div>
