@@ -85,7 +85,7 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             open: false,
-            proxy: 'http://capezza-hill.local/'
+            proxy: 'http://capezzahill.local/'
         },
         {
             reload: false

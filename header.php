@@ -26,11 +26,11 @@
 				if ( $description || is_customize_preview() ) :
 					?>
 						<hr class="short blue">
-						<p class="site-description formal">
+						<p class="site-description formal mb-3">
 							<?php echo $description; ?>
 						</p>
 				<?php endif; ?>
-				<a href="#primary" class="position-relative" ><?php echo capezzahill_get_icon_svg('chevron_down', 32); ?></a>
+				<a href="#primary" class="relative" ><?php echo capezzahill_get_icon_svg('chevron_down', 32); ?></a>
 			</div>
 			<?php endif; ?>
         </header>

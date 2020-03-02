@@ -1,12 +1,27 @@
 // Helper classes
 
+@mixin absolute-content {
+    position: absolute;
+    content: '';    
+}
 
 // creates pseudo elements
 .beforeafter{
     position: relative;
     &:before, &:after{
-        position: absolute;
-        content: '';
+        @include absolute-content;
+    }
+}
+
+.before{
+    &:before{
+        @include absolute-content;
+    }
+}
+
+.after{
+    &:after{
+        @include absolute-content;
     }
 }
 
@@ -47,26 +62,26 @@ a .svg-icon{
     position: absolute;
     top:0;
     bottom:0;
+    transform: translateX(-50%);
     margin: auto;
 }
 
 hr{
+    border-bottom: 1px solid;
     &.short{
-        border: none;
         width: 94px
     }
     &.shorter{
-        border: none;
         width: 58px
     }
     &.blue{
-        border-bottom: 1px solid $lightblue;
+        border-color: $lightblue;
     }
     &.white{
-        border-bottom: 1px solid $wht;
+        border-color: $wht;
     }
     &.black{
-        border-bottom: 1px solid $blk;
+        border-color: $blk;
     }
 }
 
@@ -104,6 +119,30 @@ hr{
     }    
 }
 
-.position-relative{
+.block{
+    display: block !important;
+}
+
+.inline-block{
+    display: inline-block !important;
+}
+
+.flex{
+    display: flex !important;
+}
+
+.grid{
+    display: grid !important;
+}
+
+.relative{
     position: relative !important;
+}
+
+.absolute{
+    position: absolute !important;    
+}
+
+.fixed{
+    position: fixed !important;    
 }
