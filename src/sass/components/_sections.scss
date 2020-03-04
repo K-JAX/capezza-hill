@@ -14,21 +14,30 @@
 
 .duo-split{
     display: grid;
-    @media all and (min-width: 768px){
+    @media all and (min-width: 992px){
         grid-template-columns: 1fr 1fr;
     }
     .split-section{
         padding: 30px 45px 70px;
         &:first-of-type .inner-contain{
-            margin-left: auto;
-            margin-right: 5em;
+            @media all and (min-width: 768px){
+                margin-left: auto;
+                margin-right: 5em;
+            }
         }
         &:last-of-type .inner-contain{
-            margin-left: 5em;
-            margin-right: auto;
+            @media all and (min-width: 768px){
+                margin-left: 5em;
+                margin-right: auto;
+            }
         }
         .inner-contain{
             max-width: 550px;
         }
     }
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto; 
 }

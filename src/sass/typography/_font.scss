@@ -4,12 +4,46 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400&display=swap');
 
 // elements
-h1, .h1 { font-size: 2.5em;     }
-h2, .h2 { font-size: 2.25em;    }
-h3, .h3 { font-size: 2em;       }
-h4, .h4 { font-size: 1.75em;    }
-h5, .h5 { font-size: 1.5em;     }
-h6, .h6 { font-size: 1.25em;    }
+h1, .h1 {
+    font-size: 2.5em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+h2, .h2 { 
+    font-size: 2.25em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+h3, .h3 { 
+    font-size: 2em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+h4, .h4 { 
+    font-size: 1.75em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+h5, .h5 { 
+    font-size: 1.5em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+h6, .h6 { 
+    font-size: 1.25em;
+    font-weight: 100;
+    margin-bottom: 1.2em;
+}
+
+p{
+    margin-bottom: 1.7em;
+}
+
+blockquote, .wp-block-quote{
+    border-left: 1px solid $lightblue;
+    padding: 0.7em 3em;
+    margin-bottom: 1.7em;    
+}
 
 // //element
 
@@ -33,7 +67,7 @@ h6, .h6 { font-size: 1.25em;    }
 }
 
 .informal{
-    font-family: "Work Sans", serif;
+    font-family: "Gill Sans", "Work Sans", serif;
 }
 
 .light{

@@ -62,8 +62,15 @@ a .svg-icon{
     position: absolute;
     top:0;
     bottom:0;
-    transform: translateX(-50%);
     margin: auto;
+}
+
+.jump-scroll .svg-icon{
+    transform: translateX(-50%);
+    transition: 0.25s;
+    &:hover{
+        transform: translate(-50%, 5px);
+    }
 }
 
 hr{

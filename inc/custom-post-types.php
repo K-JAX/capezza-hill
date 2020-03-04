@@ -47,7 +47,7 @@ if (! function_exists('register_attorney_cpt') ){
             'show_in_nav_menus'     => true,
             'query_var'  => true,
             'rewrite' =>  array( 'slug' => 'attorneys' ),
-            'has_archive' =>  'attorneys',
+            'has_archive' =>  'attorneys-archive',
             'can_export'    => true,
             'exclude_from_search'   => false,
             'menu_position' =>  4,

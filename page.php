@@ -7,8 +7,8 @@
  ?>
 
     <div id="primary" class="content-area">
-        <main id="main" class="site-main">
-
+        <main id="main" class="site-main container">
+            <div class="mx-3">
             <?php
 
             // Start the loop
@@ -23,6 +23,7 @@
                 }
             endwhile; // End of the loop
             ?>
+            </div>
         </main><!-- #main -->
     </div><!-- #primary -->
 

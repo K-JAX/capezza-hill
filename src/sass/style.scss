@@ -10,14 +10,16 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 */
 
+// Vendor Style
+@import "vendor/normalize-scss/normalize";
+
 // Config
 @import "vars/*";
 @import "mixins/*";
 @import "typography/*";
 @import "components/*";
 
-// // Vendor Components
-@import "vendor/normalize-scss/normalize";
+
 
  
 .alignfull {

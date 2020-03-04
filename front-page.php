@@ -45,28 +45,53 @@
         if( have_rows('featured_page_controls') ): ?>
         <section class="feature-page-links duo-split">
 
-        <?php while( have_rows('featured_page_controls') ): the_row(); ?>
-
-            <section class="page-section-link split-section half-height overtint" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
-                <?php 
-
-                    $postObj = get_sub_field('featured_post_type_object');
-                    $title  = $postObj ?  get_the_title($postObj->ID) : 'nothin';
-                    $description = $postObj ? get_the_excerpt($postObj->ID) : 'nothin';
-                    $linkText = get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) !== '' ? get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) : 'See more';
-                    $linkColor = get_sub_field('link_color') ? get_sub_field('link_color') : '#0077B6';
-
+        <?php while( have_rows('featured_page_controls') ): the_row();
+                $postObj = get_sub_field('featured_post_type_object');
+                $title  = $postObj ?  get_the_title($postObj->ID) : 'nothin';
+                $thumb = $postObj ? get_the_post_thumbnail_url( $postObj->ID ) : the_post_thumbnail_url();
+                $description = $postObj ? get_the_excerpt($postObj->ID) : 'nothin';
+                $linkText = get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) !== '' ? get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) : 'See more';
+                $linkColor = get_sub_field('link_color') ? get_sub_field('link_color') : '#0077B6';
+            ?>
+            <section class="page-section-link split-section half-height overtint" style="background-image: url(<?php echo $thumb; ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
+                <div class="inner-contain">
+                <?php
                     if(get_sub_field( 'has_archive_posts' ) == 'post' ){ 
-                        $link = $postObj ? get_permalink( $postObj->ID ) : 'no-link';
+                        $archive = get_sub_field('archive_name') ? get_sub_field('archive_name') : 'shabowza';
+                        $subLinks = get_posts([
+                            'post_type'     =>  $archive,
+                            'post_status'   =>  'publish',
+                            'numberposts'   =>  -1
+                        ]);
+                        function displaySubz($subz, $linkColor) {
+                            foreach($subz as $subLink){
+                                    $output .= '<li><a href="' . get_permalink($subLink->ID) . '" style="color: ' . $linkColor . ';" alt=" ' . $subLink->post_excerpt . '" >' . capezzahill_get_icon_svg('person', 22) . ' ' . $subLink->post_title . '</a></li>';
+                            }
+                            return $output;
+                        }
+                        $link = $postObj ? 
+                            '<nav class="feature-page-subnav">
+                                <a href="' . get_permalink( $postObj->ID ) .'" style="color: ' . $linkColor . ';" >' . $linkText . ' ' . capezzahill_get_icon_svg('chevron_right', 26) . '</a>
+                                <ul class="subnav">' . 
+                                displaySubz($subLinks, $linkColor)
+                                 . 
+                                '</ul>
+                            </nav>
+                            '
+                            : 'no-link';
                     } else{
-                        $link = $postObj ? get_permalink( $postObj->ID ) : 'no-link';
+                        $link = $postObj ? 
+                            '<a href="' . get_permalink( $postObj->ID ) . '" style="color: ' . $linkColor . ';" >' . $linkText . ' ' . capezzahill_get_icon_svg('chevron_right', 26) . '</a>'
+                            : 'no-link';
                     }
                 ?>
                 
                 <h3><?php echo $title; ?></h3>
                 <hr class="short white ml-0" />
                 <p><?php echo $description; ?></p>
-                <a style="color: <?php echo $linkColor; ?>" href="<?php echo $link; ?>"><?php echo $linkText; ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a>
+                <!-- <a style="color: <?php echo $linkColor; ?>" href="<?php echo $link; ?>"><?php echo $linkText; ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a> -->
+                <?php echo _e($link); ?>
+                </div>
             </section>
             
         <?php endwhile; ?> 
