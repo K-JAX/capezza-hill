@@ -442,6 +442,19 @@ blockquote, .wp-block-quote {
   opacity: 0; }
 .submenu-expand.submenu-expanded .svg-icon line:last-of-type {
   transform: translateX(-20%) translateY(-20%) rotate(-45deg); }
+button, input[type="submit"]:not(.search-submit) {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1em 2em; }
+button.secondary, input[type="submit"]:not(.search-submit).secondary {
+    border: 2px solid #10153F;
+    background-color: #10153F; }
+button.primary, input[type="submit"] {
+  border: none;
+  color: white;
+  background-color: #10153F; }
+input[type="submit"] {
+  cursor: pointer; }
 .beforeafter {
   position: relative; }
 .beforeafter:before, .beforeafter:after {
@@ -617,15 +630,25 @@ label {
   font-weight: 100;
   text-transform: uppercase;
   color: #10153F; }
-input {
+input[type="text"], input[type="email"], textarea {
   position: relative;
+  width: 100%;
   font-size: 1.75em;
   border: 0;
-  border-bottom: 4px solid #B0B7BB; }
+  border-bottom: 2px solid #B0B7BB; }
+input[type="text"].valid, input[type="email"].valid, textarea.valid {
+    border-bottom: 2px solid #0077B6; }
+textarea {
+  resize: none;
+  padding: 10px;
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.45) inset; }
+.wpcf7-form p {
+  width: 100%; }
 .wpcf7-form-control-wrap {
   position: relative;
-  display: inline-block; }
-.wpcf7-form-control-wrap input:focus {
+  display: inline-block;
+  width: 100%; }
+.wpcf7-form-control-wrap input:focus, .wpcf7-form-control-wrap textarea:focus {
     outline: none; }
 .wpcf7-form-control-wrap:before {
     content: '';
@@ -633,14 +656,20 @@ input {
     z-index: 1;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 1px;
     margin: auto;
     width: 0;
-    height: 2px;
+    height: 3px;
     transition: 0.25s;
     background-color: #10153F; }
 .wpcf7-form-control-wrap.active:before {
     width: 100%; }
+.required {
+  color: red; }
+.wpcf7-not-valid-tip {
+  position: absolute;
+  top: -20px;
+  right: 0; }
 .home .site-header {
   height: 100vh; }
 .home .site-header .site-header-inner {
@@ -855,12 +884,13 @@ input {
 .search-area .search-form .search-field {
       display: flex;
       align-items: center;
+      font-size: 1em;
       width: 0;
       border: none;
       color: #fff;
       border-bottom: 2px solid #fff;
       background: transparent;
-      padding: 0;
+      padding: 8px 0 2px;
       transition: 0.25s; }
 @media all and (min-width: 768px) {
         .search-area .search-form .search-field {
@@ -909,6 +939,9 @@ input {
 .container {
   max-width: 1200px;
   margin: auto; }
+.container.with-sidebar {
+    display: grid;
+    grid-template-columns: 80% 20%; }
 .mt-0 {
   margin-top: 0 !important; }
 .ml-0 {
@@ -962,6 +995,16 @@ input {
 .my-3 {
   margin-top: 1.5em !important;
   margin-bottom: 1.5em !important; }
+.flex-row {
+  display: flex;
+  flex-flow: row wrap; }
+.flex-row .half {
+    width: 45%;
+    margin: 0 5%; }
+.flex-row .half:first-of-type {
+      margin-left: 0; }
+.flex-row .half:last-of-type {
+      margin-right: 0; }
 body {
   display: grid;
   grid-template-areas: 'head' 'body'  'footer'; }

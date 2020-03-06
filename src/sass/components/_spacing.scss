@@ -80,3 +80,19 @@
     margin-top: 1.5em !important;
     margin-bottom: 1.5em !important;
 }
+
+
+.flex-row{
+    display: flex;
+    flex-flow: row wrap;
+    .half{
+        width: 45%;
+        margin: 0 5%;
+        &:first-of-type{
+            margin-left: 0;
+        }
+        &:last-of-type{
+            margin-right: 0;
+        }
+    }
+}

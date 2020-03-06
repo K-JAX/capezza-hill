@@ -161,6 +161,18 @@ function capezzahill_widgets_init() {
 
     register_sidebar(
         array(
+            'name'          =>  __( 'contact', 'capezzahill' ),
+            'id'            =>  'contact',
+            'description'   =>  __( 'Add widgets here to appear in your footer.', 'capezzahill' ),
+            'before_widget' =>  '<section id="%1$s" class="widget %2s">',
+            'after_widget'  =>  '</section>',
+            'before_title'  =>  '<h2 class="widget-title">',
+            'after_title'   =>  '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
             'name'          =>  __( 'Footer', 'capezzahill' ),
             'id'            =>  'sidebar-1',
             'description'   =>  __( 'Add widgets here to appear in your footer.', 'capezzahill' ),
@@ -170,7 +182,7 @@ function capezzahill_widgets_init() {
             'after_title'   =>  '</h2>',
         )
     );
-
+    
 }
 add_action( 'widgets_init', 'capezzahill_widgets_init' );
 
@@ -227,6 +239,8 @@ add_action( 'wp_head', 'capezzahill_colors_css_wrap' );
 require get_template_directory() . '/inc/wp-enqueue.php';
 
 require get_template_directory() . '/inc/custom-post-types.php';
+
+require get_template_directory() . '/inc/custom-widgets.php';
 
 require get_template_directory() . '/classes/class-capezzahill-svg-icons.php';
 

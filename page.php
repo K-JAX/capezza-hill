@@ -7,7 +7,7 @@
  ?>
 
     <div id="primary" class="content-area">
-        <main id="main" class="site-main container">
+        <main id="main" class="site-main container <?php echo is_active_sidebar( 'contact' ) ? 'with-sidebar' : '' ; ?>">
             <div class="mx-3">
             <?php
 
@@ -24,6 +24,14 @@
             endwhile; // End of the loop
             ?>
             </div>
+
+            <?php if ( is_page('Contact') && is_active_sidebar( 'contact' ) ) : ?>
+                <div>
+                <?php get_sidebar( 'contact' ); ?>
+            <?php else : ?>
+                <!-- Time to add some widgets! -->
+                </div>
+            <?php endif; ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 

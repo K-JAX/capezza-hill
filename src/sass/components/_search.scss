@@ -25,12 +25,13 @@
         .search-field{
             display: flex;
             align-items: center;
+            font-size: 1em;
             width: 0;
             border: none;
             color: $wht;
             border-bottom: 2px solid $wht;
             background: transparent;
-            padding: 0;
+            padding: 8px 0 2px;
             transition: 0.25s;
             @media all and (min-width: 768px){
                 width: auto;

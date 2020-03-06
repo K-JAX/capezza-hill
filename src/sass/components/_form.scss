@@ -10,11 +10,21 @@ label{
     color: $navy;
 }
 
-input{
+input[type="text"], input[type="email"], textarea{
     position: relative;
+    width: 100%;
     font-size: 1.75em;
     border:0;
-    border-bottom: 4px solid $lightgray;
+    border-bottom: 2px solid $lightgray;
+    &.valid{
+        border-bottom: 2px solid $lightblue;
+    }
+}
+
+textarea{
+    resize: none;
+    padding: 10px;
+    box-shadow: 0 1px 10px 2px rgba(0,0,0,0.45) inset;
 }
 
 // // elements
@@ -22,10 +32,17 @@ input{
 
 // classes
 
+.wpcf7-form{
+    p{
+        width: 100%;
+    }
+}
+
 .wpcf7-form-control-wrap{
     position: relative;
     display: inline-block;
-    input{
+    width: 100%;
+    input, textarea{
         &:focus{
             outline: none;
         }
@@ -36,10 +53,10 @@ input{
         z-index: 1;
         left:0;
         right:0;
-        bottom: 0;
+        bottom: 1px;
         margin: auto;
         width: 0;
-        height: 2px;
+        height: 3px;
         transition: 0.25s;
         background-color: $navy;
     }
@@ -48,6 +65,16 @@ input{
             width: 100%;
         }
     }
+}
+
+.required{
+    color: red;
+}
+
+.wpcf7-not-valid-tip{
+    position: absolute;
+    top: -20px;
+    right: 0;
 }
 
 // // classes

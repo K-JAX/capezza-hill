@@ -1,0 +1,23 @@
+// button components
+
+
+button, input[type="submit"]:not(.search-submit) {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1em 2em;
+    &.secondary{
+        border: 2px solid $navy;
+        background-color: $navy;
+    }
+}
+
+button.primary, input[type="submit"]{
+    border: none;
+    color: white;
+    background-color: $navy;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    
+}

@@ -32,15 +32,22 @@ window.addEventListener("load", function(){
 
 
     // Add active class to input's parents
-    document.querySelectorAll('.wpcf7-form-control-wrap input').forEach(item => {
+    document.querySelectorAll('.wpcf7-form-control-wrap *').forEach(item => {
         // if( item ){
             item.addEventListener('focus', event => {
                 item.parentElement.classList.toggle('active');
             });
             item.addEventListener('blur', event => {
+                
                 item.parentElement.classList.toggle('active');
+                if ( item.value !== '' ) {
+                    item.classList.add('valid');
+                } else{
+                    item.classList.remove('valid');
+                }
             });
         // }  
     });
+    
 });
 
