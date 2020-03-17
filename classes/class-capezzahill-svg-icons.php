@@ -95,6 +95,20 @@ class CapezzaHill_SVG_Icons {
 <polyline class="st0" points="50.4,192.3 306,467.3 561.6,192.3 "/>
 </svg>
 ',
+'triple_chevron_down'			=> /* kevin's hand-made down chevron arrow */'
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 612 918" style="enable-background:new 0 0 612 918;" xml:space="preserve">
+<style type="text/css">
+	.triplet-chevron{fill:none;stroke:#FFFFFF;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10; transform-origin: center;}
+	.st0{transform: translateY(0); opacity: 0.25;}
+	.st1{transform: translateY(25%); opacity: 0.5;}
+	.st2{transform: translateY(50%); opacity: 0.75;}
+</style>
+<polyline class="triplet-chevron st0" points="50.4,192.3 306,467.3 561.6,192.3 " />
+<polyline class="triplet-chevron st1" points="50.4,192.3 306,467.3 561.6,192.3 "/>
+<polyline class="triplet-chevron st2" points="50.4,192.3 306,467.3 561.6,192.3 "/>
+</svg>
+',
 		'check'                  => /* material-design – check */ '
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M0 0h24v24H0z" fill="none"></path>

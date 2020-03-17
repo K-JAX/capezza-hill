@@ -3,46 +3,28 @@
  * The template for displaying attorney content
  */
 
- get_header();
+ get_header('attorney');
  ?>
+    <section id="primary" class="content-area container with-sidebar left pt-0">
+        <main id="main" class="site-main py-3">
+            <div class="mx-3">
+            <?php
+                /* Start the Loop */
+                while ( have_posts() ) :
+                    the_post();
+                    get_template_part('template-parts/content/content', 'attorney');
 
+                endwhile; // End of the loop.
+            ?>
+            </div>
 
-        <section id="primary" class="content-area">
-            <main id="main" class="site-main">
-
-                <?php
-                    /* Start the Loop */
-                    while ( have_posts() ) :
-                        the_post();
-                        get_template_part('template-parts/content/content', 'attorney');
-
-                        
-                        if ( is_singular( 'attachment' ) ) {
-                            // Parent post navigation
-                            the_post_navigation(
-                                array(
-                                    /* translators: %s: parent post link */
-                                    'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'capezzahill' ), '%title' ),
-                                )
-                                );
-                        } elseif ( is_singular( 'post' ) ) {
-                            // Previous/next post navigation.
-                            the_post_navigation(
-                                array(
-                                    'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next Post', 'capezzahill' ) . '</span> ' .
-                                        '<span class="screen-reader-text">' . __( 'Next post:', 'capezzahill' ) . '</span> <br/>' .
-                                        '<span class="post-title">%title</span>',
-                                    'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'capezzahill' ) . '</span>' .
-                                    '<span class="screen-reader-text">' . __( 'Previous post:', 'capezzahill') . '</span> <br />' .
-                                    '<span class="post-title">%title</span>',
-                                )
-                            );
-                        } 
-
-                    endwhile; // End of the loop.
-                ?>
-            </main><!-- #main -->
-        </section><!-- #primary -->
+        </main><!-- #main -->
+        <aside class="sidebar-container">
+            <ul class="bio-list">
+                <?php capezzahill_attorney_title_meta( get_post_meta( get_the_ID(), '', true ) ); ?>
+            </ul>
+        </aside>
+    </section><!-- #primary -->
 
 <?php
 get_footer();

@@ -1,14 +1,13 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Template Name: Sidebar Page
  */
-
  get_header();
- $is_sidebar = get_field('is_sidebar') ? 'with-sidebar right-sidebar' : '';
+ $sidebar_side = get_field('sidebar_side');
  ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main container <?php echo $is_sidebar; ?>">
+    <div id="primary" class="content-area container with-sidebar <?php echo strtolower($sidebar_side); ?>">
+        <main id="main" class="site-main   ">
             <div class="mx-3">
             <?php
 
@@ -26,14 +25,13 @@
             ?>
             </div>
 
-            <?php if ( is_page('Contact') && is_active_sidebar( 'contact' ) ) : ?>
-                <div>
-                <?php get_sidebar( 'contact' ); ?>
-            <?php else : ?>
-                <!-- Time to add some widgets! -->
-                </div>
-            <?php endif; ?>
+
         </main><!-- #main -->
+        <?php if ( is_page('Contact') && is_active_sidebar( 'contact' ) ) : ?>
+        <aside class="sidebar-container">
+            <?php get_sidebar( 'contact' ); ?>
+        </aside>
+            <?php endif; ?>
     </div><!-- #primary -->
 
     <?php

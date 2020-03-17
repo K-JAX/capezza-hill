@@ -13,8 +13,17 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
     const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
     
 }
+var scrollE = document.querySelectorAll('.jump-scroll')[0];
+scrollE.addEventListener('click', event => {
+    if (!scrollE.classList.contains('clicked')){
+        scrollE.classList.add('clicked');
+    }
+});
+
 
 window.addEventListener("load", function(){
+
+
 
     // Create dropdown for homepage feature section
     var navThang = document.querySelectorAll('.feature-page-subnav')[0],
@@ -31,7 +40,7 @@ window.addEventListener("load", function(){
     }
 
 
-    // Add active class to input's parents
+    // When clicking form input add active class to input's parents
     document.querySelectorAll('.wpcf7-form-control-wrap *').forEach(item => {
         // if( item ){
             item.addEventListener('focus', event => {
@@ -47,6 +56,31 @@ window.addEventListener("load", function(){
                 }
             });
         // }  
+    });
+   
+    // Manipulating attorney title on archive page
+    document.querySelectorAll('.feature-attorney-title').forEach(item => {
+        let name = item.innerHTML;
+        pieces = name.split('. ');
+        pieces[0] = '<span class="small-title">' + pieces[0] + '</span><br>';
+        pieces[1] = pieces[1].replace( pieces[1][0], '<span class="block-cap">' + pieces[1][0] + '</span>');
+        name = pieces.join(' ');
+        item.innerHTML = name;
+    });
+
+    // Bio targetting on the attorney page
+    this.document.querySelectorAll('.bio-button').forEach(item => {
+        item.addEventListener('click', event => {
+
+            // remove all of the classes
+            document.querySelectorAll('.active').forEach(item => { item.classList.remove('active') });
+            
+            let targetID =  item.getAttribute('data-target');
+            let target = document.getElementById(targetID + '_content');
+            console.log(target);
+            target.classList.add('active');
+            
+        });
     });
     
 });

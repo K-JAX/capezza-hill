@@ -38,11 +38,26 @@
 }
 
 .container {
-   max-width: 1200px;
+   max-width: 1440px;
    margin: auto; 
    &.with-sidebar{
        display: grid;
-       grid-template-columns: 80% 20%;
+       
+       grid-column-gap: 2.0%;
+       &.right{
+        grid-template-areas: 'main side';
+        grid-template-columns: auto 29%;
+       }
+       &.left{
+        grid-template-areas: 'side main';
+        grid-template-columns: 29% auto;
+       }
+       main{
+           grid-area: main;
+       }
+       .sidebar-container{
+           grid-area: side;
+       }
    }
 }
 

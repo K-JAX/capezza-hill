@@ -1,0 +1,26 @@
+// svg stuff
+
+.triplet-chevron{
+    animation: opacityFade 2s infinite;
+    &.st0{
+        animation-delay: 0s;
+    }
+    &.st1{
+        animation-delay: 0.1s;
+    }
+    &.st2{
+        animation-delay: 0.3s;
+    }
+}
+
+.clicked{
+    .triplet-chevron{
+        animation: none;
+    }
+}
+
+@keyframes opacityFade{
+    0% { opacity: 0.1;}
+    30% { opacity: 0.7;}
+    100% { opacity: 0.1;}
+}

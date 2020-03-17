@@ -245,10 +245,10 @@ endif;
 // Code for looping through all of the meta for a post type template
 if ( ! function_exists( 'capezzahill_attorney_title_meta')){
     function capezzahill_attorney_title_meta( $meta ) {
-        foreach (array_slice($meta, 1) as $key=>$val){
+        $cleanedMeta = array_slice($meta, 1);
+        foreach ($cleanedMeta as $key=>$val){
             if( endsWith($key, 'title') ){
-                // echo $key . ' : ' . $val[0] . '<br/>';
-                echo '<h2>' . $val[0] . '</h2><br/>';
+                echo '<li><h2><a class="bio-button" href="javascript:void(0)" data-target="'. $key .'">' . $val[0] . '</a></h2></li>';
 
             }
         }
@@ -261,7 +261,12 @@ if ( ! function_exists( 'capezzahill_all_the_meta')){
         $cleanedMeta = array_slice($meta, 1);
         
         foreach ($cleanedMeta as $key=>$val){
-            echo $key . ' : ' . $val[0] . '<br/>';
+            if(!endsWith($key, 'title') && !endsWith($key, 'email') && !endsWith($key, 'number')  ){
+                $count++;
+                $defaultActive = $count == 1 ? 'active' : '';
+                echo '<div id="'. $key .'_title_content" class="bio-description-section ' . $defaultActive . '">' . $val[0] . '</div>';
+            }
         }
+        // print_r($meta);
     }
 }

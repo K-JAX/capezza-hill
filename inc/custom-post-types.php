@@ -52,7 +52,7 @@ if (! function_exists('register_attorney_cpt') ){
             'exclude_from_search'   => false,
             'menu_position' =>  4,
             'menu_icon' =>  'dashicons-id',
-            'supports'      => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields')
+            'supports'      => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes')
         );
 
         // action!

@@ -1,0 +1,12 @@
+// site breadcrumbs
+
+#breadcrumbs{
+    color: $wht;
+    span a{
+        color: rgba(255,255,255,0.75);
+    }
+    .breadcrumb_last{
+        color: $wht;
+        font-weight: 700;
+    }
+}

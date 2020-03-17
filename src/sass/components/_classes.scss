@@ -14,12 +14,14 @@
 }
 
 .before{
+    position: relative;
     &:before{
         @include absolute-content;
     }
 }
 
 .after{
+    position: relative;
     &:after{
         @include absolute-content;
     }
@@ -65,11 +67,13 @@ a .svg-icon{
     margin: auto;
 }
 
-.jump-scroll .svg-icon{
-    transform: translateX(-50%);
-    transition: 0.25s;
-    &:hover{
-        transform: translate(-50%, 5px);
+.jump-scroll {
+    &:hover{text-decoration: none !important;}
+    .svg-icon{
+        transition: 0.25s;
+        &:hover{
+            transform: translate(0, 5px);
+        }
     }
 }
 
@@ -89,6 +93,9 @@ hr{
     }
     &.black{
         border-color: $blk;
+    }
+    &.left{
+        margin-left: 0; 
     }
 }
 

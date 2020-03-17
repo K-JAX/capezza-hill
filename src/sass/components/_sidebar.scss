@@ -1,0 +1,23 @@
+// sidebar component
+
+.sidebar {
+    color: $navy;
+    background-color: $lightgrayblue;
+    .media_image-3{
+        img{
+            width: 100%;
+        }
+    }
+    .widget-title{
+        text-align: center;
+        font-size: 2em;
+        margin: 0;
+        padding: 0.25em 0;
+        color: white;
+        background: $navy;
+    }
+
+    .widget-box{
+        padding: 1em 1.5em;
+    }
+}

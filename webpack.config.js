@@ -13,7 +13,7 @@ module.exports = {
         script: './src/js/script.js',
         // blocks: './src/js/blocks.js',
         style: './src/sass/style.scss',
-        styleeditor: './src/sass/style-editor.scss'
+        // styleeditor: './src/sass/style-editor.scss'
         // vendor: './src/js/vendor.js',
     },
     resolve: {

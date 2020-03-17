@@ -21,6 +21,9 @@ body{
 a {
     color: $lightblue;
     text-transform: uppercase;
+    .informal{
+        text-transform: initial;
+    }
     &:hover{
         opacity: 0.85;
     }

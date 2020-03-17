@@ -79,7 +79,6 @@ blockquote, .wp-block-quote{
     font-weight: 100;
 }
 
-
 .llp{
     font-size: 0.5em;
     bottom: 0;
@@ -105,6 +104,38 @@ blockquote, .wp-block-quote{
 
 .spaced{
     letter-spacing: 0.2em;
+}
+
+.entry-title{
+    margin-bottom: 1.5em;
+    &:after{
+        width: 80px;
+        left: 0;
+        bottom: -0.75em;
+        border-bottom: 1px solid $lightblue;
+    }
+}
+
+.feature-attorney-title{
+    font-size: 3em;
+}
+
+.small-title{
+    font-size: 0.65em;
+}
+
+.block-cap{
+    display: inline-block;
+    color: $wht;
+    background-color: $navy;
+    padding: 0.1em 5px;
+}
+
+.title-banner{
+    color: $wht;
+    background-color: $navy;
+    margin: 0;
+    padding: 0.4em 1em;
 }
 
 // //custom font classes

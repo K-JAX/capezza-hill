@@ -5,7 +5,7 @@
 
 $discussion = ! is_page() && capezzahill_can_show_post_thumbnail() ? capezzahill_get_discussion_data() : null ?>
 
-<?php the_title( '<h1 class="entry-title all-caps">', '</h1>' ); ?>
+<?php the_title( '<h1 class="entry-title all-caps after">', '</h1>' ); ?>
 
 <?php if ( ! is_page() ) : ?>
 <div class="entry-meta">

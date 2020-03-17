@@ -93,35 +93,87 @@ function my_dynamic_sidebar_params( $params ) {
 		return $params;
 		
 	}
-	
-    
-    $params[0][] .= '<ul>';
 
-    // email icon
-    $email_icon = get_field('email_icon', 'widget_' . $widget_id);
+    // Get all ACF fields
+    $email_icon     = get_field('email_icon', 'widget_' . $widget_id);
+    $email          = get_field('email', 'widget_' . $widget_id);
+    $phone_icon     = get_field('phone_icon', 'widget_' . $widget_id);    
+    $phone          = get_field('phone', 'widget_' . $widget_id);
+    $fax_icon       = get_field('fax_icon', 'widget_' . $widget_id);
+    $fax            = get_field('fax', 'widget_' . $widget_id);
+    $mail_icon      = get_field('mail_icon', 'widget_' . $widget_id);
+    $mail           = get_field('mail', 'widget_' . $widget_id);
+    $mail_address   = get_field('mail_address', 'widget_' . $widget_id);
+    $map            = get_field('display_map', 'widget_' . $widget_id);
     
-    // email text
-	$email = get_field('email', 'widget_' . $widget_id);
-	
+    $params[0]['after_widget'] .= '<div class="widget-box">';
+    
+    $params[0]['after_widget'] .= '<ul class="custom-icon-list">';
+    
 	if( $email ) {
-		
-		$params[0]['before_widget'] .= '<li>';
-		$params[0]['before_widget'] .= sprintf('%s %s', $email_icon['url'], $email);
-		$params[0]['before_widget'] .= '</li>';
-		
-	}
+		$params[0]['after_widget'] .= '<li>';
+        $params[0]['after_widget'] .= sprintf('
+                                                <img class="inline-icon" src="%s" />
+                                                <div>
+                                                    <span>%s</span>
+                                                </div>', 
+                                                $email_icon['sizes']['medium'],
+                                                $email
+                                            );
+		$params[0]['after_widget'] .= '</li>';
+    }
     
-    $params[0][] .= '</ul>';
-	
-	// add image to after_widget
-	// $image = get_field('image', 'widget_' . $widget_id);
-	
-	// if( $image ) {
-		
-	// 	$params[0]['after_widget'] = '<img src="' . $image['url'] . '">' . $params[0]['after_widget'];		
-	// }
+    if( $phone ) {
+		$params[0]['after_widget'] .= '<li>';
+        $params[0]['after_widget'] .= sprintf('
+                                                <img class="inline-icon" src="%s" />
+                                                <div>
+                                                    <span>%s</span>
+                                                </div>', 
+                                                $phone_icon['sizes']['medium'],
+                                                $phone
+                                            );
+		$params[0]['after_widget'] .= '</li>';    
+    }
+   
+    if( $fax ) {
+		$params[0]['after_widget'] .= '<li>';
+        $params[0]['after_widget'] .= sprintf('
+                                                <img class="inline-icon" src="%s" />
+                                                <div>
+                                                    <span>%s</span>
+                                                </div>', 
+                                                $fax_icon['sizes']['medium'],
+                                                $fax
+                                            );
+		$params[0]['after_widget'] .= '</li>';    
+    }
 
-	
+    if( $mail ) {
+		$params[0]['after_widget'] .= '<li>';
+        $params[0]['after_widget'] .= sprintf('
+                                                <img class="inline-icon" src="%s" />
+                                                <div>
+                                                    <span>%s</span>
+                                                </div>
+                                                <div class="line-drop">
+                                                </div>
+                                                <div>
+                                                    <address>%s</address>
+                                                </div>', 
+                                                $mail_icon['sizes']['medium'],
+                                                $mail,
+                                                $mail_address
+                                            );
+		$params[0]['after_widget'] .= '</li>';
+    }
+
+    $params[0]['after_widget'] .= '</ul>';
+
+    $params[0]['after_widget'] .= sprintf('<div>%s</div>', $map);
+    
+    $params[0]['after_widget'] .= '</div>';
+    
 	// return
 	return $params;
 

@@ -1,6 +1,6 @@
 // header style
 
-.home {
+.home, .single-attorney {
     .site-header{
         height: 100vh;
         .site-header-inner{
@@ -36,14 +36,13 @@
         height: 100%;
         left: 0;
         top: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(45,45,45,0.2) 60%,rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(45,45,45,0.2) 60%,rgba(0,0,0,0.6) 100%);
     }
     .site-header-inner{
         z-index: 5;
         display: grid;
         position: relative;
         grid-template-columns: auto 1fr;
-        max-width: 1260px;
         @media all and (min-width: 767px){
             height: 187px;
 
@@ -90,3 +89,76 @@
             }
 }
 
+.single-attorney{
+    .site-header{
+        flex-flow: column nowrap;
+        height: 75vh;
+        #breadcrumbs{
+            text-align: right;
+        }
+        .attorney-hero{
+            display: flex;
+            flex-flow: row;
+            width: 70%;
+            z-index: 1;
+            align-self: end;
+            margin: auto;
+            padding: 0;
+            overflow: hidden;
+            .title-contact-box{
+                color: $wht;
+                width: 350px;
+                height: auto;
+                align-self: end;
+                margin: auto 0 0;
+                background: linear-gradient(135deg, rgba(171,171,171,0.5662640056022409) 0%, rgba(64,64,64,0.5858718487394958) 70%);
+                > * {
+                    padding-left: 1em;
+                    padding-right: 1em;
+                }
+                header{
+                    color: $blk;
+                    height: auto;
+                    background: $lightergray;
+                    h1{
+                        margin: 0;
+                        padding: 2px 0 5px;
+                    }
+                    
+                }
+                .contact-details{
+                    grid-template-areas:    'email email'
+                                            'phone vcard';
+                    grid-template-columns: auto auto;
+                    column-gap: 10px;
+                    list-style: none;
+                    li{
+                        font-size: 18px;
+                        align-items: center;
+                        grid-template-columns: 50px auto;
+                        img{
+                            height: 24px;
+                            justify-self: start;
+                        }
+                    }
+                    .email{
+                        grid-area: email;
+                    }
+                    .phone{
+                        grid-area: phone;
+                    }
+                    .vcard{
+                        grid-area: vcard;
+                    }
+
+                }
+            }
+            .attorney-full-hero{
+                min-height: 600px;
+                height: 100%;
+                margin-left: 15%;
+                    margin-right: auto;
+            }
+        }
+    }
+}

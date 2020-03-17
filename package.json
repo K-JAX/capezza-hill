@@ -39,7 +39,7 @@
   },
   "scripts": {
     "build": "webpack --mode=production ",
-    "watch": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch"
   },
   "devDependencies": {
     "resolve-url-loader": "^3.1.0"

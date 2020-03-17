@@ -1,0 +1,65 @@
+// list styles
+
+// custom image list
+.custom-icon-list {
+    list-style: none;
+    padding: 0;
+    li{
+        display: grid;
+        grid-template-columns: 20% auto;
+        align-items: start;
+        font-size: 26px;
+        margin-bottom: 1em;
+        img{
+            justify-self: center;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        .line-drop{
+            position: relative;
+            height: 100%;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 65%;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 15px;
+                margin: auto;
+                background-color: $navy;
+            }
+        }
+        address{
+            margin: 20px 0;
+            font-style: normal;
+            font-size: 18px;
+        }
+    }
+}
+
+.bio-list{
+    list-style: none;
+    background: $lightgrayblue;
+    padding-left: 0;
+    li{
+        background: $wht;
+        h2{
+            margin: 0.25em 0;
+        }
+    }
+}
+
+.bio-description-section{
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+
+.single-attorney{
+    .site-main{
+        box-shadow: 2px 4px 1px 0 rgba(0,0,0,0.25);
+    }
+}
