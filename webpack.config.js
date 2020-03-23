@@ -6,13 +6,14 @@ const {version} = require('./package.json');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const env = process.env.NODE_ENV || 'development'
 const mode = env === 'production' ? 'production' : 'development'
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: env,
     entry: {
         script: './src/js/script.js',
         // blocks: './src/js/blocks.js',
-        style: './src/sass/style.scss',
+        // style: './src/sass/style.scss',
         // styleeditor: './src/sass/style-editor.scss'
         // vendor: './src/js/vendor.js',
     },
@@ -22,10 +23,17 @@ module.exports = {
         }
     },
     output: {
-        filename: './assets/js/[name].min.js',
-        path: path.resolve(__dirname, './'),
+        filename: '[name].min.js',
+        path: path.resolve(__dirname, './assets/js/'),
+        publicPath: path.resolve(__dirname, './'),
         hotUpdateChunkFilename: 'hot/[hash]-hot-update.js',
         hotUpdateMainFilename: 'hot/[hash]-hot-update.json'
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin({
+            sourceMap: true,
+        })],
     },
     module: {
         rules: [
@@ -49,7 +57,6 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc|c)ss$/i,
-                include: path.resolve(__dirname, './src/sass/'),
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -78,7 +85,7 @@ module.exports = {
             }
         ],
     },
-    devtool: 'source-map',
+    devtool: 'source',
     plugins: [
         new BrowserSyncPlugin({
             files: ['**/*.css', '**/*.php'],
@@ -99,9 +106,9 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['./capezza-hill/assets/js/hot', 'script-min-*', './capezza-hill/style.css'],
         }),
         new MiniCssExtractPlugin({
-            // filename: './style.css',
-            moduleFilename: ({ name }) => `${name.replace('/js/', '/css/')}.css`,
-            chunkFilename: './[id].css',
+            filename: '../../style.css',
+            // moduleFilename: ({ name }) => `${name.replace('/js/', '/css/')}.css`,
+            chunkFilename: '../../[id].css',
           }),
         new webpack.DefinePlugin({
             APP_BASE: JSON.stringify(path.resolve(__dirname, './package.json')),

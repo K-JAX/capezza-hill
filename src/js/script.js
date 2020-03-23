@@ -1,7 +1,7 @@
-// import '../sass/style.scss';
+import '../sass/style.scss';
 
 import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import 'aos/dist/aos.css';
 
 AOS.init({
     offset: 200,
@@ -9,7 +9,6 @@ AOS.init({
     easing: 'ease-in-sine',
     delay: 100,
   });
-
 
 // Scroll to specific values
 // scrollTo is the same
