@@ -35,13 +35,16 @@
                     </header>
                     <h2 class="title-banner h4" ><?php echo $meta['attorney_title_block_field'][0] ?></h2>
                     <ul class="contact-details grid custom-icon-list">
+                        <?php 
+                            $contact = get_field('attorney_title_section');
+                         ?>
                         <li class="email">
-                            <img class="inline-icon" alt="Email <?php echo $meta['attorney_contact_phone_number'][0] ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/mail-icon.png'; ?>" />
-                            <a class="informal" alt="Link to open email with <?php echo $meta['attorney_contact_phone_number'][0] ?>" href="mailto:<?php echo $meta['attorney_contact_phone_number'][0] ?>"><?php echo $meta['attorney_contact_email'][0] ?></a>
+                            <img class="inline-icon" alt="Email <?php echo $contact['email']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/mail-icon.png'; ?>" />
+                            <a class="informal" alt="Link to open email with <?php echo $contact['email']; ?>" href="mailto:<?php echo $contact['email']; ?>"><?php echo $contact['email']; ?></a>
                         </li>
                         <li class="phone">
-                            <img class="inline-icon" alt="Call number <?php echo $meta['attorney_contact_phone_number'][0] ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
-                            <a class="informal" alt="Telephone link to call <?php echo $meta['attorney_contact_phone_number'][0] ?>" href="tel:<?php echo $meta['attorney_contact_phone_number'][0] ?>"><?php echo $meta['attorney_contact_phone_number'][0] ?></a>
+                            <img class="inline-icon" alt="Call number <?php echo $contact['phone_number']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
+                            <a class="informal" alt="Telephone link to call <?php echo $contact['phone_number']; ?>" href="tel:<?php echo $contact['phone_number']; ?>"><?php echo $contact['phone_number']; ?></a>
                         </li> 
                         <?php 
                             // do some work to return the vcard path

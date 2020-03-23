@@ -1,0 +1,6 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Thomas A. Capezza
+ORG:Client Company Name
+ADR;WORK;PREF:123 Fake Street;Fake City;MN;55106
+END:VCARD

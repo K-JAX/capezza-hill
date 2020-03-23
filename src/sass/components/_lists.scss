@@ -1,5 +1,9 @@
 // list styles
 
+.list-none{
+    list-style: none;
+}
+
 // custom image list
 .custom-icon-list {
     list-style: none;
@@ -41,25 +45,143 @@
 
 .bio-list{
     list-style: none;
-    background: $lightgrayblue;
+    background: #efefff;
+    height:100%;
     padding-left: 0;
+    box-shadow: 4px 4px 1px 0 rgba(0,0,0,0.25);
     li{
+        margin: 4px 0;
+        padding: 0.35em 0.25em;
         background: $wht;
+        transition: 0.25s;
+        box-shadow: 0px 0px 1px 0 rgba(0,0,0,0.25);
+        &:after{
+            width: 0;
+            height:100%;
+            transition: 0.25s;
+            top: 0;
+            right:0;
+            background-color: $navy;
+        }
         h2{
-            margin: 0.25em 0;
+            margin: 4px 0;
+        }
+        &:hover{
+            &:after{
+                width: 4px;
+            }
+        }
+        &.active, &:hover{
+            transform: translate(-2px, -2px);
+            box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.25);
+        }
+        &.active{
+            &:after{
+                width: 9px;
+            }
         }
     }
 }
 
 .bio-description-section{
-    display: none;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 18px;
+    max-height: 0;
+    overflow: hidden;
     &.active{
-        display: block;
+        opacity: 1;
+        height: auto;
+        max-height: 100vh;
+        transition: opacity 0.75s 0.25s, max-height 0.5s 0.5s;
     }
 }
 
 .single-attorney{
     .site-main{
         box-shadow: 2px 4px 1px 0 rgba(0,0,0,0.25);
+    }
+}
+
+
+// Box hover from practices page
+.invisi-hover-list{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    // max-width: 999px;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: 333px 333px;
+    margin-left: auto;
+    margin-right: auto;
+    @media all and (max-width: 768px){
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    .invisi-box{
+        @media all and (max-width: 768px){
+            height: 125px;
+            height: 15vh;
+        }
+        .fg{
+            align-items: center;
+            justify-content: center;
+            border: 8px solid white;
+            z-index: 1;
+            position: relative !important;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            h2{
+                z-index: 1;
+            }
+            &:before{
+                z-index:0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0) 30%,rgba(255,255,255,0.85) 100%);
+                transition: 0.5s;
+            }
+        }
+        .bg{
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    &.hover-state{
+        .invisi-box.hover-state{
+            .bg{
+                z-index: 0;
+            }
+        }
+        .invisi-box:not(.hover-state){
+            .fg{
+                background-color: transparent !important;
+            }
+            .fg:before{
+                background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.1) 100%);
+            }
+        }
+    }
+}
+
+.featured-posts{
+    li{
+        &:after{
+            width: 50px;
+            border-bottom: 1px solid $navy;
+            left: 0;
+            bottom: -1.25em;
+        }
+        &:last-of-type:after{
+            border-bottom: none;
+        }
     }
 }

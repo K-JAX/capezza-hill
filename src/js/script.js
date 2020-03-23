@@ -1,6 +1,14 @@
 // import '../sass/style.scss';
 
+import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
+AOS.init({
+    offset: 200,
+    duration: 600,
+    easing: 'ease-in-sine',
+    delay: 100,
+  });
 
 
 // Scroll to specific values
@@ -14,12 +22,13 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
     
 }
 var scrollE = document.querySelectorAll('.jump-scroll')[0];
-scrollE.addEventListener('click', event => {
-    if (!scrollE.classList.contains('clicked')){
-        scrollE.classList.add('clicked');
-    }
-});
-
+    if (scrollE){
+    scrollE.addEventListener('click', event => {
+        if (!scrollE.classList.contains('clicked')){
+            scrollE.classList.add('clicked');
+        }
+    });
+}
 
 window.addEventListener("load", function(){
 
@@ -61,6 +70,7 @@ window.addEventListener("load", function(){
     // Manipulating attorney title on archive page
     document.querySelectorAll('.feature-attorney-title').forEach(item => {
         let name = item.innerHTML;
+        console.log(name);
         pieces = name.split('. ');
         pieces[0] = '<span class="small-title">' + pieces[0] + '</span><br>';
         pieces[1] = pieces[1].replace( pieces[1][0], '<span class="block-cap">' + pieces[1][0] + '</span>');
@@ -69,19 +79,55 @@ window.addEventListener("load", function(){
     });
 
     // Bio targetting on the attorney page
-    this.document.querySelectorAll('.bio-button').forEach(item => {
-        item.addEventListener('click', event => {
+    if(document.querySelectorAll('.bio-button') != undefined ){
+        this.document.querySelectorAll('.bio-button').forEach(item => {
+            item.addEventListener('click', event => {
 
-            // remove all of the classes
-            document.querySelectorAll('.active').forEach(item => { item.classList.remove('active') });
-            
-            let targetID =  item.getAttribute('data-target');
-            let target = document.getElementById(targetID + '_content');
-            console.log(target);
-            target.classList.add('active');
-            
+                // remove all of the classes
+                document.querySelectorAll('.active').forEach(item => { item.classList.remove('active') });
+                
+                // add to parent list item
+                item.parentElement.parentElement.classList.add('active');
+                
+                // add to corresponding description container
+                let targetID =  item.getAttribute('data-target');
+                let target = document.getElementById(targetID);
+                target.classList.add('active');
+                
+            });
         });
-    });
+    }
+
+    var boxE = document.querySelectorAll('.invisi-box');
+
+    if( boxE != undefined ){
+
+        boxE.forEach( item => {
+            item.addEventListener('mouseenter', event => {
+
+                // remove all calsses first
+                document.querySelectorAll('.hover-state').forEach( active => {active.classList.remove('hover-state')});
+
+                // update
+                item.parentElement.classList.add('hover-state');
+
+                item.classList.add('hover-state');
+                
+                
+            });
+
+            item.addEventListener('mouseleave', event => {
+
+                // remove all calsses first
+                document.querySelectorAll('.hover-state').forEach( active => { active.classList.remove('hover-state')});
+                
+            });
+
+        });
+
+        
+    }
+    
     
 });
 

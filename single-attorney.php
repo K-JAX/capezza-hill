@@ -21,7 +21,20 @@
         </main><!-- #main -->
         <aside class="sidebar-container">
             <ul class="bio-list">
-                <?php capezzahill_attorney_title_meta( get_post_meta( get_the_ID(), '', true ) ); ?>
+                <?php 
+                    $meta_loop = array(
+                        'about'      => get_field('about_fields'),
+                        'services'   => get_field('services_fields'),
+                        'industries' => get_field('industries_fields'),
+                        'education'  => get_field('education_fields')
+                    );
+                    foreach($meta_loop as $item){
+                        $count++;
+                        $defaultActive = $count == 1 ? 'active' : '';
+                        $target = strtolower(str_replace( ' ', '-', $item['title'] ));
+                        echo '<li class="after ' . $defaultActive . '"><h2 class="h3"><a class="bio-button rst block" href="javascript:void(0)" data-target="'. $target .'">' . $item['title'] . '</a></h2></li>';
+                    }
+                ?>
             </ul>
         </aside>
     </section><!-- #primary -->

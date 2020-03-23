@@ -3,7 +3,7 @@
  * Custom Meta Boxes
  */
 
-add_action( 'add_meta_boxes', 'capezzahill_add_meta_box' );
+    add_action( 'add_meta_boxes', 'capezzahill_add_meta_box' );
 if ( ! function_exists( 'capezzahill_add_meta_box' ) ) {
     /**
      * Add meta box to page screen

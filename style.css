@@ -414,6 +414,8 @@ blockquote, .wp-block-quote {
   font-family: "Gill Sans", "Work Sans", serif; }
 .light {
   font-weight: 100; }
+b, strong, .bold {
+  font-weight: 700; }
 .site-title {
   font-variant: small-caps;
   font-weight: 100; }
@@ -729,6 +731,19 @@ a:hover {
     opacity: 0.85; }
 a svg {
     fill: #0077B6; }
+.search .entry {
+  margin: 7px 0;
+  padding: 27px 20px;
+  background: #E8EEEF; }
+.search .entry:first-child {
+    margin-top: 0 !important; }
+.entry-footer span {
+  margin: 0 1em; }
+.entry-footer span:first-of-type {
+    margin-left: 0; }
+.entry-footer span .svg-icon {
+    margin-bottom: -0.15em;
+    fill: #696f9e; }
 .site-footer {
   grid-area: footer;
   color: #fff;
@@ -848,6 +863,9 @@ textarea {
 .single-attorney .site-header {
   flex-flow: column nowrap;
   height: 75vh; }
+@media all and (max-width: 992px) {
+    .single-attorney .site-header {
+      height: auto; } }
 .single-attorney .site-header #breadcrumbs {
     text-align: right; }
 .single-attorney .site-header .attorney-hero {
@@ -856,9 +874,12 @@ textarea {
     width: 70%;
     z-index: 1;
     align-self: end;
-    margin: auto;
+    margin: auto auto 0;
     padding: 0;
     overflow: hidden; }
+@media all and (max-width: 992px) {
+      .single-attorney .site-header .attorney-hero {
+        flex-flow: column-reverse; } }
 .single-attorney .site-header .attorney-hero .title-contact-box {
       color: #fff;
       width: 350px;
@@ -866,6 +887,9 @@ textarea {
       align-self: end;
       margin: auto 0 0;
       background: linear-gradient(135deg, rgba(171, 171, 171, 0.566264) 0%, rgba(64, 64, 64, 0.585872) 70%); }
+@media all and (max-width: 992px) {
+        .single-attorney .site-header .attorney-hero .title-contact-box {
+          width: 100%; } }
 .single-attorney .site-header .attorney-hero .title-contact-box > * {
         padding-left: 1em;
         padding-right: 1em; }
@@ -876,6 +900,9 @@ textarea {
 .single-attorney .site-header .attorney-hero .title-contact-box header h1 {
           margin: 0;
           padding: 2px 0 5px; }
+@media all and (max-width: 992px) {
+            .single-attorney .site-header .attorney-hero .title-contact-box header h1 {
+              text-align: center; } }
 .single-attorney .site-header .attorney-hero .title-contact-box .contact-details {
         grid-template-areas: 'email email' 'phone vcard';
         grid-template-columns: auto auto;
@@ -899,6 +926,14 @@ textarea {
       height: 100%;
       margin-left: 15%;
       margin-right: auto; }
+@media all and (max-width: 992px) {
+        .single-attorney .site-header .attorney-hero .attorney-full-hero {
+          height: 50vh;
+          min-height: initial;
+          margin-left: auto; } }
+.entry-header.text-center h1:after {
+  right: 0;
+  margin: auto; }
 .case-figure {
   width: 416px; }
 .case-figure:hover, .case-figure:hover a, .case-figure:hover figcaption {
@@ -940,6 +975,8 @@ textarea {
 .inline-icon {
   height: 27px;
   object-fit: contain; }
+.list-none {
+  list-style: none; }
 .custom-icon-list {
   list-style: none;
   padding: 0; }
@@ -973,18 +1010,101 @@ textarea {
       font-size: 18px; }
 .bio-list {
   list-style: none;
-  background: #E8EEEF;
-  padding-left: 0; }
+  background: #efefff;
+  height: 100%;
+  padding-left: 0;
+  box-shadow: 4px 4px 1px 0 rgba(0, 0, 0, 0.25); }
 .bio-list li {
-    background: #fff; }
+    margin: 4px 0;
+    padding: 0.35em 0.25em;
+    background: #fff;
+    transition: 0.25s;
+    box-shadow: 0px 0px 1px 0 rgba(0, 0, 0, 0.25); }
+.bio-list li:after {
+      width: 0;
+      height: 100%;
+      transition: 0.25s;
+      top: 0;
+      right: 0;
+      background-color: #10153F; }
 .bio-list li h2 {
-      margin: 0.25em 0; }
+      margin: 4px 0; }
+.bio-list li:hover:after {
+      width: 4px; }
+.bio-list li.active, .bio-list li:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.25); }
+.bio-list li.active:after {
+      width: 9px; }
 .bio-description-section {
-  display: none; }
+  opacity: 0;
+  transition: 0.5s;
+  font-size: 18px;
+  max-height: 0;
+  overflow: hidden; }
 .bio-description-section.active {
-    display: block; }
+    opacity: 1;
+    height: auto;
+    max-height: 100vh;
+    transition: opacity 0.75s 0.25s, max-height 0.5s 0.5s; }
 .single-attorney .site-main {
   box-shadow: 2px 4px 1px 0 rgba(0, 0, 0, 0.25); }
+.invisi-hover-list {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: 333px 333px;
+  margin-left: auto;
+  margin-right: auto; }
+@media all and (max-width: 768px) {
+    .invisi-hover-list {
+      grid-template-columns: auto;
+      grid-template-rows: auto; } }
+@media all and (max-width: 768px) {
+    .invisi-hover-list .invisi-box {
+      height: 125px;
+      height: 15vh; } }
+.invisi-hover-list .invisi-box .fg {
+    align-items: center;
+    justify-content: center;
+    border: 8px solid white;
+    z-index: 1;
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s; }
+.invisi-hover-list .invisi-box .fg h2 {
+      z-index: 1; }
+.invisi-hover-list .invisi-box .fg:before {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.85) 100%);
+      transition: 0.5s; }
+.invisi-hover-list .invisi-box .bg {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center; }
+.invisi-hover-list.hover-state .invisi-box.hover-state .bg {
+    z-index: 0; }
+.invisi-hover-list.hover-state .invisi-box:not(.hover-state) .fg {
+    background-color: transparent !important; }
+.invisi-hover-list.hover-state .invisi-box:not(.hover-state) .fg:before {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.1) 100%); }
+.featured-posts li:after {
+  width: 50px;
+  border-bottom: 1px solid #10153F;
+  left: 0;
+  bottom: -1.25em; }
+.featured-posts li:last-of-type:after {
+  border-bottom: none; }
 .content-area {
   grid-area: body;
   min-height: 50vh;
@@ -1154,13 +1274,36 @@ textarea {
 .container.with-sidebar.right {
       grid-template-areas: 'main side';
       grid-template-columns: auto 29%; }
+@media all and (max-width: 992px) {
+        .container.with-sidebar.right {
+          grid-template-columns: auto;
+          grid-template-rows: auto auto;
+          grid-template-areas: 'main main'  'side side'; } }
 .container.with-sidebar.left {
       grid-template-areas: 'side main';
       grid-template-columns: 29% auto; }
+@media all and (max-width: 992px) {
+        .container.with-sidebar.left {
+          grid-template-columns: auto;
+          grid-template-rows: auto auto;
+          grid-template-areas: 'side side'  'main main'; } }
 .container.with-sidebar main {
       grid-area: main; }
 .container.with-sidebar .sidebar-container {
       grid-area: side; }
+@media all and (max-width: 992px) {
+        .container.with-sidebar .sidebar-container {
+          padding: 0 2em; } }
+.page-template-page-single-practice .practice-image img {
+  width: 650px; }
+@media all and (max-width: 992px) {
+    .page-template-page-single-practice .practice-image img {
+      width: 100%; } }
+.page-template-page-single-practice .practice-image figcaption {
+  font-style: italic;
+  background: #EAEAEA;
+  margin-top: -5px;
+  padding: 20px; }
 .sidebar {
   color: #10153F;
   background-color: #E8EEEF; }
@@ -1205,6 +1348,18 @@ textarea {
   padding-bottom: 2em !important; }
 .pb-5 {
   padding-bottom: 2.5em !important; }
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+.px-1 {
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important; }
+.px-2 {
+  padding-left: 1em !important;
+  padding-right: 1em !important; }
+.px-3 {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important; }
 .py-1 {
   padding-top: 0.5em !important;
   padding-bottom: 0.5em !important; }
@@ -1232,6 +1387,12 @@ textarea {
 .my-3 {
   margin-top: 1.5em !important;
   margin-bottom: 1.5em !important; }
+.my-4 {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important; }
+.my-5 {
+  margin-top: 2.5em !important;
+  margin-bottom: 2.5em !important; }
 .flex-row {
   display: flex;
   flex-flow: row wrap; }

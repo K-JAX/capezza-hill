@@ -1,0 +1,26 @@
+// excerpts
+
+// search
+.search{
+    .entry{
+        margin: 7px 0;
+        padding: 27px 20px;
+        background: $lightgrayblue;
+        &:first-child{
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.entry-footer{
+    span{
+        margin: 0 1em;
+        &:first-of-type{
+            margin-left:0;
+        }
+        .svg-icon{
+            margin-bottom: -0.15em;
+            fill: #696f9e;
+        }
+    }
+}

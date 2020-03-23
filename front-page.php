@@ -2,12 +2,13 @@
 
 <div id="primary" class="content-area mt-0 pt-0">
     <main id="main" class="site-main">
+    <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
 
     <section class="announcement-title-banner">
         <h2 class="formal light">Trusted Counsel - Tested Advocates</h2>
         <hr class="shorter blue mb-3">
     </section>
-
+</div>
         <!-- <?php 
         $args = array(
                     'post_type' => 'page',

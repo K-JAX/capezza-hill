@@ -42,22 +42,54 @@
    margin: auto; 
    &.with-sidebar{
        display: grid;
-       
        grid-column-gap: 2.0%;
        &.right{
-        grid-template-areas: 'main side';
-        grid-template-columns: auto 29%;
+            grid-template-areas: 'main side';
+            grid-template-columns: auto 29%;
+            @media all and (max-width: 992px){
+                grid-template-columns: auto;
+                grid-template-rows: auto auto;
+                grid-template-areas: 
+                                    'main main' 
+                                    'side side';
+            }
        }
        &.left{
-        grid-template-areas: 'side main';
-        grid-template-columns: 29% auto;
+            grid-template-areas: 'side main';
+            grid-template-columns: 29% auto;
+            @media all and (max-width: 992px){
+                grid-template-columns: auto;
+                grid-template-rows: auto auto;
+                grid-template-areas: 
+                                    'side side' 
+                                    'main main';
+            }
        }
        main{
            grid-area: main;
        }
        .sidebar-container{
            grid-area: side;
+           @media all and (max-width: 992px){
+            padding: 0 2em;
+           }
        }
    }
 }
 
+.page-template-page-single-practice{
+    .practice-image{
+        img{
+            width: 650px;
+            @media all and (max-width: 992px){
+                width: 100%;
+            }
+        }
+        figcaption{
+            font-style: italic;
+            background: $lightergray;
+            margin-top: -5px;
+            padding: 20px;
+        }
+    }
+}

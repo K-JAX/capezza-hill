@@ -51,7 +51,7 @@ if (! function_exists('register_attorney_cpt') ){
             'can_export'    => true,
             'exclude_from_search'   => false,
             'menu_position' =>  4,
-            'menu_icon' =>  'dashicons-id',
+            'menu_icon' =>  'dashicons-businessman',
             'supports'      => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes')
         );
 
@@ -63,118 +63,118 @@ if (! function_exists('register_attorney_cpt') ){
 
 
 // Change the title placeholder for new attorney's
-add_filter( 'enter_title_here', 'attorney_name_place_holder', 20, 2 );
-function attorney_name_place_holder($title, $post) {
-    if( $post->post_type == 'attorney' ) {
-        $my_title = 'Add attorney\'s name';
-        return $my_title;
-    }
-    return $title;
-}
+// add_filter( 'enter_title_here', 'attorney_name_place_holder', 20, 2 );
+// function attorney_name_place_holder($title, $post) {
+//     if( $post->post_type == 'attorney' ) {
+//         $my_title = 'Add attorney\'s name';
+//         return $my_title;
+//     }
+//     return $title;
+// }
 
-function attorney_post_block_template() {
+// function attorney_post_block_template() {
 
-    $post_type_object = get_post_type_object( 'attorney' );
-    $post_type_object->template = array(
-        array( 'ch-block/attorney-title' ),
-        array( 'ch-block/attorney-contact' ),
-        array( 'ch-block/attorney-about'),
-        array( 'ch-block/attorney-services'),
-        array( 'ch-block/attorney-industries'),
-        array( 'ch-block/attorney-education'),
-    );
-  }
-  add_action( 'init', 'attorney_post_block_template' );
+//     $post_type_object = get_post_type_object( 'attorney' );
+//     $post_type_object->template = array(
+//         array( 'ch-block/attorney-title' ),
+//         array( 'ch-block/attorney-contact' ),
+//         array( 'ch-block/attorney-about'),
+//         array( 'ch-block/attorney-services'),
+//         array( 'ch-block/attorney-industries'),
+//         array( 'ch-block/attorney-education'),
+//     );
+//   }
+//   add_action( 'init', 'attorney_post_block_template' );
 
 
-add_action('init', 'attorney_register_post_meta');
-function attorney_register_post_meta() {
-    $cpt = 'attorney';
-    register_post_meta( $cpt, 'attorney_title_block_field', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_contact_email', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_contact_phone_number', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_about_title', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_about', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_services_title', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_services', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_industries_title', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_industries', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_education_title', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
-    register_post_meta( $cpt, 'attorney_education', array(
-        'show_in_rest'  => true,
-        'single'        => true,
-        'type'          => 'string'
-    ));
+// add_action('init', 'attorney_register_post_meta');
+// function attorney_register_post_meta() {
+//     $cpt = 'attorney';
+//     register_post_meta( $cpt, 'attorney_title_block_field', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_contact_email', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_contact_phone_number', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_about_title', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_about', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_services_title', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_services', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_industries_title', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_industries', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_education_title', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
+//     register_post_meta( $cpt, 'attorney_education', array(
+//         'show_in_rest'  => true,
+//         'single'        => true,
+//         'type'          => 'string'
+//     ));
 
-}
+// }
 
-function attorney_create_vCard( $post_id ) {
+// function attorney_create_vCard( $post_id ) {
 
-	/*
-     * In production code, $slug should be set only once in the plugin,
-     * preferably as a class property, rather than in each function that needs it.
-     */
-    $post_type = get_post_type($post_id);
+// 	/*
+//      * In production code, $slug should be set only once in the plugin,
+//      * preferably as a class property, rather than in each function that needs it.
+//      */
+//     $post_type = get_post_type($post_id);
 
-    // only update the attorneys custom post type on save
-    if ( "attorney" != $post_type ) return;
+//     // only update the attorneys custom post type on save
+//     if ( "attorney" != $post_type ) return;
 
-    $vpost = get_post($post->ID);
-    $filename = $vpost->post_name.".vcf";
-    header('Content-type: text/x-vcard; charset=utf-8');
-    // header("Content-Disposition: attachment; filename=".$filename);
-    $data=null;
-    $data.="BEGIN:VCARD\n";
-    $data.="VERSION:3.0\n";
-    $data.="FN:".$vpost->post_title."\n"; // get post title
-    $data.="ORG:Client Company Name\n";
-    // $data.="EMAIL;TYPE=work:" . get_post_meta( $vpost->ID, 'attorney_contact_email', true )."\n";  // get acf field value
-    // $data.="TEL;WORK;VOICE:" .get_post_meta( $vpost->ID, 'attorney_contact_phone_number', true )."\n";  // get acf field value
-    $data.="ADR;WORK;PREF:123 Fake Street;Fake City;MN;55106\n";  // get acf field value
-    $data.="END:VCARD";
-    $filePath = get_template_directory()."/vcard/".$filename; // you can specify path here where you want to store file.
-    $file = fopen($filePath,"w");
-    fwrite($file,$data);
-    fclose($file);
-}
-add_action( 'save_post', 'attorney_create_vCard' );
+//     $vpost = get_post($post->ID);
+//     $filename = $vpost->post_name.".vcf";
+//     header('Content-type: text/x-vcard; charset=utf-8');
+//     // header("Content-Disposition: attachment; filename=".$filename);
+//     $data=null;
+//     $data.="BEGIN:VCARD\n";
+//     $data.="VERSION:3.0\n";
+//     $data.="FN:".$vpost->post_title."\n"; // get post title
+//     $data.="ORG:Client Company Name\n";
+//     // $data.="EMAIL;TYPE=work:" . get_post_meta( $vpost->ID, 'attorney_contact_email', true )."\n";  // get acf field value
+//     // $data.="TEL;WORK;VOICE:" .get_post_meta( $vpost->ID, 'attorney_contact_phone_number', true )."\n";  // get acf field value
+//     $data.="ADR;WORK;PREF:123 Fake Street;Fake City;MN;55106\n";  // get acf field value
+//     $data.="END:VCARD";
+//     $filePath = get_template_directory()."/vcard/".$filename; // you can specify path here where you want to store file.
+//     $file = fopen($filePath,"w");
+//     fwrite($file,$data);
+//     fclose($file);
+// }
+// add_action( 'save_post', 'attorney_create_vCard' );

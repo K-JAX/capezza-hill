@@ -21,7 +21,7 @@
         );
 
         printf(
-            '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark"> %3$s</a></span>',
+            '<span class="posted-on">%1$s<a href="%2$s" class="informal navy-txt" rel="bookmark"> %3$s</a></span>',
             capezzahill_get_icon_svg( 'watch', 16 ),
             esc_url( get_permalink() ),
             $time_string
@@ -36,7 +36,7 @@
     function capezzahill_posted_by() {
         printf(
             // translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link.
-            '<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"> <a class="url fn n" href="%3$s">%4$s</a></span></span></span>',
+            '<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"> <a class="url fn n informal navy-txt" href="%3$s">%4$s</a></span></span></span>',
             capezzahill_get_icon_svg('person', 16),
             __( 'Posted by', 'capezzahill' ),
             esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -73,7 +73,7 @@ endif;
         if ( 'post' === get_post_type() ){
 
             // Posted by
-            capezzahill_posted_by();
+            // capezzahill_posted_by();
 
             // Posted on
             capezzahill_posted_on();
@@ -103,9 +103,9 @@ endif;
             }
         }
         //  Comment count.
-        if ( ! is_singular() ) {
-            capezzahill_comment_count();
-        }
+        // if ( ! is_singular() ) {
+        //     capezzahill_comment_count();
+        // }
 
         // Edit post link.
         edit_post_link(
@@ -227,6 +227,12 @@ endif;
     }
  endif;
 
+ function startsWith ($string, $startString) 
+{ 
+    $len = strlen($startString); 
+    return (substr($string, 0, $len) === $startString); 
+} 
+ 
  function endsWith($string, $endString) 
  { 
      $len = strlen($endString); 
@@ -243,30 +249,59 @@ endif;
 //      echo "False"; 
 
 // Code for looping through all of the meta for a post type template
-if ( ! function_exists( 'capezzahill_attorney_title_meta')){
-    function capezzahill_attorney_title_meta( $meta ) {
-        $cleanedMeta = array_slice($meta, 1);
-        foreach ($cleanedMeta as $key=>$val){
-            if( endsWith($key, 'title') ){
-                echo '<li><h2><a class="bio-button" href="javascript:void(0)" data-target="'. $key .'">' . $val[0] . '</a></h2></li>';
+// if ( ! function_exists( 'capezzahill_attorney_title_meta')){
+//     function capezzahill_attorney_title_meta( $meta ) {
+//         $cleanedMeta = array_slice($meta, 1);
+//         $output = '';
+//         foreach ($cleanedMeta as $key=>$val){
+//             $title = endsWith($key, 'fields_title')  && !startsWith($key, '_');
+//             $fields = endsWith($key, '_fields');
+//             if($fields){
+                
+//             if( $title && $val[0] != '' ){ 
+//                 $count++;
+//                 $defaultActive = $count == 1 ? 'active' : '';
+//                 $output .= '<li class="after ' . $defaultActive . '"><h2 class="h3"><a class="bio-button rst block" href="javascript:void(0)" data-target="'. $key .'">' . $val[0] . '</a></h2></li>';
 
-            }
-        }
-    }
-}
+//             }
+//             }
+//         }
+//         echo $output;
+//     }
+// }
 
 // Code for looping through all of the meta for a post type template
-if ( ! function_exists( 'capezzahill_all_the_meta')){
-    function capezzahill_all_the_meta( $meta ) {
-        $cleanedMeta = array_slice($meta, 1);
-        
-        foreach ($cleanedMeta as $key=>$val){
-            if(!endsWith($key, 'title') && !endsWith($key, 'email') && !endsWith($key, 'number')  ){
-                $count++;
-                $defaultActive = $count == 1 ? 'active' : '';
-                echo '<div id="'. $key .'_title_content" class="bio-description-section ' . $defaultActive . '">' . $val[0] . '</div>';
-            }
-        }
-        // print_r($meta);
-    }
-}
+// if ( ! function_exists( 'capezzahill_all_the_meta')){
+//     function capezzahill_all_the_meta( $meta ) {
+//         $cleanedMeta = array_slice($meta, 1);
+//         $output = '';
+//         foreach ($cleanedMeta as $key=>$val){
+//             $notMetaIDField = !startsWith($key, '_');
+//             // $notConact = !endsWith($key, 'email') && !endsWith($key, 'number');
+//             $notConact = !endsWith($key, 'email') && !endsWith($key, 'number');
+//             $fields = endsWith($key, '_fields');
+
+//             if ( $fields ) {
+//                 // $output .= 'test passed';
+//                 $count++;
+//                 $defaultActive = $count == 1 ? 'active' : '';
+//                 $output .= _('<div id="'. $key .'_content" class="bio-description-section absolute ' . $defaultActive . '">test passed' );
+//                 // $title = endsWith($key, 'section_title') || endsWith($key, 'fields_title');
+//                 // $description = endsWith($key, '_description');
+
+//                 if( $title && $val[0] != '' ){
+//                     $output .= '<h2 class="h3"><a class="bio-button rst block" href="javascript:void(0)">' . $val[0] . '</a></h2><hr class="shorter blue left" />';
+//                 }
+            
+//                 // if( $description && $val[0] != '' ){
+//                 //     $output .= '<div>' . $val[0] . '</div>';
+//                 // }
+                
+//                 $output .= _('</div>');
+
+//             }
+
+//         }
+//         echo $output;
+//     }
+// }
