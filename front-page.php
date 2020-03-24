@@ -47,6 +47,7 @@
         <section class="feature-page-links duo-split">
 
         <?php while( have_rows('featured_page_controls') ): the_row();
+                $count++;
                 $postObj = get_sub_field('featured_post_type_object');
                 $title  = $postObj ?  get_the_title($postObj->ID) : 'nothin';
                 $thumb = $postObj ? get_the_post_thumbnail_url( $postObj->ID ) : the_post_thumbnail_url();
@@ -54,11 +55,11 @@
                 $linkText = get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) !== '' ? get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) : 'See more';
                 $linkColor = get_sub_field('link_color') ? get_sub_field('link_color') : '#0077B6';
             ?>
-            <section class="page-section-link split-section half-height overtint" style="background-image: url(<?php echo $thumb; ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
+            <section data-aos-duration="2000" <?php echo $count %2 == 1 ? 'data-aos="fade-left"' : 'data-aos="fade-right"' ?> class="page-section-link split-section half-height overtint" style="background-image: url(<?php echo $thumb; ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
                 <div class="inner-contain">
                 <?php
                     if(get_sub_field( 'has_archive_posts' ) == 'post' ){ 
-                        $archive = get_sub_field('archive_name') ? get_sub_field('archive_name') : 'shabowza';
+                        $archive = get_sub_field('archive_name') ? get_sub_field('archive_name') : '';
                         $subLinks = get_posts([
                             'post_type'     =>  $archive,
                             'post_status'   =>  'publish',
@@ -101,9 +102,9 @@
         <?php endif; ?>
         
 
-    <section class="posts-section mt-0">
-        <section class="announcement-title-banner lightergray-bg mt-0">
-            <h2 class="darkgray-txt light all-caps spaced my-1">Recent cases</h2>
+    <section  class="posts-section mt-0">
+        <section data-aos="fade-up" data-aos-duration="1000" class="announcement-title-banner lightergray-bg mt-0">
+            <h2 class="darkgray-txt light all-caps spaced py-2 mt-0">Recent cases</h2>
         </section>
         <section class="duo-split">
 
@@ -115,7 +116,7 @@
             foreach( $posts_array as $post ) : setup_postdata( $post ); 
             $count++; ?>
     
-                <section class="feature-case split-section py-3">
+                <section data-aos-duration="2000" <?php echo $count %2 == 1 ? 'data-aos="fade-left"' : 'data-aos="fade-right"' ?> class="feature-case split-section py-3">
                     <figure class="case-figure  relative before after inner-contain">
                         <a href="<?php echo the_permalink(); ?>">
                             <?php echo has_post_thumbnail() ? the_post_thumbnail('medium') : '<img src="' . get_template_directory_uri() . '/assets/images/case-placeholder-image.jpg" />' ?>

@@ -7,7 +7,7 @@
  ?>
 
     <div id="primary" class="content-area container with-sidebar <?php echo strtolower($sidebar_side); ?>">
-        <main id="main" class="site-main   ">
+        <main id="main" class="site-main"  >
             <div class="mx-3">
             <?php
 
@@ -28,7 +28,7 @@
 
         </main><!-- #main -->
         <?php if ( is_page('Contact') && is_active_sidebar( 'contact' ) ) : ?>
-        <aside class="sidebar-container">
+        <aside class="sidebar-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
             <?php get_sidebar( 'contact' ); ?>
         </aside>
             <?php endif; ?>

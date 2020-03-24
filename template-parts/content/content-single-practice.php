@@ -8,10 +8,10 @@
 
 
     <div class="entry-content">
-        <header class="entry-header inline-block">
+        <header class="entry-header inline-block" data-aos="fade-right" data-aos-duration="1000">
             <?php echo the_title('<h1 class="entry-title inline-block after">', '</h1>'); ?>
         </header>
-        <figure class="practice-image inline" style="float: right;">
+        <figure class="practice-image inline" style="float: right;" data-aos="fade-left" data-aos-duration="1000">
             <?php
                 $alt = get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
                 $caption = get_the_post_thumbnail_caption() != '' ? get_the_post_thumbnail_caption() : $alt;
@@ -21,7 +21,7 @@
                 <?php echo $caption; ?>
             </figcaption>
         </figure>
-        <?php the_content();?>
+        <div data-aos="fade-up" data-aos-duration="1000"><?php the_content();?></div>
     </div><!-- .entry-content -->
 
     <?php if ( get_edit_post_link() ) : ?>

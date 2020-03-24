@@ -6,7 +6,7 @@
  get_header('attorney');
  ?>
     <section id="primary" class="content-area container with-sidebar left pt-0">
-        <main id="main" class="site-main py-3">
+        <main id="main" class="site-main py-3"  data-aos="fade-right" data-aos-duration="500" >
             <div class="mx-3">
             <?php
                 /* Start the Loop */
@@ -19,7 +19,7 @@
             </div>
 
         </main><!-- #main -->
-        <aside class="sidebar-container">
+        <aside class="sidebar-container"  data-aos="fade-left" data-aos-duration="500" >
             <ul class="bio-list">
                 <?php 
                     $meta_loop = array(

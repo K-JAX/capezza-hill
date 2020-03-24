@@ -1136,10 +1136,36 @@ textarea {
       display: inline-block;
       list-style: none; }
 .site-header-nav-container .main-navigation .menu-primary-container .main-menu li {
+        position: relative;
         display: inline-block;
         margin: 0 14px; }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu li a {
+          padding: 1.5em 0; }
 .site-header-nav-container .main-navigation .menu-primary-container .main-menu .sub-menu {
-        list-style: none; }
+        position: absolute;
+        left: 0;
+        top: 3em;
+        list-style: none;
+        margin-left: -20px;
+        width: 450px;
+        padding: 0 20px;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform-origin: top;
+        transform: rotateX(90deg);
+        transition: 0.25s;
+        background-color: rgba(0, 0, 0, 0.25); }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu .sub-menu li {
+          margin: 4px 0; }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu .sub-menu.expanded-true {
+          opacity: 1;
+          max-height: 80vh;
+          padding: 20px;
+          transform: rotateX(0deg); }
+.site-header-nav-container .main-navigation .menu-primary-container .main-menu .submenu-expand {
+        display: none; }
 .site-header-nav-container .main-navigation .main-menu-more {
       display: inline-block; }
 .site-header-nav-container .main-navigation .main-menu-more .main-menu {

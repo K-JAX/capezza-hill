@@ -27,11 +27,42 @@
                 display: inline-block;
                 list-style: none;
                 li{
+                    position: relative;
                     display: inline-block;
                     margin: 0 14px;
+                    a{
+                        padding: 1.5em 0;
+                    }
                 }
                 .sub-menu{
+                    position: absolute;
+                    left: 0;
+                    top: 3em;
                     list-style: none;
+                    margin-left: -20px;
+                    width: 450px;
+                    padding: 0 20px;
+                    height: auto;
+                    max-height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    transform-origin: top;
+                    transform: rotateX(90deg);
+                    transition: 0.25s;
+                    background-color: rgba(0,0,0,0.25);
+                    li{
+                        margin: 4px 0;
+                    }
+                    &.expanded-true{
+                        opacity: 1;
+                        max-height: 80vh;
+                        padding: 20px;
+                        transform: rotateX(0deg);
+
+                    }
+                }
+                .submenu-expand{
+                    display: none;
                 }
             }
         }

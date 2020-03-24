@@ -295,7 +295,7 @@ add_filter( 'walker_nav_menu_start_el', 'capezzahill_add_dropdown_icons', 10, 4 
 	}
 	return $amended_menu_items;
 }
-add_filter( 'wp_nav_menu_objects', 'capezzahill_add_mobile_parent_nav_menu_items', 10, 2 );
+// add_filter( 'wp_nav_menu_objects', 'capezzahill_add_mobile_parent_nav_menu_items', 10, 2 );
 
 /**
  * Convert HSL to HEX colors

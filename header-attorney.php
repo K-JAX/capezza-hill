@@ -29,7 +29,7 @@
             ?>
             <!-- <div class="container w100 relative" > -->
             <figure class="container w100 attorney-hero">
-                <figcaption class="title-contact-box">
+                <figcaption class="title-contact-box"  data-aos="fade-left" data-aos-duration="1000" >
                     <header>
                         <h1 class="feature-attorney-title formal" ><?php echo get_the_title(); ?></h1>
                     </header>
@@ -60,7 +60,7 @@
                         </li> 
                     </ul>
                 </figcaption>
-                <img class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
+                <img data-aos="fade" data-aos-duration="500"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
             </figure>
             <h2 class="w100 title-banner text-center relative"><a href="#primary" class="relative jump-scroll informal">Read Bio <span style="margin-left: 10px;"><?php echo capezzahill_get_icon_svg('triple_chevron_down', 36); ?></span></a></h2>
             <!-- </div> -->

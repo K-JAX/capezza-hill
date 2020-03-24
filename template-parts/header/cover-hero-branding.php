@@ -1,5 +1,5 @@
-<div class="center">
-    <h1 class="site-title formal"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <sub class="llp">LLP</sub></a></h1>
+<div class="center rellax">
+    <h1 class="site-title formal my-1"><a href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <sub class="llp">LLP</sub></a></h1>
     <?php
     $description = get_bloginfo( 'description', 'display' );
     if ( $description || is_customize_preview() ) :

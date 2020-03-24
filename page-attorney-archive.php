@@ -5,9 +5,9 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
     <main id="main" class="site-main container">
-        <div class="mx-3">
+        <div class="mx-3" >
             <header class="page-header">
                 <?php the_title('<h1 class="entry-title all-caps after">', '</h1>'); ?>
             </header><!-- .page-header -->
@@ -25,7 +25,7 @@ get_header();
                     <?php
                         $color = get_field('feature_color');
                      ?>
-                    <figure class="card quadrant half team-member before <?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>" style="background: <?php echo $color; ?>">
+                    <figure data-aos-duration="1500" <?php echo $count %2 == 1 ? 'data-aos="fade-right"' : 'data-aos="fade-left"' ?> class="card quadrant half team-member before <?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>" style="background: <?php echo $color; ?>">
                         <div class="portrait" style="background-image: url(<?php echo get_field('cropped_portrait')['url']; ?>);"></div>
                         <figcaption class="<?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>">
                             <h2 class="feature-attorney-title formal mb-1"><?php echo get_the_title(); ?></h2>

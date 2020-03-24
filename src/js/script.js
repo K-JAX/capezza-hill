@@ -2,13 +2,11 @@ import '../sass/style.scss';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Rellax from 'rellax';
 
-AOS.init({
-    offset: 200,
-    duration: 600,
-    easing: 'ease-in-sine',
-    delay: 100,
-  });
+AOS.init();
+
+
 
 // Scroll to specific values
 // scrollTo is the same
@@ -31,7 +29,12 @@ var scrollE = document.querySelectorAll('.jump-scroll')[0];
 
 window.addEventListener("load", function(){
 
+    if( document.querySelectorAll('.rellax').length > 0 ) {
 
+        var rellax = new Rellax('.rellax', {
+            center: true,
+        });
+    }
 
     // Create dropdown for homepage feature section
     var navThang = document.querySelectorAll('.feature-page-subnav')[0],
@@ -70,7 +73,7 @@ window.addEventListener("load", function(){
     document.querySelectorAll('.feature-attorney-title').forEach(item => {
         let name = item.innerHTML;
         console.log(name);
-        pieces = name.split('. ');
+        let pieces = name.split('. ');
         pieces[0] = '<span class="small-title">' + pieces[0] + '</span><br>';
         pieces[1] = pieces[1].replace( pieces[1][0], '<span class="block-cap">' + pieces[1][0] + '</span>');
         name = pieces.join(' ');

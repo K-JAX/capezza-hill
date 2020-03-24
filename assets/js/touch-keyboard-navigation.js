@@ -107,11 +107,17 @@
 		'use strict';
 		// Update classes
 		// classList.add is not supported in IE11
-		currentSubMenu.parentElement.className += ' off-canvas';
-		currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
+		if (currentSubMenu.parentElement.classList.contains('off-canvas') == false){
+			currentSubMenu.parentElement.className += ' off-canvas';
+		};
+		if (currentSubMenu.parentElement.lastElementChild.classList.contains('expanded-true') == false){
+			currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
+		};
 		var menuItem     = getCurrentParent( currentSubMenu, '.menu-item' );
 		var menuItemAria = menuItem.querySelector('button[aria-expanded]');
-		menuItemAria.className += ' submenu-expanded';
+		if (menuItemAria.classList.contains('submenu-expanded') == false){
+			menuItemAria.className += ' submenu-expanded';
+		}
 		// Update aria-expanded state
 		toggleAriaExpandedState( currentSubMenu );
 	}
@@ -272,7 +278,9 @@
 			// Check if .submenu-expand is touched
 			if ( event.target.matches('.submenu-expand')  ) {
 				openSubMenu(event.target);
-
+			// } else if ( event.target.matches('a') && event.target.parentElement.classList.contains('menu-item-has-children') ) {
+			// 	openSubMenu(event.target);
+			
 			// Check if child of .submenu-expand is touched
 			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) &&
 								getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) && !getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expanded' ) ) {
@@ -290,7 +298,30 @@
 		
 		document.addEventListener('touchstart', handleInteraction, false);
 		document.addEventListener('click', handleInteraction, false);
+		// document.addEventListener('mouseover', handleInteraction, false);
+		// document.addEventListener('mouseleave', function(){ console.log('mouse left tee hee') }, false);
 
+		var submenus = document.querySelectorAll('.menu-item-has-children');
+		// console.log(submenus);
+
+		submenus.forEach(item => {
+			var removing;
+			item.addEventListener('mouseover', function(){
+				clearTimeout(removing);
+				button = item.querySelectorAll('button')[0];
+
+				openSubMenu(button);
+			});
+			item.addEventListener('mouseleave', function(){
+				removing = setTimeout(function(){
+					button = item.querySelectorAll('button')[0];
+	
+					closeSubMenu(button);
+
+				}, 125);
+			});			
+		})
+		
 		document.addEventListener('touchend', function(event) {
 
 			

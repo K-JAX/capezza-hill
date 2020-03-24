@@ -8,7 +8,7 @@
     </head>
     <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
-		<header class="site-header before" style="background: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>) center/cover, linear-gradient(to bottom, rgba(255,255,255,0.75) 0%,rgba(162,162,162,0.32) 61%,rgba(0,0,0,0.75) 100%);">
+		<header class="site-header before" style="background: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>) center/cover, linear-gradient(to bottom, rgba(255,255,255,0.75) 0%,rgba(162,162,162,0.32) 61%,rgba(0,0,0,0.75) 100%);" data-aos="fade" data-aos-duration="1000">
 			<div class="mx-3">
 				<div class="site-header-inner container">
 					<?php 

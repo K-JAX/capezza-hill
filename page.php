@@ -7,9 +7,9 @@
  $is_sidebar = get_field('is_sidebar') ? 'with-sidebar right-sidebar' : '';
  ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
         <main id="main" class="site-main container <?php echo $is_sidebar; ?>">
-            <div class="mx-3">
+            <div class="mx-3" >
             <?php
 
             // Start the loop

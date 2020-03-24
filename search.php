@@ -7,13 +7,13 @@
 
 
 <section class="content-area container">
-    <header class="page-header container">
+    <header class="page-header container" data-aos="fade-right" data-aos-duration="1000">
         <h1 class="page-title mb-1">
             <?php _e( 'Search results for:', 'capezzahill' ); ?> "<i class="lightgray-txt"><?php echo get_search_query(); ?></i> "
         </h1>
     </header><!-- .page-header -->
     <section id="primary" class="content-area container with-sidebar right">
-        <main id="main" class="site-main container">
+        <main id="main" class="site-main container" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
             <div>
             <?php if ( have_posts() ) : ?>
             
@@ -42,7 +42,7 @@
             ?>
             </div>
         </main><!-- #main -->
-        <aside class="sidebar-container">
+        <aside class="sidebar-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
             <?php get_sidebar( ); ?>
         </aside>
     </section><!-- #primary -->
