@@ -300,8 +300,6 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu{list-style:none}
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu .is-empty{display:none}
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu li{list-style:none}
-.site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu li:after{content:'';position:relative;width:30px;height:1px;left:0;bottom:-0.75em;background-color:#6DC1EE}
-.site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu li:after:last-of-type{opacity:0}
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu .sub-menu{position:absolute;background-color:rgba(0,0,0,0.75);margin-left:-55px;padding:0 10px;padding-left:35px;overflow:hidden;transition:0.25s}
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu .sub-menu.hidden-links{max-height:0}
 .site-header-nav-container .main-navigation .main-menu-more .mobile-main-menu .sub-menu.hidden-links.expanded-true{max-height:100vh;overflow:visible}

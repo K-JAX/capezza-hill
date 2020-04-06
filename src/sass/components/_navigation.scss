@@ -83,19 +83,6 @@
                 }
                 li{
                     list-style: none;
-                    &:after{
-                        content: '';
-                        position: relative;
-                        width: 30px;
-                        height: 1px;
-                        left: 0;
-                        bottom: -0.75em;
-                        background-color: $lighterblue;
-                        &:last-of-type{
-                            opacity: 0;
-                        }
-                    }
-
                 }
                 .sub-menu{
                     position: absolute;
