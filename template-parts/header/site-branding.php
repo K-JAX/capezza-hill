@@ -6,7 +6,7 @@
  ?>
 <div class="site-branding-container" >
     <div class="site-branding">
-        <?php if ( has_custom_logo() ) : ?>
+        <?php if ( has_custom_logo() && get_field('hide_logo_on_homepage') != 1 ) : ?>
             <div class="site-logo"><?php the_custom_logo(); ?></div>
         <?php endif; ?>
         <?php $blog_info = get_bloginfo( 'name' ); ?>

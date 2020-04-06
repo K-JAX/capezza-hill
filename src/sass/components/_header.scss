@@ -29,6 +29,7 @@
 
 .site-header{
     position: relative;
+    z-index: 1;
     grid-area: head;
     width: 100%;
     &:before{

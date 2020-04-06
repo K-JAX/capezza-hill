@@ -7,6 +7,7 @@
     align-items: center;
     height: 100px;
     padding-bottom: 6px;
+
     @media all and (min-width: 768px){
     }
     .main-navigation{
@@ -29,29 +30,35 @@
                 li{
                     position: relative;
                     display: inline-block;
-                    margin: 0 14px;
+                    margin: 1.5em 14px;
                     a{
-                        padding: 1.5em 0;
+                        // padding: 1.5em 0;
                     }
                 }
                 .sub-menu{
                     position: absolute;
                     left: 0;
-                    top: 3em;
+                    top: 1.5em;
                     list-style: none;
                     margin-left: -20px;
-                    width: 450px;
+                    width: auto;
+                    min-width: 200px;
+                    max-width: 500px;
                     padding: 0 20px;
                     height: auto;
                     max-height: 0;
-                    overflow: hidden;
+                    // overflow: hidden;
                     opacity: 0;
                     transform-origin: top;
                     transform: rotateX(90deg);
                     transition: 0.25s;
-                    background-color: rgba(0,0,0,0.25);
+                    background-color: rgba(0,0,0,0.65);
                     li{
-                        margin: 4px 0;
+                        margin: 0.45em 0;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        // text-overflow: ellipsis;
                     }
                     &.expanded-true{
                         opacity: 1;
@@ -68,26 +75,57 @@
         }
         .main-menu-more{
             display: inline-block;
-            .main-menu{
+            height: auto;
+            .mobile-main-menu{
                 list-style: none;
                 .is-empty{
                     display: none;
                 }
                 li{
                     list-style: none;
+                    &:after{
+                        content: '';
+                        position: relative;
+                        width: 30px;
+                        height: 1px;
+                        left: 0;
+                        bottom: -0.75em;
+                        background-color: $lighterblue;
+                        &:last-of-type{
+                            opacity: 0;
+                        }
+                    }
+
                 }
                 .sub-menu{
                     position: absolute;
-                    overflow: hidden;
-                    background-color: rgba(0,0,0,0.25);
+                    background-color: rgba(0,0,0,0.75);
                     margin-left: -55px;
                     padding: 0 10px;
+                    padding-left: 35px;
+                    overflow:hidden;
                     transition: 0.25s;
                     &.hidden-links{
                         max-height:0;
                         &.expanded-true{
-                            padding: 5px 10px;
-                            max-height: 100%;
+                            max-height: 100vh;
+                            overflow:visible;
+                        }
+                        .submenu-expand{
+                            position: absolute;
+                            left: 2px;
+                        }
+                        .sub-menu{
+                            position: absolute;
+                            top: 0;
+                            right: 100%;
+                            max-height:0;
+                            overflow: hidden;
+                            &.expanded-true{
+                                // padding: 5px 10px;
+                                height: auto;
+                                max-height: 100vh;
+                            }
                         }
                     }
                 }
@@ -109,7 +147,7 @@
         max-height: 0;
         transition: 0.25s;
         overflow: hidden;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0,0,0,0.75);
         transform: rotateX(30deg);
         opacity: 0;
         transform-origin: top;
@@ -132,5 +170,16 @@
                 text-decoration: none;
             }
         }
+    }
+}
+
+.mobile-menu {
+    li{
+        margin: 1.5em 0;
+        .submenu-expand{
+            margin-left: 5px;
+            transform: translateY(-0.3em);
+        }
+
     }
 }

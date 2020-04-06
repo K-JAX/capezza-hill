@@ -5,7 +5,7 @@
         wp_nav_menu(
             array(
                 'theme_location'    =>  'top-right',
-                'menu_class'        =>  'main-menu',
+                'menu_class'        =>  'main-menu desktop-menu',
                 'items_wrap'        =>  '<ul id="%1$s" class="%2$s" tabindex="0">%3$s</ul>',
                 'link_before'     => '',
             )
@@ -24,7 +24,7 @@
                         'link_after'        =>  '</span>' . capezzahill_get_icon_svg('link'),
                         'depth'             =>  1,
                     )
-                    );
+                );
                 ?>
         </nav><!-- .social-navigation -->
     <?php endif; ?>

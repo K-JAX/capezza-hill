@@ -133,11 +133,13 @@
 		var menuItem     = getCurrentParent( currentSubMenu, '.menu-item' ); // this.parentNode
 		var menuItemAria = menuItem.querySelector('button[aria-expanded]');
 
-		var subMenu      = currentSubMenu.closest('.sub-menu');
+		var subMenu      = currentSubMenu.closest('.link-dropdown');
 
 		// If this is in a sub-sub-menu, go back to parent sub-menu
 		if ( getCurrentParent( currentSubMenu, 'ul' ).classList.contains( 'sub-menu' ) ) {
 
+			console.log('yes its a sub sub');
+			console.log(subMenu);
 			// Update classes
 			// classList.remove is not supported in IE11
 			menuItem.className = menuItem.className.replace( 'off-canvas', '' );
@@ -308,13 +310,13 @@
 			var removing;
 			item.addEventListener('mouseover', function(){
 				clearTimeout(removing);
-				button = item.querySelectorAll('button')[0];
+				button = item.querySelectorAll('.link-dropdown')[0];
 
 				openSubMenu(button);
 			});
 			item.addEventListener('mouseleave', function(){
 				removing = setTimeout(function(){
-					button = item.querySelectorAll('button')[0];
+					button = item.querySelectorAll('.link-dropdown')[0];
 	
 					closeSubMenu(button);
 
