@@ -279,6 +279,7 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .invisi-hover-list .invisi-box .fg h2{z-index:1}
 .invisi-hover-list .invisi-box .fg:before{z-index:0;width:100%;height:100%;top:0;left:0;background:linear-gradient(45deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.85) 100%);transition:0.5s}
 .invisi-hover-list .invisi-box .bg{z-index:-1;top:0;left:0;width:100%;height:100%;opacity:0;background-size:cover;background-position:center}
+.invisi-hover-list.hover-state a{opacity:1 !important}
 .invisi-hover-list.hover-state .invisi-box.hover-state .bg{opacity:1;z-index:0}
 .invisi-hover-list.hover-state .invisi-box:not(.hover-state) .fg{background-color:transparent !important}
 .invisi-hover-list.hover-state .invisi-box:not(.hover-state) .fg:before{background:linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.1) 100%)}
@@ -350,6 +351,10 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .page-template-page-single-practice .practice-image figcaption{font-style:italic;background:#EAEAEA;margin-top:-5px;padding:20px}
 .sidebar{color:#10153F;background-color:#E8EEEF}
 .sidebar .media_image-3 img{width:100%}
+.sidebar .location-img{position:relative;display:flex}
+.sidebar .location-img img{width:50%;object-fit:cover}
+.sidebar .location-img .map{position:relative;width:50%;height:100%}
+@media all and (max-width: 992px){.sidebar .location-img .map>.leaflet-map{height:540px !important}}
 .sidebar .widget-title{text-align:center;font-size:2em;margin:0;padding:0.25em 0;color:white;background:#10153F}
 .sidebar .widget-box{padding:1em 1.5em}
 .w100{width:100% !important}

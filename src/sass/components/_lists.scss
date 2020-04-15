@@ -157,6 +157,9 @@
         }
     }
     &.hover-state{
+        a{
+            opacity: 1 !important;
+        }
         .invisi-box.hover-state{
             .bg{
                 opacity: 1;

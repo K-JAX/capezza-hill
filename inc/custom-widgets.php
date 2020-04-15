@@ -104,7 +104,17 @@ function my_dynamic_sidebar_params( $params ) {
     $mail_icon      = get_field('mail_icon', 'widget_' . $widget_id);
     $mail           = get_field('mail', 'widget_' . $widget_id);
     $mail_address   = get_field('mail_address', 'widget_' . $widget_id);
+    $locationimg    = get_field('location_img', 'widget_' . $widget_id);
     $map            = get_field('display_map', 'widget_' . $widget_id);
+
+    if ( $locationimg ){
+        $params[0]['before_widget'] .= sprintf('<div class="location-img"><img src="%s"/>', $locationimg['url']);
+        if ( $map ){
+            $params[0]['before_widget'] .= sprintf('<div class="map">%s</div>', $map);
+        }
+        $params[0]['before_widget'] .= sprintf('</div>');
+
+    }
     
     $params[0]['after_widget'] .= '<div class="widget-box">';
     
@@ -170,7 +180,6 @@ function my_dynamic_sidebar_params( $params ) {
 
     $params[0]['after_widget'] .= '</ul>';
 
-    $params[0]['after_widget'] .= sprintf('<div>%s</div>', $map);
     
     $params[0]['after_widget'] .= '</div>';
     

@@ -8,6 +8,25 @@
             width: 100%;
         }
     }
+    .location-img{
+        position: relative;
+        display: flex;
+        img{
+            width: 50%;
+            object-fit: cover;
+        }
+        .map{
+            position: relative;
+            width: 50%;
+            height:100%;
+            &>.leaflet-map{
+                // height: 300px !important;
+                @media all and (max-width: 992px){
+                    height: 540px !important;
+                }
+            }
+        }
+    }
     .widget-title{
         text-align: center;
         font-size: 2em;
