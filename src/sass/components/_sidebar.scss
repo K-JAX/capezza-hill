@@ -11,6 +11,8 @@
     .location-img{
         position: relative;
         display: flex;
+        height: 300px;
+        overflow:hidden;
         img{
             width: 50%;
             object-fit: cover;
@@ -21,8 +23,9 @@
             height:100%;
             &>.leaflet-map{
                 // height: 300px !important;
+                height: 100% !important;
                 @media all and (max-width: 992px){
-                    height: 540px !important;
+                    // height: 540px !important;
                 }
             }
         }

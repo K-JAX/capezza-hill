@@ -45,7 +45,7 @@
        grid-column-gap: 2.0%;
        &.right{
             grid-template-areas: 'main side';
-            grid-template-columns: auto 29%;
+            grid-template-columns: auto 26%;
             @media all and (max-width: 992px){
                 grid-template-columns: auto;
                 grid-template-rows: auto auto;
@@ -56,7 +56,7 @@
        }
        &.left{
             grid-template-areas: 'side main';
-            grid-template-columns: 29% auto;
+            grid-template-columns: 26% auto;
             @media all and (max-width: 992px){
                 grid-template-columns: auto;
                 grid-template-rows: auto auto;

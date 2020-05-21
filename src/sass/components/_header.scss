@@ -93,7 +93,7 @@
 .single-attorney{
     .site-header{
         flex-flow: column nowrap;
-        height: 75vh;
+        height: 55vh;
         @media all and (max-width: 992px){
             height: auto;
         }
@@ -167,7 +167,7 @@
                 }
             }
             .attorney-full-hero{
-                min-height: 600px;
+                min-height: 400px;
                 height: 100%;
                 margin-left: 15%;
                     margin-right: auto;

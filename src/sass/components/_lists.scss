@@ -7,14 +7,16 @@
 // custom image list
 .custom-icon-list {
     list-style: none;
+    margin: 0;
     padding: 0;
     li{
         display: grid;
         grid-template-columns: 20% auto;
         align-items: start;
-        font-size: 26px;
+        font-size: 20px;
         margin-bottom: 1em;
         img{
+            height: 20px;
             justify-self: center;
             margin-right: 15px;
             margin-top: 2px;

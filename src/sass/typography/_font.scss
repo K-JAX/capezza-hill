@@ -111,17 +111,19 @@ b, strong, .bold{
 }
 
 .entry-title{
-    margin-bottom: 1.5em;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
     &:after{
         width: 80px;
         left: 0;
-        bottom: -0.75em;
+        bottom: -0.25em;
         border-bottom: 1px solid $lightblue;
     }
 }
 
 .feature-attorney-title{
     font-size: 3em;
+    white-space: nowrap;
 }
 
 .small-title{

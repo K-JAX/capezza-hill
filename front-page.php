@@ -4,10 +4,12 @@
     <main id="main" class="site-main">
     <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
 
+    <?php if(get_field('inbetween_section_title')): ?>.
     <section class="announcement-title-banner">
-        <h2 class="formal light">Trusted Counsel - Tested Advocates</h2>
+        <h2 class="formal light"><?php echo get_field('inbetween_section_title'); ?></h2>
         <hr class="shorter blue mb-3">
     </section>
+<?php endif; ?>
 </div>
         <!-- <?php 
         $args = array(
@@ -101,6 +103,7 @@
 
         <?php endif; ?>
         
+    <?php if( get_field('display_recent_case_posts') == 1 ): ?>
 
     <section  class="posts-section mt-0">
         <section data-aos="fade-up" data-aos-duration="1000" class="announcement-title-banner lightergray-bg mt-0">
@@ -133,6 +136,7 @@
             ?>
         </section>
     </section>
+    <?php endif; ?>
     
     </main><!-- #main -->
 </div>

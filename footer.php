@@ -1,3 +1,4 @@
+        <div class="site-footer-whitespace-offset"></div>
         <footer id="colophon" class="site-footer">
             <div class="site-footer text-center">
 
