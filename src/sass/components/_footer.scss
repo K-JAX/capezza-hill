@@ -4,6 +4,7 @@
     grid-area: footer;
     @include dark-theme;
     position: fixed;
+    padding: 1em 0;
     width: 100%;
     bottom: 0;
     z-index: 2;

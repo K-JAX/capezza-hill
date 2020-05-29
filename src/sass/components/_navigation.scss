@@ -27,13 +27,18 @@
             .main-menu{
                 display: inline-block;
                 list-style: none;
+                // padding-left:0;
+                
                 li{
                     position: relative;
                     display: inline-block;
-                    margin: 1.5em 14px;
-                    a{
-                        // padding: 1.5em 0;
-                    }
+                    margin: 1.5em 8px;
+                    // a{
+                    //     @media all and (max-width: 992px){
+                    //         font-size: 0.75em;
+                    //     }
+                    //     // padding: 1.5em 0;
+                    // }
                 }
                 .sub-menu{
                     position: absolute;
@@ -78,8 +83,13 @@
             height: auto;
             .mobile-main-menu{
                 list-style: none;
-                .is-empty{
-                    display: none;
+                .submenu-expand{
+                    margin: 0 0px;
+                    &.is-empty{
+                        display: none;
+                        margin: 0;
+                    }
+
                 }
                 li{
                     list-style: none;

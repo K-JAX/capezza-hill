@@ -73,14 +73,17 @@ window.addEventListener("load", function(){
     });
    
     // Manipulating attorney title on archive page
-    document.querySelectorAll('.feature-attorney-title').forEach(item => {
-        let name = item.innerHTML;
-        let pieces = name.split('. ');
-        pieces[0] = '<span class="small-title">' + pieces[0] + '.</span><br>';
-        pieces[1] = pieces[1].replace( pieces[1][0], '<span class="block-cap">' + pieces[1][0] + '</span>');
-        name = pieces.join(' ');
-        item.innerHTML = name;
-    });
+    if(document.querySelectorAll('.feature-attorney-title') != undefined){
+
+        document.querySelectorAll('.feature-attorney-title').forEach(item => {
+            let name = item.innerHTML;
+            let pieces = name.split('. ');
+            pieces[0] = '<span class="small-title">' + pieces[0] + '.</span><br>';
+            pieces[1] = pieces[1].replace( pieces[1][0], '<span class="block-cap">' + pieces[1][0] + '</span>');
+            name = pieces.join(' ');
+            item.innerHTML = name;
+        });
+    }
 
     // Bio targetting on the attorney page
     if(document.querySelectorAll('.bio-button') != undefined ){
@@ -101,6 +104,7 @@ window.addEventListener("load", function(){
             });
         });
     }
+
 
     var boxE = document.querySelectorAll('.invisi-box');
 

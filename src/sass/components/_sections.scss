@@ -78,7 +78,11 @@
 }
 
 .page-template-page-single-practice{
+    article{
+        flex-direction: column;
+    }
     .practice-image{
+        margin-right: 0;
         img{
             width: 650px;
             @media all and (max-width: 992px){

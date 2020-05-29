@@ -88,8 +88,10 @@
                 height: 311px;
                 background: radial-gradient(black, #232323a3);
                 @media all and (min-width: 1200px){
-                    background: transparent;
-                    height: auto;
+                    // background: transparent;
+                    height: 100%;
+                    grid-row-start:1;
+                    grid-row-end: 3;
                 }
             }
         }

@@ -43,6 +43,7 @@
 	 * @param {Element} element
 	 */
 	function prependElement(container, element) {
+		// console.log(element)
 		if (container.firstChild.nextSibling) {
 			return container.insertBefore(element, container.firstChild.nextSibling);
 		} else {
@@ -79,6 +80,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
+		// console.log(container.offsetWidth)
 		return container.offsetWidth - button.offsetWidth - 85;
 	}
 
@@ -88,6 +90,7 @@
 	 * @returns {boolean} Is overflowing
 	 */
 	function isOverflowingNavivation( list, button, container ) {
+		// console.log(list.offsetWidth > getAvailableSpace( button, container ));
 		return list.offsetWidth > getAvailableSpace( button, container );
 	}
 
@@ -126,7 +129,12 @@
 			// Record the width of the list
 			breaks.push( visibleList.offsetWidth );
 			// Move last item to the hidden list
-			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? visibleList.previousElementSibling : visibleList.lastChild );
+			// console.log(! visibleList.lastChild || null === visibleList.lastChild)
+			// console.log(visibleList.parentNode.nextElementSibling);
+			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? {} : visibleList.lastChild );
+			// if(! visibleList.lastChild || null === visibleList.lastChild){
+			// 	prependElement( hiddenList, visibleList.lastChild );
+			// }
 			// Show the toggle button
 			showButton( toggleButton );
 

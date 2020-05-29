@@ -57,7 +57,7 @@
                 $linkText = get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) !== '' ? get_post_meta($postObj->ID, 'capezzahill_feature_link_text', true) : 'See more';
                 $linkColor = get_sub_field('link_color') ? get_sub_field('link_color') : '#0077B6';
             ?>
-            <section data-aos-duration="2000" <?php echo $count %2 == 1 ? 'data-aos="fade-left"' : 'data-aos="fade-right"' ?> class="page-section-link split-section half-height overtint" style="background-image: url(<?php echo $thumb; ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
+            <section data-aos-duration="2000" <?php echo $count %2 == 1 ? 'data-aos="fade-left"' : 'data-aos="fade-right"' ?> class="page-section-link split-section qtr-height overtint" style="background-image: url(<?php echo $thumb; ?>); background-color:<?php echo the_sub_field('background_color'); ?>; background-size: cover; background-position: center; color: <?php echo the_sub_field('foreground_color'); ?>;">
                 <div class="inner-contain">
                 <?php
                     if(get_sub_field( 'has_archive_posts' ) == 'post' ){ 
