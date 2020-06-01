@@ -185,25 +185,10 @@ function capezzahill_get_discussion_data() {
   */
   function capezzahill_add_ellipses_to_nav( $nav_menu, $args ) {
 	if ( 'top-right' === $args->theme_location ) :
-		$nav_menu .= '<div class="main-menu-more">';
-		$nav_menu .= '<ul class="mobile-main-menu">';
-		$nav_menu .= '<li class="menu-item burger">';
-		$nav_menu .= '<button class="submenu-expand main-menu-more-toggle reset-btn is-empty" tabindex="-1" aria-label="More" aria-haspopup="true" aria-expanded="false">';
+		$nav_menu .= '<button class="burger main-menu-more-toggle reset-btn" tabindex="-1" aria-label="More" aria-haspopup="true" aria-expanded="false">';
 		$nav_menu .= '<span class="screen-reader-text">' . esc_html__( 'More', 'capezzahill' ) . '</span>';
-		$nav_menu .= capezzahill_get_icon_svg( 'burger' );
+		$nav_menu .= capezzahill_get_icon_svg( 'burger', 36 );
 		$nav_menu .= '</button>';
-		$nav_menu .= '<ul class="sub-menu mobile-menu hidden-links">';
-		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
-	// this will only be included if I want an explicit button for exiting out of nav menu other than the main toggle button
-		// $nav_menu .= '<button class="menu-item-link-return">';
-		// $nav_menu .= capezzahill_get_icon_svg( 'chevron_left' );
-		// $nav_menu .= esc_html__( 'Back', 'twentynineteen' );
-		// $nav_menu .= '</button>';
-		$nav_menu .= '</li>';
-		$nav_menu .= '</ul>';
-		$nav_menu .= '</li>';
-		$nav_menu .= '</ul>';
-		$nav_menu .= '</div>';
 	endif;
 	return $nav_menu;
 }
@@ -259,9 +244,9 @@ function capezzahill_add_dropdown_icons( $output, $item, $depth, $args ) {
 		);
 	} elseif ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 		// Add SVG icon to parent items.
-		$icon = capezzahill_get_icon_svg( 'chevron_left', 30 );
+		$icon = '<sup>&#9662;</sup>';
 		$output .= sprintf(
-			'<button class="submenu-expand link-dropdown reset-btn" tabindex="-1" aria-haspopup="true" aria-expanded="false">%s</button>',
+			'<button class="sub-menu-expand link-dropdown reset-btn" aria-haspopup="true" aria-expanded="false">%s</button>',
 			$icon
 		);
 	}

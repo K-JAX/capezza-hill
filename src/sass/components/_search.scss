@@ -1,11 +1,10 @@
 // search bar
 
 .search-area{
-    position: absolute;
-    width: 40px;
-    bottom: 41%;
-    right: -30px;
+    position: relative;
+    width: auto;
     display: flex;
+
     margin: 0 15px 4px;
     @media all and (min-width: 768px){
         position: relative;
@@ -18,26 +17,30 @@
     .search-form {
         display: inline-flex;
         justify-content: flex-end;
-        width: 22px;
+        width: auto;
         @media all and (min-width: 768px){
             width: auto;
+        }
+        label{
+            display: flex;
         }
         .search-field{
             display: flex;
             align-items: center;
-            font-size: 1em;
+            font-size: 1.2em;
             width: 0;
             border: none;
             color: $wht;
             border-bottom: 2px solid $wht;
             background: transparent;
-            padding: 8px 0 2px;
+            padding: 6px 0 2px;
             transition: 0.25s;
             @media all and (min-width: 768px){
                 width: auto;
             }
             &::placeholder{
                 color: white;
+                font-style: italic;
             }
             &:active, &:focus {
                 outline: none;
@@ -47,24 +50,51 @@
         .search-submit{
             background: resolve("search.png") no-repeat center/contain;
             text-indent: -9999px;
+            cursor: pointer;
             border: none;
             @media all and (max-width: 768px){
-                margin-top: 10px;
+                margin-top: 0px;
                 margin-left: 5px;
-                width: 100%;
+                padding: 11px;
                 flex-shrink: 0;
             }
         }
-        &.active{
+        &.mobile-expand{
             .search-field{
-                width: 50vw;
-                padding: 4px s1px;
+                width: 225px;
+                // padding: 4px 1px;
                 background: rgba(0,0,0,0.85);
                 box-shadow: 0 0 2px 2px rgba(0,0,0,0.85) inset, 0 0 5px 2px rgba(0,0,0,0.85);
             }
         }
     }
+
 }
+.search-area {
+    @media all and (max-width: 768px){
+        &.menu-is-active{
+            .search-submit{
+                background: resolve("search.svg") no-repeat center/contain;
+                margin-left: 9px;
+                padding: 16px;
+            }
+            .mobile-expand{
+                .search-field{
+                    color: $navy;
+                    padding-left: 1em;
+                    background-color: white;
+                    box-shadow: 0 0 2px 2px #fff inset, 0 0 5px 2px rgba(0,0,0,0.85);
+                    &::placeholder{
+                        color: $navy;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
 
 .search-placeholder{
     display: flex;

@@ -11,38 +11,7 @@
     </section>
 <?php endif; ?>
 </div>
-        <!-- <?php 
-        $args = array(
-                    'post_type' => 'page',
-                    'order' => 'ASC',
-                    'orderby' => 'menu_order',
-                    'meta_query' => array(
-                            array(
-                                'key' => 'capezzahill_featured_page',
-                                'value' => '1'
-                            )
-                        )
-                );
-        
-        $page_query = new WP_Query($args);?>
-        
-        <?php while ($page_query->have_posts()) : $page_query->the_post(); 
-            $linkText = get_post_meta(get_the_ID(), 'capezzahill_feature_link_text', true) !== '' ? get_post_meta(get_the_ID(), 'capezzahill_feature_link_text', true) : 'See more';
-            $count++; 
-        ?> 
-        
-            <section class="page-section-link split-section half-height <?php echo $count == 1 ? 'white-txt lightblue-bg' : 'darkgray-txt white-bg' ?> overtint" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
-                <div class="feature-text inner-contain">
-                    <h3 class="h2"><?php the_title(); ?></h3>
-                    <hr class="short <?php echo $count == 1 ? 'white' : 'black'; ?> ml-0">
-                    <p><?php the_excerpt(); ?></p>
-                    <a <?php echo $count == 1 ? 'class="lightlink-txt"' : ''; ?> href="<?php echo get_permalink(); ?>"><?php echo $linkText; ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a>
-                </div>
-            </section>
-        
-        <?php endwhile;
-        wp_reset_query();
-        ?> -->
+ 
 
         <?php 
         if( have_rows('featured_page_controls') ): ?>

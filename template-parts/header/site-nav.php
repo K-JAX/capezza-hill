@@ -5,11 +5,10 @@
         wp_nav_menu(
             array(
                 'theme_location'    =>  'top-right',
-                'menu_class'        =>  'main-menu desktop-menu',
-                'items_wrap'        =>  '<ul id="%1$s" class="%2$s" tabindex="0">%3$s</ul>',
-                'link_before'     => '',
+                'container'         =>  'ul',
+                'menu_class'        =>  'main-menu',
             )
-            );
+        );
         ?>
     </nav><!-- #site-navigation -->
     <?php endif; ?>

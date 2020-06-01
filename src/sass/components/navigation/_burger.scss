@@ -1,14 +1,23 @@
 // menu burger
-.submenu-expand {
+
+.burger {
+    z-index: 4;
+    margin: 0;
     padding: 0;
+    display: inline-block;
+    cursor: pointer;
+    @media all and (min-width: 767px) {
+        display: none;
+    }
     .svg-icon {
         fill: white;
+        transition: 0.2s;
         line {
             transition: 0.2s;
             transform-origin: center;
         }
     }
-    &.submenu-expanded {
+    &.active {
         .svg-icon {
             line {
                 &:first-of-type {
@@ -19,6 +28,7 @@
                 }
                 &:last-of-type {
                     transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+                    // fill: $navy !important;
                 }
             }
         }

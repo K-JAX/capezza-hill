@@ -1,5 +1,11 @@
 // button components
 
+button:focus{
+    opacity: 0.9;
+    transform: translateY(1px);
+    box-shadow: 0 0 3px 0px #bbb inset, 0 0 3px 0px #bbb;
+    transition: 0.25s;
+}
 
 button, input[type="submit"]:not(.search-submit) {
     text-transform: uppercase;

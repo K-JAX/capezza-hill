@@ -2,7 +2,7 @@
         <footer id="colophon" class="site-footer">
             <div class="site-footer text-center">
 
-            <a class="rst white-txt" href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><h2 class="formal light mb-1"><?php echo bloginfo( 'name' ) ?>,<sub class="llp"> LLP</sub></h2></a>
+            <a class="rst white-txt" href="<?php echo esc_url(home_url('/') ); ?>" rel="home"><h2 class="formal inline-block light mb-1"><?php echo bloginfo( 'name' ) ?>,<sub class="llp"> LLP</sub></h2></a>
 
                 <hr class="short blue mb-3" />
                 <address class="mb-3">30 South Pearl Street, Suite P-110,  Albany, New York 12207</address>

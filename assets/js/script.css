@@ -463,14 +463,14 @@ b, strong, .bold {
 #breadcrumbs .breadcrumb_last {
     color: #fff;
     font-weight: 700; }
-.submenu-expand .svg-icon line {
+.burger .svg-icon line {
   transition: 0.2s;
   transform-origin: center; }
-.submenu-expand.submenu-expanded .svg-icon line:first-of-type {
+.burger.burgered .svg-icon line:first-of-type {
   transform: translateX(-20%) translateY(20%) rotate(45deg); }
-.submenu-expand.submenu-expanded .svg-icon line:nth-of-type(2) {
+.burger.burgered .svg-icon line:nth-of-type(2) {
   opacity: 0; }
-.submenu-expand.submenu-expanded .svg-icon line:last-of-type {
+.burger.burgered .svg-icon line:last-of-type {
   transform: translateX(-20%) translateY(-20%) rotate(-45deg); }
 button, input[type="submit"]:not(.search-submit) {
   text-transform: uppercase;

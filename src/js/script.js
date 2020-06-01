@@ -4,8 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Rellax from 'rellax';
 
-import './functions/priority-menu';
 import './functions/touch-keyboard-navigation';
+import './functions/activate-search';
 
 AOS.init();
 
