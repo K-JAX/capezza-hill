@@ -1,4 +1,7 @@
 // main styling area
+body.menu-is-active{
+    overflow-y: hidden;
+}
 
 .content-area {
     grid-area: body;

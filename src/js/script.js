@@ -22,7 +22,7 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
     
 }
 var scrollE = document.querySelectorAll('.jump-scroll')[0];
-    if (scrollE){
+    if (scrollE !== undefined || scrollE !== null){
     scrollE.addEventListener('click', event => {
         if (!scrollE.classList.contains('clicked')){
             scrollE.classList.add('clicked');

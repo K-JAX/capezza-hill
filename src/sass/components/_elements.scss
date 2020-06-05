@@ -10,13 +10,14 @@ html, body{
 }
 
 html{
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
+    // overflow-x: hidden;
     background: $navy;
 }
 
 body{
     background: $wht;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 a {

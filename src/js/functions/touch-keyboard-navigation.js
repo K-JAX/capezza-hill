@@ -6,22 +6,28 @@
 
 (function () {
     function burgerClick() {
-        var burger = document.querySelectorAll(".burger")[0];
-        var mainMenu = document.getElementById("menu-primary");
-		var contentArea = document.getElementById("primary");
-		var search = document.querySelectorAll('.search-area')[0];
+        var burger = document.querySelectorAll(".burger")[0],
+            mainMenu = document.getElementById("menu-primary"),
+            navContainer = document.querySelectorAll('.site-header-nav-container')[0],
+		    contentArea = document.getElementById("primary"),
+            search = document.querySelectorAll('.search-area')[0];
+            
         burger.addEventListener("click", function () {
             if (this.matches(".active")) {
                 this.classList.remove("active");
                 mainMenu.classList.remove("open");
-				contentArea.classList.remove("menu-is-active");
-				search.classList.remove("menu-is-active");
+                contentArea.classList.remove("menu-is-active");
+                navContainer.classList.remove("menu-is-active");
+                search.classList.remove("menu-is-active");
+                document.body.classList.remove("menu-is-active");
                 this.setAttribute("aria-expanded", "false");
             } else {
                 this.classList.add("active");
                 mainMenu.classList.add("open");
-				contentArea.classList.add("menu-is-active");
-				search.classList.add("menu-is-active");
+                contentArea.classList.add("menu-is-active");
+                navContainer.classList.add("menu-is-active");
+                search.classList.add("menu-is-active");
+                document.body.classList.add("menu-is-active");
                 this.setAttribute("aria-expanded", "true");
             }
         });
