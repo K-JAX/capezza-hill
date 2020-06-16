@@ -2,122 +2,128 @@
 
 @mixin absolute-content {
     position: absolute;
-    content: '';    
+    content: "";
 }
 
 // creates pseudo elements
-.beforeafter{
+.beforeafter {
     position: relative;
-    &:before, &:after{
+    &:before,
+    &:after {
         @include absolute-content;
     }
 }
 
-.before{
+.before {
     position: relative;
-    &:before{
+    &:before {
         @include absolute-content;
     }
 }
 
-.after{
+.after {
     position: relative;
-    &:after{
+    &:after {
         @include absolute-content;
     }
 }
 
-.screen-reader-text{
+.screen-reader-text {
     display: none;
 }
 
-.reset-input{
+.reset-input {
     border: none;
-    &:active, &:focus {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
 
-.reset-btn{
+.reset-btn {
     background: transparent;
     border: none;
-    &:active, &:focus {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
 
 a {
-    &.rst{
+    &.rst {
         text-transform: initial;
         color: initial;
         text-decoration: none;
-        &.hover-underline:hover{
+        &.hover-underline:hover {
             text-decoration: underline;
         }
     }
-    &.informal{
+    &.informal {
         text-transform: initial;
     }
 }
 
-a .svg-icon{
+a .svg-icon {
     position: absolute;
-    top:0;
-    bottom:0;
+    top: 0;
+    bottom: 0;
     margin: auto;
 }
 
 .jump-scroll {
-    &:hover{text-decoration: none !important;}
-    .svg-icon{
+    &:hover {
+        text-decoration: none !important;
+    }
+    .svg-icon {
         transition: 0.25s;
-        &:hover{
+        &:hover {
             transform: translate(0, 5px);
         }
     }
 }
 
-hr{
+hr {
     border-bottom: 1px solid;
-    &.short{
-        width: 94px
+    &.short {
+        width: 94px;
     }
-    &.shorter{
-        width: 58px
+    &.shorter {
+        width: 58px;
     }
-    &.blue{
+    &.blue {
         border-color: $lightblue;
     }
-    &.white{
+    &.white {
         border-color: $wht;
     }
-    &.black{
+    &.black {
         border-color: $blk;
     }
-    &.left{
-        margin-left: 0; 
+    &.left {
+        margin-left: 0;
+        // IE11
+        text-align: left;
     }
 }
 
-.announcement-title-banner{
+.announcement-title-banner {
     font-weight: 100;
     width: 100%;
     padding: 00px 0;
     margin: 0;
     text-align: center;
-    h2{
+    h2 {
         font-size: 1.75em;
     }
 }
 
-
 // Inbox classing. Build now categorize later
 .feature-case {
     position: relative;
-    &:first-of-type{
-        background: #F8F5F5;
+    &:first-of-type {
+        background: #f8f5f5;
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             right: 0;
@@ -126,37 +132,36 @@ hr{
             margin: auto 0;
             border-right: 1px solid $lightblue;
         }
-    }    
-    &:last-of-type{
-        background: #F4F7F9;
-
-    }    
+    }
+    &:last-of-type {
+        background: #f4f7f9;
+    }
 }
 
-.block{
+.block {
     display: block !important;
 }
 
-.inline-block{
+.inline-block {
     display: inline-block !important;
 }
 
-.flex{
+.flex {
     display: flex !important;
 }
 
-.grid{
+.grid {
     display: grid !important;
 }
 
-.relative{
+.relative {
     position: relative !important;
 }
 
-.absolute{
-    position: absolute !important;    
+.absolute {
+    position: absolute !important;
 }
 
-.fixed{
-    position: fixed !important;    
+.fixed {
+    position: fixed !important;
 }

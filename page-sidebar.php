@@ -24,8 +24,6 @@
             endwhile; // End of the loop
             ?>
             </div>
-
-
         </main><!-- #main -->
         <?php if ( is_page('Contact') && is_active_sidebar( 'contact' ) ) : ?>
         <aside class="sidebar-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">

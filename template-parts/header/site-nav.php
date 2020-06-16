@@ -31,5 +31,4 @@
             <?php get_search_form( ); ?>
     </div><!-- /.search-area -->
     <!-- Holds position so that the search active can turn absolute on mobile without changing the layout flow of the other elements -->
-    <div class="search-placeholder"></div>
 </div>

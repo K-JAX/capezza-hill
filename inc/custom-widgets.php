@@ -168,9 +168,7 @@ function my_dynamic_sidebar_params( $params ) {
                                                 </div>
                                                 <div class="line-drop">
                                                 </div>
-                                                <div>
-                                                    <address>%s</address>
-                                                </div>', 
+                                                    <address>%s</address>', 
                                                 $mail_icon['sizes']['medium'],
                                                 $mail,
                                                 $mail_address

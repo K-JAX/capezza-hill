@@ -25,7 +25,7 @@ get_header();
                     <?php
                         $color = get_field('feature_color');
                      ?>
-                    <figure data-aos-duration="1500" <?php echo $count %2 == 1 ? 'data-aos="fade-right"' : 'data-aos="fade-left"' ?> class="card quadrant half team-member before <?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>" style="background: <?php echo $color; ?>">
+                    <figure data-aos-duration="1500" <?php echo $count %2 == 1 ? 'data-aos="fade-right"' : 'data-aos="fade-left"' ?> class="card flex quadrant half team-member before <?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>" style="background: <?php echo $color; ?>">
                         <div class="portrait" style="background-image: url(<?php echo get_field('cropped_portrait')['url']; ?>);"></div>
                         <figcaption class="<?php echo $count % 2 == 1 ? 'odd' : 'even'; ?> relative">
                             <h2 class="feature-attorney-title formal mb-1"><?php echo get_the_title(); ?></h2>

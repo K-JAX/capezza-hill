@@ -1,6 +1,6 @@
 // list styles
 
-.list-none{
+.list-none {
     list-style: none;
 }
 
@@ -9,23 +9,24 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    li{
-        display: grid;
-        grid-template-columns: 20% auto;
+    li {
+        display: flex;
+        justify-content: start;
         align-items: start;
+        flex-wrap: wrap;
         font-size: 20px;
         margin-bottom: 1em;
-        img{
+        img {
             height: 20px;
             justify-self: center;
             margin-right: 15px;
             margin-top: 2px;
         }
-        .line-drop{
+        .line-drop {
             position: relative;
             height: 100%;
-            &:before{
-                content: '';
+            &:before {
+                content: "";
                 position: absolute;
                 width: 2px;
                 height: 65%;
@@ -37,61 +38,77 @@
                 background-color: $navy;
             }
         }
-        address{
-            margin: 20px 0;
+        address {
+            position: relative;
+            width: 100%;
+            padding-left: 2em;
             font-style: normal;
             font-size: 18px;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 55%;
+                top: 1em;
+                // bottom: 0;
+                left: 0.75em;
+                // right: 15px;
+
+                margin: auto;
+                background-color: $navy;
+            }
         }
     }
 }
 
-.bio-list{
+.bio-list {
     list-style: none;
     background: #efefff;
-    height:100%;
+    height: 100%;
     padding-left: 0;
-    box-shadow: 4px 4px 1px 0 rgba(0,0,0,0.25);
-    li{
+    box-shadow: 4px 4px 1px 0 rgba(0, 0, 0, 0.25);
+    li {
         margin: 4px 0;
         padding: 0.35em 0.25em;
         background: $wht;
         transition: 0.25s;
-        box-shadow: 0px 0px 1px 0 rgba(0,0,0,0.25);
-        &:after{
+        box-shadow: 0px 0px 1px 0 rgba(0, 0, 0, 0.25);
+        &:after {
             width: 0;
-            height:100%;
+            height: 100%;
             transition: 0.25s;
             top: 0;
-            right:0;
+            right: 0;
             background-color: $navy;
         }
-        h2{
+        h2 {
             margin: 4px 0;
         }
-        &:hover{
-            &:after{
+        &:hover {
+            &:after {
                 width: 4px;
             }
         }
-        &.active, &:hover{
+        &.active,
+        &:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.25);
+            box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.25);
         }
-        &.active{
-            &:after{
+        &.active {
+            &:after {
                 width: 9px;
             }
         }
     }
 }
 
-.bio-description-section{
+.bio-description-section {
     opacity: 0;
     transition: 0.5s;
     font-size: 18px;
     max-height: 0;
     overflow: hidden;
-    &.active{
+    &.active {
         opacity: 1;
         height: auto;
         max-height: 100vh;
@@ -99,33 +116,36 @@
     }
 }
 
-.single-attorney{
-    .site-main{
-        box-shadow: 2px 4px 1px 0 rgba(0,0,0,0.25);
+.single-attorney {
+    .site-main {
+        box-shadow: 2px 4px 1px 0 rgba(0, 0, 0, 0.25);
     }
 }
 
-
 // Box hover from practices page
-.invisi-hover-list{
+.invisi-hover-list {
     position: relative;
     padding: 0;
     width: 100%;
-    // max-width: 999px;
-    grid-template-columns: repeat(3, 33.33%);
-    grid-template-rows: 333px 333px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // grid-template-columns: repeat(3, 33.33%);
+    // grid-template-rows: 333px 333px;
     margin-left: auto;
     margin-right: auto;
-    @media all and (max-width: 768px){
+    @media all and (max-width: 768px) {
         grid-template-columns: auto;
         grid-template-rows: auto;
     }
-    .invisi-box{
-        @media all and (max-width: 768px){
+    .invisi-box {
+        width: 33.33%;
+        height: 333px;
+        @media all and (max-width: 768px) {
+            width: 100%;
             height: 125px;
             height: 15vh;
         }
-        .fg{
+        .fg {
             align-items: center;
             justify-content: center;
             border: 8px solid white;
@@ -134,20 +154,24 @@
             width: 100%;
             height: 100%;
             transition: 0.5s;
-            h2{
+            h2 {
                 z-index: 1;
             }
-            &:before{
-                z-index:0;
+            &:before {
+                z-index: 0;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 left: 0;
-                background: linear-gradient(45deg, rgba(255,255,255,0) 30%,rgba(255,255,255,0.85) 100%);
+                background: linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 0) 30%,
+                    rgba(255, 255, 255, 0.85) 100%
+                );
                 transition: 0.5s;
             }
         }
-        .bg{
+        .bg {
             z-index: -1;
             top: 0;
             left: 0;
@@ -158,36 +182,41 @@
             background-position: center;
         }
     }
-    &.hover-state{
-        a{
+    &.hover-state {
+        a {
             opacity: 1 !important;
         }
-        .invisi-box.hover-state{
-            .bg{
+        .invisi-box.hover-state {
+            .bg {
                 opacity: 1;
                 z-index: 0;
             }
         }
-        .invisi-box:not(.hover-state){
-            .fg{
+        .invisi-box:not(.hover-state) {
+            .fg {
                 background-color: transparent !important;
             }
-            .fg:before{
-                background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.1) 100%);
+            .fg:before {
+                background: linear-gradient(
+                    45deg,
+                    rgba(0, 0, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.15) 50%,
+                    rgba(0, 0, 0, 0.1) 100%
+                );
             }
         }
     }
 }
 
-.featured-posts{
-    li{
-        &:after{
+.featured-posts {
+    li {
+        &:after {
             width: 50px;
             border-bottom: 1px solid $navy;
             left: 0;
             bottom: -1.25em;
         }
-        &:last-of-type:after{
+        &:last-of-type:after {
             border-bottom: none;
         }
     }

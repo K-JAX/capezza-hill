@@ -4,15 +4,21 @@
  * Contains handlers for touch devices and keyboard navigation.
  */
 
+import supportsCSSTransformsOnSVG from "./polyfills";
+
 (function () {
     function burgerClick() {
         var burger = document.querySelectorAll(".burger")[0],
             mainMenu = document.getElementById("menu-primary"),
-            navContainer = document.querySelectorAll('.site-header-nav-container')[0],
-		    contentArea = document.getElementById("primary"),
-            search = document.querySelectorAll('.search-area')[0];
-            
+            navContainer = document.querySelectorAll(
+                ".site-header-nav-container"
+            )[0],
+            contentArea = document.getElementById("primary"),
+            search = document.querySelectorAll(".search-area")[0];
+
         burger.addEventListener("click", function () {
+            var topBun = this.querySelectorAll("svg line:first-of-type")[0];
+            var botBun = this.querySelectorAll("svg line:last-of-type")[0];
             if (this.matches(".active")) {
                 this.classList.remove("active");
                 mainMenu.classList.remove("open");
@@ -21,6 +27,16 @@
                 search.classList.remove("menu-is-active");
                 document.body.classList.remove("menu-is-active");
                 this.setAttribute("aria-expanded", "false");
+                if (supportsCSSTransformsOnSVG) {
+                    topBun.setAttribute(
+                        "transform",
+                        "translate(0 0) rotate(0)"
+                    );
+                    botBun.setAttribute(
+                        "transform",
+                        "translate(0 0) rotate(0)"
+                    );
+                }
             } else {
                 this.classList.add("active");
                 mainMenu.classList.add("open");
@@ -29,6 +45,16 @@
                 search.classList.add("menu-is-active");
                 document.body.classList.add("menu-is-active");
                 this.setAttribute("aria-expanded", "true");
+                if (supportsCSSTransformsOnSVG) {
+                    topBun.setAttribute(
+                        "transform",
+                        "translate(180 40) rotate(45)"
+                    );
+                    botBun.setAttribute(
+                        "transform",
+                        "translate(-250 220) rotate(-45)"
+                    );
+                }
             }
         });
     }
@@ -129,4 +155,3 @@ function hide(el, eventClass) {
         el.classList.remove(...classes);
     }, 500);
 }
-

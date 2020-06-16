@@ -23,11 +23,11 @@
         $parent = new WP_Query( $args );
 
         if ( $parent->have_posts() ) : ?>
-            <ul id="parent-<?php the_ID(); ?>" class="grid invisi-hover-list list-none" data-aos="fade-up" data-aos-duration="1000">
+            <ul id="parent-<?php the_ID(); ?>" class="flex invisi-hover-list list-none" data-aos="fade-up" data-aos-duration="1000">
 
             <?php while ( $parent->have_posts() ) : $parent->the_post(); $count++; ?>
             <li class="invisi-box">
-                <a class="rst white-txt" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
+                <a class="inline-block rst white-txt" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
                     <div class="fg flex before"  style="background-color: <?php echo get_field('box_color'); ?>">
                         <h2 class="h6 text-center"><?php the_title(); ?></h2>
                     </div>

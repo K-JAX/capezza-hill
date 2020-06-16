@@ -4,7 +4,7 @@
     position: absolute;
     width: 220px;
     max-width: 500px;
-    @media all and (max-width: 766px){
+    @media all and (max-width: 766px) {
         width: 100%;
         max-width: 100%;
     }
@@ -16,15 +16,14 @@
     // background-color: rgba(0, 0, 0, 0.65);
     margin-bottom: 0.75em;
     background-color: #f1f1f1;
-    box-shadow: 0 4px 7px 0px rgba(0,0,0,0.25) inset;
+    box-shadow: 0 4px 7px 0px rgba(0, 0, 0, 0.25) inset;
     border-left: 2px solid $navy;
-    li{
-        a{
+    li {
+        a {
             color: $navy;
-
         }
-        &:after{
-            content: '';
+        &:after {
+            content: "";
             position: absolute;
             left: 1em;
             bottom: -0.9em;
@@ -32,14 +31,14 @@
             height: 1px;
             background-color: $navy;
         }
-        &:last-of-type{
-            &:after{
+        &:last-of-type {
+            &:after {
                 display: none;
             }
         }
     }
-    &:before{
-        content: '';
+    &:before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0em;
@@ -50,30 +49,30 @@
     li.menu-item {
         padding: 0 0.75em;
     }
-    &.focus{
+    &.focus {
         display: block;
         height: auto;
     }
     &.is-visible {
         display: block;
         height: auto;
-        @media all and (max-width: 766px){
-            &.hover{
+        @media all and (max-width: 766px) {
+            &.hover {
                 display: none;
                 height: 0;
-                &.focus{
+                &.focus {
                     display: block;
                     height: auto;
                 }
             }
         }
     }
-    .visuallyhidden{
+    .visuallyhidden {
         width: 0;
         height: 0;
     }
 
-    @media all and (max-width: 766px){
+    @media all and (max-width: 766px) {
         position: relative;
     }
 }
@@ -85,20 +84,24 @@
     font-size: 0.95em;
     transition: 0.45s;
     color: white;
-    @media all and (max-width: 766px){
+    @media all and (max-width: 766px) {
         font-size: 1.1em;
-        border: 1px solid black;
-        width: 50px;
-        height: 50px;
+        // border: 1px solid black;
+        background: $lightgray;
+        width: 40px;
+        height: 40px;
         border-radius: 300px;
         color: black;
     }
-    &[aria-expanded='true']{
+    &[aria-expanded="true"] {
         transform-origin: center;
         transform: rotateX(180deg);
     }
-    sup{
-
+    sup {
         top: -0.25em;
+        @media all and (max-width: 766px) {
+            top: 1px;
+            font-size: 125%;
+        }
     }
 }

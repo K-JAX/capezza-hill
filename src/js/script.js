@@ -4,10 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Rellax from "rellax";
 
-if (window.NodeList && !NodeList.prototype.forEach) {
-    NodeList.prototype.forEach = Array.prototype.forEach;
-}
-
+import "./functions/polyfills";
 import "./functions/touch-keyboard-navigation";
 import "./functions/activate-search";
 
