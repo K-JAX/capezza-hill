@@ -60,6 +60,9 @@ a {
     }
     &.informal {
         text-transform: initial;
+        &.underline{
+            text-decoration: underline;
+        }
     }
 }
 
@@ -89,6 +92,9 @@ hr {
     }
     &.shorter {
         width: 58px;
+    }
+    &.wide{
+        width: 100%;
     }
     &.blue {
         border-color: $lightblue;

@@ -51,6 +51,17 @@
 
 .inline-icon{
     // width: 32px;
-    height: 27px;
+    height: 1em;
     object-fit: contain;
+}
+
+
+
+.ngg-galleryoverview.default-view{
+    text-align: left !important;
+    margin: 10px 0 !important; 
+}
+
+.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img{
+    width: 120px;
 }

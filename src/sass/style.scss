@@ -5,9 +5,11 @@ Author: Kevin Garubba Design & Development
 Author URI: https://github.com/K-JAX/
 Description: This is the theme used to create all backend and frontend functionality for capezza-hill.com
 Requires at least: WordPress 4.9.6
-Version: 0.0.1
+Version: 0.9.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
+Text Domain: capezzahill
+Domain Path: /languages/
 */
 
 // Vendor Style
@@ -18,9 +20,6 @@ License URI: LICENSE
 @import "mixins/*";
 @import "typography/*";
 @import "components/*";
-
-
-
  
 .alignfull {
 	margin: 32px calc(50% - 50vw);

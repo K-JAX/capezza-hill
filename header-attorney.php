@@ -45,7 +45,7 @@
                         <li class="phone">
                             <img class="inline-icon" alt="Call number <?php echo $contact['phone_number']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
                             <a class="informal" alt="Telephone link to call <?php echo $contact['phone_number']; ?>" href="tel:<?php echo $contact['phone_number']; ?>"><?php echo $contact['phone_number']; ?></a>
-                        </li> 
+                        </li>
                         <?php 
                             // do some work to return the vcard path
                             $title = strtolower(get_the_title());
@@ -58,6 +58,16 @@
                             <img class="inline-icon" alt="vCard Download" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/card-icon.png'; ?>" />
                             <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $filepath; ?>" >vCard</a>
                         </li> 
+                        <li class="print">
+                            <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/printer-icon.png'; ?>" />
+                            <a class="informal underline" alt="Print this Attorney's page" href="javascript:void(0)" onclick="window.print();return false;" >Print this page</a>
+                        </li>
+                        <hr class="wide no-print">
+                        <li class="no-print">
+                            <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/gallery-icon.png'; ?>" />
+                            <span>Gallery</span>
+                            <div class="gallery-container no-print"><?php echo do_shortcode( '[ngg src="tags" ids="'. get_field('informal_name') .'" display="basic_thumbnail" thumbnail_crop="0"]' ); ?></div>
+                        </li>
                     </ul>
                 </figcaption>
                 <img data-aos="fade" data-aos-duration="500"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />

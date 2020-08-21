@@ -64,7 +64,7 @@
         @media all and (min-width: 767px) {
             height: 187px;
         }
-        align-items: end;
+        align-content: end;
         margin: auto;
         color: $wht;
         .site-branding-container {
@@ -132,7 +132,9 @@
 .single-attorney {
     .site-header {
         flex-flow: column nowrap;
-        height: 51vh;
+        min-height: 85vh;
+        height: auto;
+        justify-content: end;
         @media all and (max-width: 992px) {
             height: auto;
         }
@@ -145,7 +147,7 @@
             width: 70%;
             z-index: 1;
             align-self: end;
-            margin: auto auto 0;
+            margin: 2em auto 0;
             padding: 0;
             overflow: hidden;
             @media all and (max-width: 992px) {
@@ -154,7 +156,7 @@
             .title-contact-box {
                 color: $wht;
                 width: 350px;
-                height: 300px;
+                height: auto;
                 align-self: end;
                 margin: auto 0 0;
                 background: linear-gradient(
@@ -188,7 +190,7 @@
                         font-size: 18px;
                         align-items: center;
                         grid-template-columns: 50px auto;
-                        img {
+                        .inline-icon {
                             margin-top: 0.25em;
                             height: 18px;
                             justify-self: start;

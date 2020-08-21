@@ -45,6 +45,9 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
             )
         );
         
+        // language
+        load_theme_textdomain( 'capezzahill', get_template_directory() . '/languages' );
+        
         // Allows for live refresh when updating widgets in customizer I think
         add_theme_support( 'customize-selective-refresh-widgets' );
 
