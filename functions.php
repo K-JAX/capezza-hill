@@ -10,6 +10,7 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
 
         // Auto generate title tag without hard-coding
         add_theme_support( 'title-tag' );
+        add_filter( 'wp_title', 'wpdocs_hack_wp_title_for_home' );
 
         // 
         add_theme_support( 'post-thumbnails' );
@@ -22,7 +23,7 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
                 'social'    => __( 'Social Links Menu', 'capezzahill'),
             )
         );
-        
+
         add_theme_support( 
             'html5',
             array(
