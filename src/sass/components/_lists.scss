@@ -104,21 +104,32 @@
 
 .bio-description-section {
     opacity: 0;
-    transition: 0.5s;
+    transition: opacity 1.5s;
     font-size: 18px;
     max-height: 0;
     overflow: hidden;
+    color: #606060;
+    line-height: 1.35;
     &.active {
         opacity: 1;
         height: auto;
         max-height: 100vh;
-        transition: opacity 0.75s 0.25s, max-height 0.5s 0.5s;
+        // transition: opacity 0.75s 0.25s, max-height 0.5s 0.5s;
     }
+    h2:first-of-type{
+        margin-bottom: 0.9em;
+    }
+
 }
 
 .single-attorney {
     .site-main {
+        margin-top: 1em;
         box-shadow: 2px 4px 1px 0 rgba(0, 0, 0, 0.25);
+        background: white;
+        h2{
+            margin-top: 0;
+        }
     }
 }
 
@@ -209,8 +220,11 @@
 }
 
 .featured-posts {
-    li {
+    li, .wp-block-image {
+        position: relative;
         &:after {
+            content: '';
+            position: absolute;
             width: 50px;
             border-bottom: 1px solid $navy;
             left: 0;
@@ -219,5 +233,11 @@
         &:last-of-type:after {
             border-bottom: none;
         }
+    }
+}
+
+.spaced-list{
+    li{
+        margin-bottom: 0.5em;
     }
 }

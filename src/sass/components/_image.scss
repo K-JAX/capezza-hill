@@ -2,8 +2,10 @@
 
 .case-figure {
     width: 416px;
-    &:hover, &:hover a, &:hover figcaption{
-        opacity:0.9;
+    &:hover,
+    &:hover a,
+    &:hover figcaption {
+        opacity: 0.9;
         transition: 0.25s;
     }
     &:before {
@@ -13,7 +15,7 @@
         width: 37px;
         height: 37px;
         background-color: $lightblue;
-        opacity: 0.75
+        opacity: 0.75;
     }
     &:after {
         z-index: 1;
@@ -22,7 +24,7 @@
         width: 68px;
         height: 68px;
         border: 6px solid $lightblue;
-        opacity: 0.75
+        opacity: 0.75;
     }
 
     img {
@@ -30,15 +32,15 @@
         width: 100%;
         height: 270px;
     }
-    
+
     figcaption {
         position: relative;
         width: 84%;
         padding-left: 20px;
         font-size: 26px;
         color: #747583;
-        :before{
-            content: '';
+        :before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -46,22 +48,39 @@
             border-left: 1px solid $lightblue;
         }
     }
-    
 }
 
-.inline-icon{
+.inline-icon {
     // width: 32px;
     height: 1em;
     object-fit: contain;
 }
 
-
-
-.ngg-galleryoverview.default-view{
+.ngg-galleryoverview.default-view {
     text-align: left !important;
-    margin: 10px 0 !important; 
+    margin: 10px 0 !important;
 }
 
-.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img{
+.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img {
     width: 120px;
+}
+
+.gallery-container {
+    width: 100%;
+}
+
+.wp-block-image {
+    img {
+        object-fit: cover;
+        height: 400px;
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        bottom: -25px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        border: 7px solid $navy;
+    }
 }

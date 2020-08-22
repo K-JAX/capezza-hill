@@ -84,9 +84,11 @@ window.addEventListener("load", function () {
     if (document.querySelectorAll(".bio-button") != undefined) {
         this.document.querySelectorAll(".bio-button").forEach((item) => {
             item.addEventListener("click", (event) => {
+                
                 // remove all of the classes
                 document.querySelectorAll(".active").forEach((item) => {
                     item.classList.remove("active");
+                    console.log(item)
                 });
                 // add to parent list item
                 item.parentElement.parentElement.classList.add("active");
@@ -94,6 +96,7 @@ window.addEventListener("load", function () {
                 let targetID = item.getAttribute("data-target");
                 let target = document.getElementById(targetID);
                 target.classList.add("active");
+                // console.log(target);
             });
         });
     }

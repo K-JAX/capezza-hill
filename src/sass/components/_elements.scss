@@ -17,12 +17,14 @@ html{
 
 body{
     background: $wht;
+    min-height: auto !important;
+    min-height: initial !important;
     // overflow-x: hidden;
 }
 
 a {
     color: $lightblue;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     .informal{
         text-transform: initial;
     }
@@ -34,3 +36,6 @@ a {
     }
 }
 
+li{
+    margin-bottom: 0.45em;
+}

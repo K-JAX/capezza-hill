@@ -1,69 +1,119 @@
-@media print{
-	#gtranslate_wrapper{
-		display: none;
-	}
-	.bio-description-section{
+@media print {
+    #gtranslate_wrapper {
+        display: none;
+    }
+    .bio-description-section {
         max-height: auto; // <-- if you're a stupid ass browser
         max-height: initial;
         height: auto;
         opacity: 1;
         overflow: visible;
     }
-    .site-footer-whitespace-offset{
+    .site-footer-whitespace-offset {
         display: none;
     }
-    .site-footer{
+    .site-footer {
         display: none;
     }
-    .bio-list{
+    .bio-list {
         display: none;
     }
-    .attorney-hero{
+    .attorney-hero {
         flex-flow: row !important;
         justify-content: start;
-        .title-contact-box{
+        .title-contact-box {
             width: 100px;
         }
-        .attorney-full-hero{
+        .attorney-full-hero {
             // display: none;
             height: 150px !important;
         }
     }
     .single-attorney {
+        background: black !important;
         .site-header {
             min-height: initial;
+            width: 100%;
+            align-items: center;
+            margin-top: 5em;
+
+            .site-header-inner {
+                .site-branding-container {
+                    .site-branding {
+                        display: flex;
+                        align-self: center;
+                        .site-logo {
+                            width: 150px !important;
+                        }
+                        .site-title a {
+                            font-size: 2em;
+                            color: $navy !important;
+                        }
+                    }
+                }
+            }
+
+            .site-header-nav-container {
+                display: none !important;
+            }
             .attorney-hero {
+                border-top: 20px solid $navy;
+                flex-flow: row-reverse !important;
+                width: 100% !important;
+                max-width: initial !important;
                 .title-contact-box {
+                    // margin: auto;
+                    width: 500px;
                     header {
-                        h1{
+                        h1 {
                             text-align: left;
                         }
                     }
-                    &> *{
+                    & > * {
                         padding-left: 0;
                     }
+                    .phone,
+                    .vcard {
+                        display: none;
+                    }
+                }
+                .attorney-full-hero {
+                    width: 200px !important;
+                    height: auto !important;
+                    // min-height: initial !important;
+                    // margin-left: 0 !important;
+                    margin-right: 10% !important;
+                }
+            }
+        }
+        .site-main {
+            box-shadow: none;
+            .bio-description-section {
+                h2 {
+                    margin-top: 1.25em;
+                    margin-bottom: 1em;
                 }
             }
         }
     }
 
-    .inline-icon{
+    .inline-icon {
         display: none;
     }
-    .title-banner{
+    .title-banner {
         display: none;
     }
-    [data-aos^=fade][data-aos^=fade]{
+    [data-aos^="fade"][data-aos^="fade"] {
         opacity: 1 !important;
     }
-    [data-aos=fade-right], [data-aos=fade-left]{
+    [data-aos="fade-right"],
+    [data-aos="fade-left"] {
         transform: none !important;
     }
-    .no-print{
+    .no-print {
+        display: none !important;
+        * {
             display: none !important;
-            *{
-                display: none !important;
-            }
+        }
     }
 }
-

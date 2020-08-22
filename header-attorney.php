@@ -65,7 +65,7 @@
                         <hr class="wide no-print">
                         <li class="no-print">
                             <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/gallery-icon.png'; ?>" />
-                            <span>Gallery</span>
+                            <span>Gallery</span><br/>
                             <div class="gallery-container no-print"><?php echo do_shortcode( '[ngg src="tags" ids="'. get_field('informal_name') .'" display="basic_thumbnail" thumbnail_crop="0"]' ); ?></div>
                         </li>
                     </ul>

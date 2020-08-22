@@ -5,7 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header" data-aos="fade-right" data-aos-duration="800">
+    <header class="entry-header container" data-aos="fade-right" data-aos-duration="800">
         <?php get_template_part( 'template-parts/header/entry', 'header'); ?>
     </header>
 

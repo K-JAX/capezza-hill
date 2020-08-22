@@ -2,6 +2,7 @@
 
 .home,
 .single-attorney {
+    background: $lightergray;
     .site-header {
         height: 100vh;
         .site-header-inner {
@@ -132,8 +133,8 @@
 .single-attorney {
     .site-header {
         flex-flow: column nowrap;
-        min-height: 85vh;
-        height: auto;
+        // min-height: 85vh;
+        height: 65vh;
         justify-content: end;
         @media all and (max-width: 992px) {
             height: auto;

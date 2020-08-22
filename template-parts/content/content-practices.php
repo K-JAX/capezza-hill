@@ -27,7 +27,7 @@
 
             <?php while ( $parent->have_posts() ) : $parent->the_post(); $count++; ?>
             <li class="invisi-box">
-                <a class="inline-block rst white-txt" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
+                <a class="flex w100 h100 rst white-txt" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
                     <div class="fg flex before"  style="background-color: <?php echo get_field('box_color'); ?>">
                         <h2 class="h6 text-center"><?php the_title(); ?></h2>
                     </div>

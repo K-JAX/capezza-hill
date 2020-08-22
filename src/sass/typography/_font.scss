@@ -111,12 +111,12 @@ b, strong, .bold{
 }
 
 .entry-title{
-    margin-top: 0em;
-    margin-bottom: 0.5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.65em;
     &:after{
         width: 80px;
         left: 0;
-        bottom: -0.25em;
+        bottom: -0.35em;
         border-bottom: 1px solid $lightblue;
     }
 }
