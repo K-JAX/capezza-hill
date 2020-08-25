@@ -65,7 +65,9 @@ a {
         }
     }
 }
-
+.no-underline{
+    text-decoration: none !important;
+}
 a .svg-icon {
     position: absolute;
     top: 0;

@@ -43,9 +43,9 @@
                             return $output;
                         }
                         $link = $postObj ? 
-                            '<nav class="feature-page-subnav">
-                                <a href="' . get_permalink( $postObj->ID ) .'" style="color: ' . $linkColor . ';" >' . $linkText . ' ' . capezzahill_get_icon_svg('chevron_right', 26) . '</a>
-                                <ul class="subnav">' . 
+                            '<nav class="feature-page-subnav">' .
+                                /* '<a href="' . get_permalink( $postObj->ID ) .'" style="color: ' . $linkColor . ';" >' . $linkText . ' ' . capezzahill_get_icon_svg('chevron_right', 26) . '</a>' . */
+                                '<ul class="subnav active">' . 
                                 displaySubz($subLinks, $linkColor)
                                  . 
                                 '</ul>

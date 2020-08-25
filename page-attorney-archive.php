@@ -26,9 +26,9 @@ get_header();
                         $color = get_field('feature_color');
                      ?>
                     <figure data-aos-duration="1500" <?php echo $count %2 == 1 ? 'data-aos="fade-right"' : 'data-aos="fade-left"' ?> class="card flex quadrant half team-member before <?php echo $count % 2 == 1 ? 'odd' : 'even'; ?>" style="background: <?php echo $color; ?>">
-                        <div class="portrait" style="background-image: url(<?php echo get_field('cropped_portrait')['url']; ?>);"></div>
+                        <a class="portrait" style="background-image: url(<?php echo get_field('cropped_portrait')['url']; ?>);" href="<?php echo get_permalink(); ?>"></a>
                         <figcaption class="<?php echo $count % 2 == 1 ? 'odd' : 'even'; ?> relative">
-                            <h2 class="feature-attorney-title formal mb-1"><?php echo get_the_title(); ?></h2>
+                            <a class="relative no-underline" href="<?php echo get_permalink(); ?>"><h2 class="feature-attorney-title formal white-txt mb-1"><?php echo get_the_title(); ?></h2></a>
                             <hr class="short blue left mb-1" />
                             <h3 class="formal my-1 ">Partner</h3>
                             <a class="relative informal" style="color: <?php echo get_field('link_color'); ?>" href="<?php echo get_permalink(); ?>">Learn about <?php echo get_field('informal_name'); ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a>

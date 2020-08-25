@@ -5,7 +5,7 @@
     width: auto;
     display: flex;
     margin: 0 15px 6px;
-    @media all and (min-width: 768px) {
+    @media all and (min-width: 992px) {
         position: relative;
         width: auto;
         bottom: auto;
@@ -17,7 +17,7 @@
         display: inline-flex;
         justify-content: flex-end;
         width: auto;
-        @media all and (min-width: 768px) {
+        @media all and (min-width: 992px) {
             width: auto;
         }
         label {
@@ -38,7 +38,7 @@
             box-shadow: 0 -12px 10px 0 rgba(0, 0, 0, 0.25) inset;
             padding: 6px 0 2px;
             transition: 0.25s;
-            @media all and (min-width: 767px) {
+            @media all and (min-width: 992px) {
                 width: 100px;
             }
             @media all and (min-width: 1200px) {
@@ -59,7 +59,7 @@
             text-indent: -9999px;
             cursor: pointer;
             border: none;
-            @media all and (max-width: 768px) {
+            @media all and (max-width: 992px) {
                 margin-top: 0px;
                 margin-left: 5px;
                 padding: 8px 12px;
@@ -80,7 +80,7 @@
     }
 }
 .search-area {
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 992px) {
         &.menu-is-active {
             .search-submit {
                 background: resolve("search.svg") no-repeat center/contain;

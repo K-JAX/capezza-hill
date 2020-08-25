@@ -10,10 +10,10 @@ body {
 
 .content-area {
     grid-area: body;
-    min-height: 50vh;
+    // min-height: 50vh;
     width: 100%;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 40px 0 0;
     &.edge-content {
         padding: 0;
     }

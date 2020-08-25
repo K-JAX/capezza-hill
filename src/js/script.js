@@ -37,18 +37,19 @@ window.addEventListener("load", function () {
     }
 
     // Create dropdown for homepage feature section
-    var navThang = document.querySelectorAll(".feature-page-subnav")[0],
-        subNavThang = document.querySelectorAll(
-            ".feature-page-subnav .subnav"
-        )[0];
-    if (navThang) {
-        navThang.addEventListener("mouseenter", function (event) {
-            subNavThang.classList.toggle("active");
-        });
-        navThang.addEventListener("mouseleave", function (event) {
-            subNavThang.classList.toggle("active");
-        });
-    }
+    // var navThang = document.querySelectorAll(".feature-page-subnav")[0],
+    //     subNavThang = document.querySelectorAll(
+    //         ".feature-page-subnav .subnav"
+    //     )[0];
+    // if (navThang) {
+    //     navThang.addEventListener("mouseenter", function (event) {
+    //         subNavThang.classList.toggle("active");
+    //     });
+    //     navThang.addEventListener("mouseleave", function (event) {
+    //         subNavThang.classList.toggle("active");
+    //     });
+    // }
+
     // When clicking form input add active class to input's parents
     document.querySelectorAll(".wpcf7-form-control-wrap *").forEach((item) => {
         // if( item ){

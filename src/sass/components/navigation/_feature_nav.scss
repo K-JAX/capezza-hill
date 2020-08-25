@@ -2,19 +2,21 @@
 
 .feature-page-subnav {
     display: inline-block;
-    & > a .svg-icon {
-        fill: $lighterblue;
+    a .svg-icon {
+        // fill: $lighterblue;
+        fill: white;
     }
     .subnav {
         padding: 0 10px;
         max-height: 0;
         transition: 0.25s;
         overflow: hidden;
-        background: rgba(0, 0, 0, 0.75);
+        // background: rgba(0, 0, 0, 0.75);
         transform: rotateX(30deg);
-        opacity: 0;
+        opacity: 1;
         transform-origin: top;
-        border: 1px solid $navy;
+        list-style: none;
+        // border: 1px solid $navy;
 
         &.active {
             max-height: 100px;
