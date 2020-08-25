@@ -7,7 +7,7 @@ get_header();
 
 <div id="primary" class="content-area container">
         <main id="main" class="site-main   ">
-            <div class="mx-3">
+            <div class="mx-3 mb-5">
             <?php
 
             // Start the loop

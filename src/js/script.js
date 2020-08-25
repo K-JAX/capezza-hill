@@ -101,6 +101,31 @@ window.addEventListener("load", function () {
             });
         });
     }
+    // Bio targetting with dropdown
+    function switchDropdown(){
+        if(document.querySelectorAll('.bio-list-dropdown') != undefined){
+            document.querySelectorAll('.bio-list-dropdown').forEach((item) => {
+                item.addEventListener('change', (event) => {
+
+                    document.querySelectorAll(".active").forEach((item) => {
+                        item.classList.remove("active");
+                        console.log(item)
+                    });
+                    
+                    // add to corresponding description container
+                    let targetID = event.target.value;
+                    let target = document.getElementById(targetID);
+                    target.classList.add("active");
+                    
+                    console.log(event.target.value);
+                });
+
+            });
+
+
+        };
+    }
+    switchDropdown();
     var boxE = document.querySelectorAll(".invisi-box");
     if (boxE != undefined) {
         boxE.forEach((item) => {

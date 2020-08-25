@@ -61,7 +61,47 @@
     }
 }
 
+.single-attorney{
+    @media all and (max-width: 992px){
+        .container.with-sidebar{
+            .sidebar-container{
+                width: 90%;
+                margin: auto;
+                padding: 0;
+            }
+            .site-main{
+                width: 90%;
+                margin: 0 auto;
+                padding: 0 0.1em;
+            }
+        }
+
+    }
+
+}
+
+.bio-list-dropdown{
+    @media all and (max-width: 992px){
+        display: block;
+    }
+    position: relative;
+    width: 100%;
+    margin: 1em 0 0.5em;
+    padding: 0.55em 0.125em;
+    color: $navy;
+    background: $wht;
+    transition: 0.25s;
+    box-shadow: 4px 4px 1px 0 rgba(0, 0, 0, 0.25);
+    font-size: 1.85em;
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Work Sans', sans-serif;
+    border: none;
+}
+
 .bio-list {
+    @media all and (max-width: 992px){
+        display: none;
+    }
     list-style: none;
     background: #efefff;
     height: 100%;

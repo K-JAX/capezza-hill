@@ -6,7 +6,7 @@
  get_header('attorney');
  ?>
     <section id="primary" class="content-area container with-sidebar left pt-0 lightergray-bg">
-        <main id="main" class="site-main py-3"  data-aos="fade-right" data-aos-duration="500" >
+        <main id="main" class="site-main py-3 mb-5"  data-aos="fade-right" data-aos-duration="500" >
             <div class="mx-3">
             <?php
                 /* Start the Loop */
@@ -35,21 +35,35 @@
                     //     echo '<li class="after ' . $defaultActive . '"><h2 class="h3"><a class="bio-button rst block" href="javascript:void(0)" data-target="'. $target .'">' . $item['title'] . '</a></h2></li>';
                     // }
                 ?>
-    <?php 
-        if (have_rows('bio_repeater')): while (have_rows('bio_repeater')): the_row();
-        $count++; 
-        $defaultActive = $count == 1 ? 'active' : '';
-        $id =strtolower(str_replace(' ', '-', get_sub_field('bio_title')));
-    ?>
+                <?php 
+                    if (have_rows('bio_repeater')): while (have_rows('bio_repeater')): the_row();
+                    $count++; 
+                    $defaultActive = $count == 1 ? 'active' : '';
+                    $id =strtolower(str_replace(' ', '-', get_sub_field('bio_title')));
+                ?>
 
-        <li class="after <?php echo $defaultActive; ?>" >
-            <h2 class="h3">
-                <a class="bio-button rst block" href="javascript:void(0)" data-target="<?php echo $id; ?>"><?php echo get_sub_field('bio_title'); ?></a>
-            </h2>
-        </li>
-<?php endwhile; endif; ?>
+                <li class="after <?php echo $defaultActive; ?>" >
+                    <h2 class="h3">
+                        <a class="bio-button rst block" href="javascript:void(0)" data-target="<?php echo $id; ?>"><?php echo get_sub_field('bio_title'); ?></a>
+                    </h2>
+                </li>
+                <?php endwhile; endif; ?>
 
             </ul>
+
+            <select name="bio-description-select" id="" class="bio-list-dropdown"  >
+            <?php 
+                    if (have_rows('bio_repeater')): while (have_rows('bio_repeater')): the_row();
+                    $count++; 
+                    $defaultActive = $count == 1 ? 'active' : '';
+                    $id =strtolower(str_replace(' ', '-', get_sub_field('bio_title')));
+                ?>
+                
+                    <option value="<?php echo $id; ?>"><?php echo get_sub_field('bio_title'); ?></option>
+
+                <?php endwhile; endif; ?>
+            </select>
+            
         </aside>
     </section><!-- #primary -->
 

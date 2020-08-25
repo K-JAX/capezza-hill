@@ -7,7 +7,7 @@ get_header();
 
 <div id="primary" class="content-area" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
     <main id="main" class="site-main container">
-        <div class="mx-3" >
+        <div class="mx-3 mb-5" >
             <header class="page-header">
                 <?php the_title('<h1 class="entry-title all-caps after">', '</h1>'); ?>
             </header><!-- .page-header -->
@@ -38,7 +38,7 @@ get_header();
                 </section>
             <?php endif;  ?>
         </div>
-        <div class="text-center">
+        <div class="text-center mb-5">
             <?php if ( have_posts() ) : while( have_posts() ): the_post(); ?>
                 <?php the_content(); ?>
             <?php endwhile; endif; ?>

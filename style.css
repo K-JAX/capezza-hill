@@ -272,7 +272,11 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .custom-icon-list li .line-drop:before{content:"";position:absolute;width:2px;height:65%;top:0;bottom:0;left:0;right:15px;margin:auto;background-color:#10153F}
 .custom-icon-list li address{position:relative;width:100%;padding-left:2em;font-style:normal;font-size:18px}
 .custom-icon-list li address:before{content:"";position:absolute;width:2px;height:55%;top:1em;left:0.75em;margin:auto;background-color:#10153F}
+@media all and (max-width: 992px){.single-attorney .container.with-sidebar .sidebar-container{width:90%;margin:auto;padding:0}.single-attorney .container.with-sidebar .site-main{width:90%;margin:0 auto;padding:0 0.1em}}
+.bio-list-dropdown{position:relative;width:100%;margin:1em 0 0.5em;padding:0.55em 0.125em;color:#10153F;background:#fff;transition:0.25s;box-shadow:4px 4px 1px 0 rgba(0,0,0,0.25);font-size:1.85em;font-weight:100;font-family:'Gill Sans', 'Work Sans', sans-serif;border:none}
+@media all and (max-width: 992px){.bio-list-dropdown{display:block}}
 .bio-list{list-style:none;background:#efefff;height:100%;padding-left:0;box-shadow:4px 4px 1px 0 rgba(0,0,0,0.25)}
+@media all and (max-width: 992px){.bio-list{display:none}}
 .bio-list li{margin:4px 0;padding:0.35em 0.25em;background:#fff;transition:0.25s;box-shadow:0px 0px 1px 0 rgba(0,0,0,0.25)}
 .bio-list li:after{width:0;height:100%;transition:0.25s;top:0;right:0;background-color:#10153F}
 .bio-list li h2{margin:4px 0}
