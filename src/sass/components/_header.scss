@@ -100,6 +100,9 @@
                     @media all and (max-width: 992px) {
                         width: 75px;
                     }
+                    @media all and (max-width: 500px) {
+                        width: 55px;
+                    }
                 }
                 .site-title {
                     display: inline-block;
@@ -111,9 +114,9 @@
                     @media all and (max-width: 992px) {
                         font-size: 32px;
                     }
-                    // @media all and (max-width: 767px) {
-                    //     font-size: 20px;
-                    // }
+                    @media all and (max-width: 500px) {
+                        font-size: 20px;
+                    }
                     span {
                         font-size: 20px;
                     }
