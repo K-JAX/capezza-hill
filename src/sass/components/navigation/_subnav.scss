@@ -57,7 +57,7 @@
     &.is-visible {
         display: block;
         height: auto;
-        padding: 0 0 1em;
+        padding: 0;
         @media all and (max-width: 766px) {
             &.hover {
                 display: none;

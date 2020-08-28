@@ -286,7 +286,8 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .bio-list li:hover:after{width:4px}
 .bio-list li.active,.bio-list li:hover{transform:translate(-2px, -2px);box-shadow:1px 2px 2px 0 rgba(0,0,0,0.25)}
 .bio-list li.active:after{width:9px}
-.bio-description-section{transition:opacity 1.5s;font-size:18px;color:#606060;line-height:1.35}
+.bio-description-section{opacity:0;transition:opacity 1.5s;font-size:18px;height:0;overflow:hidden;color:#606060;line-height:1.35}
+.bio-description-section.active{opacity:1;height:auto}
 .bio-description-section h2:first-of-type{margin-bottom:0.9em}
 .single-attorney .site-main{margin-top:1em;box-shadow:2px 4px 1px 0 rgba(0,0,0,0.25);background:white}
 .single-attorney .site-main h2{margin-top:0}
@@ -329,7 +330,7 @@ html,body{overflow-x:hidden !important}
 .sub-menu:before{content:"";position:absolute;top:0;left:0em;width:100%;height:3px;background-color:#10153F}
 .sub-menu li.menu-item{padding:0 0.75em}
 .sub-menu.focus{display:block;height:auto}
-.sub-menu.is-visible{display:block;height:auto;padding:0 0 1em}
+.sub-menu.is-visible{display:block;height:auto;padding:0}
 @media all and (max-width: 766px){.sub-menu.is-visible.hover{display:none;height:0}.sub-menu.is-visible.hover.focus{display:block;height:auto}}
 .sub-menu .visuallyhidden{width:0;height:0}
 @media all and (max-width: 766px){.sub-menu{position:relative}}
@@ -463,7 +464,7 @@ body{display:grid;grid-template-areas:'head' 'body'  'footer'}
 .sub-menu:before{content:"";position:absolute;top:0;left:0em;width:100%;height:3px;background-color:#10153F}
 .sub-menu li.menu-item{padding:0 0.75em}
 .sub-menu.focus{display:block;height:auto}
-.sub-menu.is-visible{display:block;height:auto;padding:0 0 1em}
+.sub-menu.is-visible{display:block;height:auto;padding:0}
 @media all and (max-width: 766px){.sub-menu.is-visible.hover{display:none;height:0}.sub-menu.is-visible.hover.focus{display:block;height:auto}}
 .sub-menu .visuallyhidden{width:0;height:0}
 @media all and (max-width: 766px){.sub-menu{position:relative}}
