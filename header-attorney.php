@@ -31,9 +31,9 @@
             <figure class="container w100 attorney-hero">
                 <figcaption class="title-contact-box"  data-aos="fade-left" data-aos-duration="1000" >
                     <header>
-                        <h1 class="feature-attorney-title formal" ><?php echo get_the_title(); ?></h1>
+                        <h1 class="feature-attorney-title formal notranslate" ><?php echo get_the_title(); ?></h1>
                     </header>
-                    <h2 class="title-banner h4" ><?php echo $meta['attorney_title_block_field'][0] ?></h2>
+                    <h2 class="title-banner h4" ><?php echo $meta['attorney_title_block_field'][0]; ?></h2>
                     <ul class="contact-details grid custom-icon-list">
                         <?php 
                             $contact = get_field('attorney_title_section');
@@ -58,14 +58,12 @@
                             <img class="inline-icon" alt="vCard Download" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/card-icon.png'; ?>" />
                             <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $filepath; ?>" >vCard</a>
                         </li> 
-                        <li class="print">
+                        <li class="print no-print">
                             <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/printer-icon.png'; ?>" />
-                            <a class="informal underline" alt="Print this Attorney's page" href="javascript:void(0)" onclick="window.print();return false;" >Print this page</a>
+                            <a class="informal underline" alt="Print this Attorney's page" href="javascript:void(0)" onclick="window.print();return false;" >Print this Biography</a>
                         </li>
                         <hr class="wide no-print">
                         <li class="no-print">
-                            <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/gallery-icon.png'; ?>" />
-                            <span>Gallery</span><br/>
                             <div class="gallery-container no-print"><?php echo do_shortcode( '[ngg src="tags" ids="'. get_field('informal_name') .'" display="basic_thumbnail" thumbnail_crop="0"]' ); ?></div>
                         </li>
                     </ul>

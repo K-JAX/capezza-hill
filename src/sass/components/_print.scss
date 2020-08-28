@@ -1,14 +1,14 @@
 @media print {
+    body{
+        display: block !important;
+    }
     #gtranslate_wrapper {
         display: none;
     }
-    .bio-description-section {
-        max-height: auto; // <-- if you're a stupid ass browser
-        max-height: initial;
-        height: auto;
-        opacity: 1;
-        overflow: visible;
+    .container.with-sidebar{
+        display: block;
     }
+
     .site-footer-whitespace-offset {
         display: none;
     }
@@ -87,8 +87,16 @@
             }
         }
         .site-main {
+            display: block;
+            overflow: auto;
             box-shadow: none;
             .bio-description-section {
+                max-height: auto;
+                max-height: initial;
+                height: auto;
+                opacity: 1;
+                display: block;
+                overflow: visible;
                 h2 {
                     margin-top: 1.25em;
                     margin-bottom: 1em;

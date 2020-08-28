@@ -19,14 +19,12 @@ import supportsCSSTransformsOnSVG from "./polyfills";
         burger.addEventListener("click", function () {
             var topBun = this.querySelectorAll("svg line:first-of-type")[0];
             var botBun = this.querySelectorAll("svg line:last-of-type")[0];
-            if (this.matches(".active")) {
-                this.classList.remove("active");
-                mainMenu.classList.remove("open");
-                contentArea.classList.remove("menu-is-active");
-                navContainer.classList.remove("menu-is-active");
-                search.classList.remove("menu-is-active");
-                document.body.classList.remove("menu-is-active");
+            var elements = [burger, mainMenu, contentArea, navContainer, search, document.body];
+            if (this.matches(".menu-is-active")) {
+
+                menuActivationClasses( elements, false);
                 this.setAttribute("aria-expanded", "false");
+
                 if (supportsCSSTransformsOnSVG) {
                     topBun.setAttribute(
                         "transform",
@@ -37,13 +35,9 @@ import supportsCSSTransformsOnSVG from "./polyfills";
                         "translate(0 0) rotate(0)"
                     );
                 }
+
             } else {
-                this.classList.add("active");
-                mainMenu.classList.add("open");
-                contentArea.classList.add("menu-is-active");
-                navContainer.classList.add("menu-is-active");
-                search.classList.add("menu-is-active");
-                document.body.classList.add("menu-is-active");
+                menuActivationClasses( elements, true);
                 this.setAttribute("aria-expanded", "true");
                 if (supportsCSSTransformsOnSVG) {
                     topBun.setAttribute(
@@ -55,11 +49,31 @@ import supportsCSSTransformsOnSVG from "./polyfills";
                         "translate(-250 220) rotate(-45)"
                     );
                 }
+                document.addEventListener('click', function(e){
+                    if(e.target.matches('.content-area') || e.target.matches('.site-header') || e.target.matches('.site-header-inner') || e.target.matches('.site-footer')){
+                        menuActivationClasses( elements, false);
+                    };
+                });
+                document.addEventListener('keydown', function(e){
+                    if(event.key == "Escape"){
+                        menuActivationClasses( elements, false);
+                    };
+                })
             }
         });
     }
     burgerClick();
 })();
+
+function menuActivationClasses( elements, activation ){
+
+    elements.forEach(element =>{
+        activation == true ? element.classList.add("menu-is-active") : element.classList.remove("menu-is-active");
+    })
+
+}
+
+
 
 // function reportWindowSize(){
 
@@ -99,13 +113,13 @@ function addExpandEvent(el, e) {
     eventEl.addEventListener(e, function (event) {
         // if the window is tablet/mobile size don't accept hover events
         if (window.innerWidth >= 767 || e == "click") {
-            if (!el.matches(".open")) {
-                el.classList.add("open");
+            if (!el.matches(".menu-is-active")) {
+                el.classList.add("menu-is-active");
                 show(sub, eventClass);
                 anchor.setAttribute("aria-expanded", "true");
                 btn.setAttribute("aria-expanded", "true");
             } else if (e !== "mouseenter") {
-                el.classList.remove("open");
+                el.classList.remove("menu-is-active");
                 hide(sub, eventClass);
                 anchor.setAttribute("aria-expanded", "false");
                 btn.setAttribute("aria-expanded", "false");

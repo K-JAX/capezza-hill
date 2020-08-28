@@ -51,7 +51,7 @@
 
             </ul>
 
-            <select name="bio-description-select" id="" class="bio-list-dropdown"  >
+            <select name="bio-description-select" id="" class="bio-list-dropdown no-print"  >
             <?php 
                     if (have_rows('bio_repeater')): while (have_rows('bio_repeater')): the_row();
                     $count++; 
