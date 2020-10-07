@@ -12,7 +12,7 @@ if ( ! function_exists( 'capezzahill_setup' ) ) :
         add_theme_support( 'title-tag' );
         add_filter( 'wp_title', 'wpdocs_hack_wp_title_for_home' );
 
-        // 
+        // Post thumbnails 
         add_theme_support( 'post-thumbnails' );
         set_post_thumbnail_size( 1568, 9999 );
 

@@ -27,7 +27,6 @@
                     yoast_breadcrumb( '<div class="container w100"><div class="mx-3 my-3 relative"><p id="breadcrumbs">','</p></div></div>' );
                 }
             ?>
-            <!-- <div class="container w100 relative" > -->
             <figure class="container w100 attorney-hero">
                 <figcaption class="title-contact-box"  data-aos="fade-left" data-aos-duration="1000" >
                     <header>
@@ -46,18 +45,12 @@
                             <img class="inline-icon" alt="Call number <?php echo $contact['phone_number']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
                             <a class="informal" alt="Telephone link to call <?php echo $contact['phone_number']; ?>" href="tel:<?php echo $contact['phone_number']; ?>"><?php echo $contact['phone_number']; ?></a>
                         </li>
-                        <?php 
-                            // do some work to return the vcard path
-                            $title = strtolower(get_the_title());
-                            $title_without_period = str_replace( '.', '', $title);
-                            $title_with_hyphens = str_replace( ' ', '-', $title_without_period);
-                            $filename = $title_with_hyphens . '.vcf';
-                            $filepath = get_stylesheet_directory_uri() . '/vcard/' . $filename;
-                        ?><?php ?>
+                        <?php if ( isset($contact['vcard']['url']) ): ?>
                         <li class="vcard">
                             <img class="inline-icon" alt="vCard Download" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/card-icon.png'; ?>" />
-                            <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $filepath; ?>" >vCard</a>
-                        </li> 
+                            <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $contact['vcard']['url']; ?>" download>vCard</a>
+                        </li>
+                        <?php endif; ?>
                         <li class="print no-print">
                             <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/printer-icon.png'; ?>" />
                             <a class="informal underline" alt="Print this Attorney's page" href="javascript:void(0)" onclick="window.print();return false;" >Print this Biography</a>
@@ -71,5 +64,4 @@
                 <img data-aos="fade" data-aos-duration="500"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
             </figure>
             <h2 class="w100 title-banner text-center relative"><a href="#primary" class="relative jump-scroll informal">Read Bio <span style="margin-left: 10px;"><?php echo capezzahill_get_icon_svg('triple_chevron_down', 36); ?></span></a></h2>
-            <!-- </div> -->
         </header>
