@@ -59,7 +59,7 @@
                     }
                 ?>
                 
-                <h3><?php echo $title; ?></h3>
+                <h2 class="h3"><?php echo $title; ?></h2>
                 <hr class="short white ml-0" />
                 <p><?php echo $description; ?></p>
                 <!-- <a style="color: <?php echo $linkColor; ?>" href="<?php echo $link; ?>"><?php echo $linkText; ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a> -->

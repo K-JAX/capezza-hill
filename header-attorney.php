@@ -32,7 +32,7 @@
                     <header>
                         <h1 class="feature-attorney-title formal notranslate" ><?php echo get_the_title(); ?></h1>
                     </header>
-                    <h2 class="title-banner h4" ><?php echo $meta['attorney_title_block_field'][0]; ?></h2>
+                    <div class="title-banner py-5 h4" ><?php echo $meta['attorney_title_block_field'][0]; ?></div>
                     <ul class="contact-details grid custom-icon-list">
                         <?php 
                             $contact = get_field('attorney_title_section');
@@ -61,7 +61,7 @@
                         </li>
                     </ul>
                 </figcaption>
-                <img data-aos="fade" data-aos-duration="500"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
+                <img data-aos="fade" data-aos-duration="500" alt="Full of image of <?php echo get_the_title(); ?>"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
             </figure>
             <h2 class="w100 title-banner text-center relative"><a href="#primary" class="relative jump-scroll informal">Read Bio <span style="margin-left: 10px;"><?php echo capezzahill_get_icon_svg('triple_chevron_down', 36); ?></span></a></h2>
         </header>

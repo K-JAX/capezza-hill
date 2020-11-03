@@ -108,7 +108,7 @@ function my_dynamic_sidebar_params( $params ) {
     $map            = get_field('display_map', 'widget_' . $widget_id);
 
     if ( $locationimg ){
-        $params[0]['before_widget'] .= sprintf('<div class="location-img"><img src="%s"/>', $locationimg['url']);
+        $params[0]['before_widget'] .= sprintf('<div class="location-img"><img src="%s" alt="%s"/>', $locationimg['url'], $locationimg['alt']);
         if ( $map ){
             $params[0]['before_widget'] .= sprintf('<div class="map">%s</div>', $map);
         }
@@ -123,11 +123,12 @@ function my_dynamic_sidebar_params( $params ) {
 	if( $email ) {
 		$params[0]['after_widget'] .= '<li>';
         $params[0]['after_widget'] .= sprintf('
-                                                <img class="inline-icon" src="%s" />
+                                                <img class="inline-icon" src="%s" alt="%s" />
                                                 <div>
                                                     <span>%s</span>
                                                 </div>', 
                                                 $email_icon['sizes']['medium'],
+                                                $email_icon['alt'],
                                                 $email
                                             );
 		$params[0]['after_widget'] .= '</li>';
@@ -136,11 +137,12 @@ function my_dynamic_sidebar_params( $params ) {
     if( $phone ) {
 		$params[0]['after_widget'] .= '<li>';
         $params[0]['after_widget'] .= sprintf('
-                                                <img class="inline-icon" src="%s" />
+                                                <img class="inline-icon" src="%s" alt="%s" />
                                                 <div>
                                                     <span>%s</span>
                                                 </div>', 
                                                 $phone_icon['sizes']['medium'],
+                                                $phone_icon['alt'],
                                                 $phone
                                             );
 		$params[0]['after_widget'] .= '</li>';    
@@ -149,11 +151,12 @@ function my_dynamic_sidebar_params( $params ) {
     if( $fax ) {
 		$params[0]['after_widget'] .= '<li>';
         $params[0]['after_widget'] .= sprintf('
-                                                <img class="inline-icon" src="%s" />
+                                                <img class="inline-icon" src="%s" alt="%s" />
                                                 <div>
                                                     <span>%s</span>
                                                 </div>', 
                                                 $fax_icon['sizes']['medium'],
+                                                $fax_icon['alt'],
                                                 $fax
                                             );
 		$params[0]['after_widget'] .= '</li>';    
@@ -162,7 +165,7 @@ function my_dynamic_sidebar_params( $params ) {
     if( $mail ) {
 		$params[0]['after_widget'] .= '<li>';
         $params[0]['after_widget'] .= sprintf('
-                                                <img class="inline-icon" src="%s" />
+                                                <img class="inline-icon" src="%s" alt="%s" />
                                                 <div>
                                                     <span>%s</span>
                                                 </div>
@@ -170,6 +173,7 @@ function my_dynamic_sidebar_params( $params ) {
                                                 </div>
                                                     <address>%s</address>', 
                                                 $mail_icon['sizes']['medium'],
+                                                $mail_icon['alt'],
                                                 $mail,
                                                 $mail_address
                                             );
