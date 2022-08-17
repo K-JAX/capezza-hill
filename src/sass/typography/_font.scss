@@ -1,147 +1,165 @@
 // Fonts
 
 // Google font imports
-@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Cinzel:400,700|Work+Sans:300,400,600&display=swap");
 
 // elements
-h1, .h1 {
-    font-size: 2.5em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h1,
+.h1 {
+	font-size: 2.5em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
-h2, .h2 { 
-    font-size: 2.25em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h2,
+.h2 {
+	font-size: 2.25em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
-h3, .h3 { 
-    font-size: 2em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h3,
+.h3 {
+	font-size: 2em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
-h4, .h4 { 
-    font-size: 1.75em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h4,
+.h4 {
+	font-size: 1.75em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
-h5, .h5 { 
-    font-size: 1.5em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h5,
+.h5 {
+	font-size: 1.5em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
-h6, .h6 { 
-    font-size: 1.25em;
-    font-weight: 100;
-    margin-bottom: 1.2em;
+h6,
+.h6 {
+	font-size: 1.25em;
+	font-weight: 100;
+	margin-bottom: 1.2em;
 }
 
-p{
-    margin-bottom: 1.7em;
+p {
+	margin-bottom: 1.7em;
 }
 
-blockquote, .wp-block-quote{
-    border-left: 1px solid $lightblue;
-    padding: 0.7em 3em;
-    margin-bottom: 1.7em;    
+blockquote,
+.wp-block-quote {
+	border-left: 1px solid $lightblue;
+	padding: 0.7em 3em;
+	margin-bottom: 1.7em;
 }
 
 // //element
 
-
 // custom font classes
 
 // font sizes
- 
-
 
 // formatting
 
-.text-center    { text-align: center;   }
-.text-left      { text-align: left;     }
-.text-right     { text-align: right;    }
-
-.all-caps       { text-transform: uppercase }
-
-.formal{
-    font-family: "Cinzel", serif;
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
 }
 
-.informal{
-    font-family: "Gill Sans", "Work Sans", serif;
+.all-caps {
+	text-transform: uppercase;
 }
 
-.light{
-    font-weight: 100;
+.formal {
+	font-family: "Cinzel", serif;
 }
 
-b, strong, .bold{
-    font-weight: 700;
+.informal {
+	font-family: "Gill Sans", "Work Sans", serif;
+}
+
+.light {
+	font-weight: 100;
+}
+
+b,
+strong,
+.bold {
+	font-weight: 700;
 }
 
 .site-title {
-    font-variant: small-caps;
-    font-weight: 100;
+	font-variant: small-caps;
+	font-weight: 100;
 }
 
-.llp{
-    font-size: 0.5em;
-    bottom: 0;
+.llp {
+	font-size: 0.5em;
+	bottom: 0;
 }
 
-.site-footer address{
-    color: $lightgray;
-    font-style: normal;
+.site-footer address {
+	color: $lightgray;
+	font-style: normal;
 }
 
-.has-small-font-size{
-    font-size: 19.5px;
+.has-small-font-size {
+	font-size: 19.5px;
 }
-.has-normal-font-size{
-    font-size: 22px;
+.has-normal-font-size {
+	font-size: 22px;
 }
-.has-large-font-size{
-    font-size: 36.5px;
+.has-large-font-size {
+	font-size: 36.5px;
 }
-.has-huge-font-size{
-    font-size: 49.5px;
-}
-
-.spaced{
-    letter-spacing: 0.2em;
+.has-huge-font-size {
+	font-size: 49.5px;
 }
 
-.entry-title{
-    margin-top: 0.25em;
-    margin-bottom: 0.65em;
-    &:after{
-        width: 80px;
-        left: 0;
-        bottom: -0.35em;
-        border-bottom: 1px solid $lightblue;
-    }
+.spaced {
+	letter-spacing: 0.2em;
 }
 
-.feature-attorney-title{
-    font-size: 3em;
-    white-space: nowrap;
+.entry-title {
+	margin-top: 0.25em;
+	margin-bottom: 0.65em;
+	&:after {
+		width: 80px;
+		left: 0;
+		bottom: -0.35em;
+		border-bottom: 1px solid $lightblue;
+	}
 }
 
-.small-title{
-    font-size: 0.65em;
+.feature-attorney-title {
+	font-size: 2.25em;
+	white-space: nowrap;
 }
 
-.block-cap{
-    display: inline-block;
-    color: $wht;
-    background-color: $navy;
-    padding: 0.1em 5px;
+.small-title {
+	font-size: 0.65em;
 }
 
-.title-banner{
-    color: $wht;
-    background-color: $navy;
-    margin: 0;
-    padding: 0.4em 1em;
+.last-name-remainder {
+	white-space: pre-line;
+}
+
+.block-cap {
+	display: inline-block;
+	color: $wht;
+	background-color: $navy;
+	padding: 0.1em 5px;
+}
+
+.title-banner {
+	color: $wht;
+	background-color: $navy;
+	margin: 0;
+	padding: 0.4em 1em;
 }
 
 // //custom font classes

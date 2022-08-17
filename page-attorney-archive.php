@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
+<div id="primary" class="content-area" style="overflow: hidden;" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
     <main id="main" class="site-main container">
         <div class="mx-3 mb-5" >
             <header class="page-header">
@@ -20,7 +20,7 @@ get_header();
                 'order'         => 'ASC'
             ));
             if ( $loop->have_posts() ) :?>
-                <section class="card-gallery flex">
+                <section class="card-gallery flex" style="overflow:hidden;">
                 <?php while( $loop->have_posts() ) : $loop->the_post(); $count++ ?>
                     <?php
                         $color = get_field('feature_color');
