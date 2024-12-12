@@ -1,39 +1,39 @@
 // Feature nav
 
 .feature-page-subnav {
-    display: inline-block;
-    a .svg-icon {
-        // fill: $lighterblue;
-        fill: white;
-    }
-    .subnav {
-        padding: 0 10px;
-        max-height: 0;
-        transition: 0.25s;
-        overflow: hidden;
-        // background: rgba(0, 0, 0, 0.75);
-        transform: rotateX(30deg);
-        opacity: 1;
-        transform-origin: top;
-        list-style: none;
-        // border: 1px solid $navy;
+	display: inline-block;
+	a .svg-icon {
+		// fill: $lighterblue;
+		fill: white;
+	}
+	.subnav {
+		padding: 0 10px;
+		// max-height: 0;
+		transition: 0.25s;
+		overflow: hidden;
+		// background: rgba(0, 0, 0, 0.75);
+		transform: rotateX(30deg);
+		opacity: 1;
+		transform-origin: top;
+		list-style: none;
+		// border: 1px solid $navy;
 
-        &.active {
-            max-height: 100px;
-            padding: 10px;
-            opacity: 1;
-            transform: rotateX(0deg);
-        }
-        li {
-            line-height: 1.75;
-            .svg-icon {
-                position: relative;
-                left: 0;
-                margin-bottom: -0.3em;
-            }
-            a {
-                text-decoration: none;
-            }
-        }
-    }
+		&.active {
+			// max-height: 100px;
+			padding: 10px;
+			opacity: 1;
+			transform: rotateX(0deg);
+		}
+		li {
+			line-height: 1.75;
+			.svg-icon {
+				position: relative;
+				left: 0;
+				margin-bottom: -0.3em;
+			}
+			a {
+				text-decoration: none;
+			}
+		}
+	}
 }

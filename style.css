@@ -343,8 +343,8 @@ html,body{overflow-x:hidden !important}
 @media all and (max-width: 766px){.sub-menu-expand sup{top:1px;font-size:125%}}
 .feature-page-subnav{display:inline-block}
 .feature-page-subnav a .svg-icon{fill:white}
-.feature-page-subnav .subnav{padding:0 10px;max-height:0;transition:0.25s;overflow:hidden;transform:rotateX(30deg);opacity:1;transform-origin:top;list-style:none}
-.feature-page-subnav .subnav.active{max-height:100px;padding:10px;opacity:1;transform:rotateX(0deg)}
+.feature-page-subnav .subnav{padding:0 10px;transition:0.25s;overflow:hidden;transform:rotateX(30deg);opacity:1;transform-origin:top;list-style:none}
+.feature-page-subnav .subnav.active{padding:10px;opacity:1;transform:rotateX(0deg)}
 .feature-page-subnav .subnav li{line-height:1.75}
 .feature-page-subnav .subnav li .svg-icon{position:relative;left:0;margin-bottom:-0.3em}
 .feature-page-subnav .subnav li a{text-decoration:none}
@@ -477,8 +477,8 @@ body{display:grid;grid-template-areas:'head' 'body'  'footer'}
 @media all and (max-width: 766px){.sub-menu-expand sup{top:1px;font-size:125%}}
 .feature-page-subnav{display:inline-block}
 .feature-page-subnav a .svg-icon{fill:white}
-.feature-page-subnav .subnav{padding:0 10px;max-height:0;transition:0.25s;overflow:hidden;transform:rotateX(30deg);opacity:1;transform-origin:top;list-style:none}
-.feature-page-subnav .subnav.active{max-height:100px;padding:10px;opacity:1;transform:rotateX(0deg)}
+.feature-page-subnav .subnav{padding:0 10px;transition:0.25s;overflow:hidden;transform:rotateX(30deg);opacity:1;transform-origin:top;list-style:none}
+.feature-page-subnav .subnav.active{padding:10px;opacity:1;transform:rotateX(0deg)}
 .feature-page-subnav .subnav li{line-height:1.75}
 .feature-page-subnav .subnav li .svg-icon{position:relative;left:0;margin-bottom:-0.3em}
 .feature-page-subnav .subnav li a{text-decoration:none}
