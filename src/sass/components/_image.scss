@@ -1,86 +1,91 @@
 // image related classes & components
 
 .case-figure {
-    width: 416px;
-    &:hover,
-    &:hover a,
-    &:hover figcaption {
-        opacity: 0.9;
-        transition: 0.25s;
-    }
-    &:before {
-        z-index: 1;
-        top: -18px;
-        left: -18px;
-        width: 37px;
-        height: 37px;
-        background-color: $lightblue;
-        opacity: 0.75;
-    }
-    &:after {
-        z-index: 1;
-        top: 230px;
-        left: 380px;
-        width: 68px;
-        height: 68px;
-        border: 6px solid $lightblue;
-        opacity: 0.75;
-    }
+	width: 416px;
+	&:hover,
+	&:hover a,
+	&:hover figcaption {
+		opacity: 0.9;
+		transition: 0.25s;
+	}
+	&:before {
+		z-index: 1;
+		top: -18px;
+		left: -18px;
+		width: 37px;
+		height: 37px;
+		background-color: $lightblue;
+		opacity: 0.75;
+	}
+	&:after {
+		z-index: 1;
+		top: 230px;
+		left: 380px;
+		width: 68px;
+		height: 68px;
+		border: 6px solid $lightblue;
+		opacity: 0.75;
+	}
 
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 270px;
-    }
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 270px;
+	}
 
-    figcaption {
-        position: relative;
-        width: 84%;
-        padding-left: 20px;
-        font-size: 26px;
-        color: #747583;
-        :before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            border-left: 1px solid $lightblue;
-        }
-    }
+	figcaption {
+		position: relative;
+		width: 84%;
+		padding-left: 20px;
+		font-size: 26px;
+		color: #747583;
+		:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			border-left: 1px solid $lightblue;
+		}
+	}
 }
 
 .inline-icon {
-    // width: 32px;
-    height: 1em;
-    object-fit: contain;
+	// width: 32px;
+	height: 1em;
+	object-fit: contain;
 }
 
 .ngg-galleryoverview.default-view {
-    text-align: left !important;
-    margin: 10px 0 !important;
+	text-align: left !important;
+	margin: 10px 0 !important;
 }
 
 .ngg-galleryoverview.default-view .ngg-gallery-thumbnail img {
-    width: 120px;
+	width: 120px;
 }
 
 .gallery-container {
-    width: 100%;
+	width: 100%;
+	// if there's a no images were found p tag, lets just hide that
+	p {
+		display: none;
+	}
 }
 
 .wp-block-image {
-    img {
-        object-fit: cover;
-        height: 400px;
-    }
-    &:after{
-        position: absolute;
-        content: '';
-        bottom: -25px;
-        right: 10px;
-        width: 50px;
-        height: 50px;
-        border: 7px solid $navy;
-    }
+	img {
+		object-fit: cover;
+		height: 400px;
+	}
+	// might bring this back if I can fix the issue with some of them floating off in the distance
+	// &:after{
+	//     position: absolute;
+	//     content: '';
+	//     bottom: -25px;
+	//     right: 10px;
+	//     width: 50px;
+	//     height: 50px;
+	//     border: 7px solid $navy;
+	// }
 }

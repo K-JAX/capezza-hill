@@ -36,6 +36,7 @@
                     // }
                 ?>
                 <?php 
+                    $count = 0;
                     if (have_rows('bio_repeater')): while (have_rows('bio_repeater')): the_row();
                     $count++; 
                     $defaultActive = $count == 1 ? 'active' : '';

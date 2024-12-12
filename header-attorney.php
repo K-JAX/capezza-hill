@@ -12,6 +12,7 @@
         $attorney_page = get_page_by_title('attorneys')->ID;
         $attorney_img = get_the_post_thumbnail_url( $attorney_page, 'full' );
         $meta = get_post_meta( get_the_ID(), '', true );
+        $title = get_field('attorney_title_section')['title'];
     ?>
 		<header class="site-header before flex" style="flex-flow: column; overflow: hidden; background: url(<?php echo $attorney_img; ?>) center/cover, linear-gradient(to bottom, rgba(255,255,255,0.75) 0%,rgba(162,162,162,0.32) 61%,rgba(0,0,0,0.75) 100%);">
 			<div class="mx-3">
@@ -31,25 +32,38 @@
                 <figcaption class="title-contact-box"  data-aos="fade-left" data-aos-duration="1000" >
                     <header>
                         <h1 class="feature-attorney-title formal notranslate" ><?php echo get_the_title(); ?></h1>
+                        <?php if ( $title ) : ?>
+                            <h2 class="m-0" style="padding-top: 0.125em; padding-bottom: 0.25em;" ><?php echo $title; ?></h2>
+                        <?php endif; ?>
                     </header>
-                    <div class="title-banner py-5 h4" ><?php echo $meta['attorney_title_block_field'][0]; ?></div>
+                    <div class="title-banner py-5 h4" >
+                        <?php 
+                            if ( isset( $meta['attorney_title_block_field'] ) && $meta['attorney_title_block_field'] ) {
+                                echo $meta['attorney_title_block_field'][0];
+                            }
+                        ?>
+                        </div>
                     <ul class="contact-details grid custom-icon-list">
                         <?php 
                             $contact = get_field('attorney_title_section');
                          ?>
-                        <li class="email">
-                            <img class="inline-icon" alt="Email <?php echo $contact['email']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/mail-icon.png'; ?>" />
-                            <a class="informal" alt="Link to open email with <?php echo $contact['email']; ?>" href="mailto:<?php echo $contact['email']; ?>"><?php echo $contact['email']; ?></a>
-                        </li>
-                        <li class="phone">
-                            <img class="inline-icon" alt="Call number <?php echo $contact['phone_number']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
-                            <a class="informal" alt="Telephone link to call <?php echo $contact['phone_number']; ?>" href="tel:<?php echo $contact['phone_number']; ?>"><?php echo $contact['phone_number']; ?></a>
-                        </li>
-                        <?php if ( isset($contact['vcard']['url']) ): ?>
-                        <li class="vcard">
-                            <img class="inline-icon" alt="vCard Download" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/card-icon.png'; ?>" />
-                            <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $contact['vcard']['url']; ?>" download>vCard</a>
-                        </li>
+                         <?php if ( $contact['email'] ) : ?>
+                            <li class="email">
+                                <img class="inline-icon" alt="Email <?php echo $contact['email']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/mail-icon.png'; ?>" />
+                                <a class="informal" alt="Link to open email with <?php echo $contact['email']; ?>" href="mailto:<?php echo $contact['email']; ?>"><?php echo $contact['email']; ?></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ( $contact['phone_number'] ) : ?>
+                            <li class="phone">
+                                <img class="inline-icon" alt="Call number <?php echo $contact['phone_number']; ?>" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/phone-icon.png'; ?>" />
+                                <a class="informal" alt="Telephone link to call <?php echo $contact['phone_number']; ?>" href="tel:<?php echo $contact['phone_number']; ?>"><?php echo $contact['phone_number']; ?></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ( isset($contact['vcard']['url']) ) : ?>
+                            <li class="vcard">
+                                <img class="inline-icon" alt="vCard Download" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/card-icon.png'; ?>" />
+                                <a class="informal" alt="Download <?php echo get_the_title(); ?>'s vCard." href="<?php echo $contact['vcard']['url']; ?>" download>vCard</a>
+                            </li>
                         <?php endif; ?>
                         <li class="print no-print">
                             <img class="inline-icon" alt="View this attorney's gallery." src="<?php echo get_stylesheet_directory_uri() . '/assets/images/printer-icon.png'; ?>" />
@@ -61,7 +75,9 @@
                         </li>
                     </ul>
                 </figcaption>
-                <img data-aos="fade" data-aos-duration="500" alt="Full of image of <?php echo get_the_title(); ?>"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <img data-aos="fade" data-aos-duration="500" alt="Portrait image of <?php echo get_the_title(); ?>"  class="attorney-full-hero" src="<?php echo get_the_post_thumbnail_url( $post, 'full' ); ?>" />
+                <?php endif; ?>
             </figure>
             <h2 class="w100 title-banner text-center relative"><a href="#primary" class="relative jump-scroll informal">Read Bio <span style="margin-left: 10px;"><?php echo capezzahill_get_icon_svg('triple_chevron_down', 36); ?></span></a></h2>
         </header>

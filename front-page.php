@@ -16,7 +16,7 @@
         <?php 
         if( have_rows('featured_page_controls') ): ?>
         <section class="feature-page-links duo-split">
-
+        <?php $count = 0; ?>
         <?php while( have_rows('featured_page_controls') ): the_row();
                 $count++;
                 $postObj = get_sub_field('featured_post_type_object');
@@ -34,9 +34,12 @@
                         $subLinks = get_posts([
                             'post_type'     =>  $archive,
                             'post_status'   =>  'publish',
-                            'numberposts'   =>  -1
+                            'numberposts'   =>  -1,
+                            'orderby'       =>  'menu_order',
+                            'order'         =>  'ASC'
                         ]);
                         function displaySubz($subz, $linkColor) {
+                            $output = '';
                             foreach($subz as $subLink){
                                     $output .= '<li><a href="' . get_permalink($subLink->ID) . '" style="color: ' . $linkColor . ';" alt=" ' . $subLink->post_excerpt . '" >' . capezzahill_get_icon_svg('person', 22) . ' ' . $subLink->post_title . '</a></li>';
                             }
@@ -86,7 +89,8 @@
             $posts_array = get_posts( $args );
             $count = 0;
             foreach( $posts_array as $post ) : setup_postdata( $post ); 
-            $count++; ?>
+            
+        ?>
     
                 <section data-aos-duration="2000" <?php echo $count %2 == 1 ? 'data-aos="fade-left"' : 'data-aos="fade-right"' ?> class="feature-case split-section py-3">
                     <figure class="case-figure  relative before after inner-contain">
@@ -100,6 +104,7 @@
                         </figcaption>
                     </figure>
                 </section>
+                <?php $count++; ?>
             <?php endforeach;
                 wp_reset_postdata();
             ?>

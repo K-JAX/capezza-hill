@@ -2,224 +2,225 @@
 
 .home,
 .single-attorney {
-    background: $lightergray;
-    .site-header {
-        height: 100vh;
-        .site-header-inner {
-            height: 110px;
-        }
-        .center {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            .site-title {
-                font-size: 64px;
-                @media all and (max-width: 767px) {
-                    font-size: 41px;
-                }
-            }
-            .site-description {
-                font-size: 28px;
-                color: $wht;
-            }
-        }
-    }
+	background: $lightergray;
+	.site-header {
+		height: 100vh;
+		.site-header-inner {
+			height: 110px;
+		}
+		.center {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			.site-title {
+				font-size: 64px;
+				@media all and (max-width: 767px) {
+					font-size: 41px;
+				}
+			}
+			.site-description {
+				font-size: 28px;
+				color: $wht;
+			}
+		}
+	}
 }
 
 .site-header {
-    position: relative;
-    z-index: 4;
-    grid-area: head;
-    width: 100%;
-    &:before {
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(45, 45, 45, 0.2) 60%,
-            rgba(0, 0, 0, 0.9) 100%
-        );
-        @media all and(max-width: 992px) {
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.6) 0%,
-                rgba(45, 45, 45, 0.7) 60%,
-                rgba(0, 0, 0, 1) 100%
-            );
-        }
-    }
-    .site-header-inner {
-        z-index: 5;
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        @media all and (min-width: 992px) {
-            height: 187px;
-        }
-        align-content: end;
-        margin: auto;
-        color: $wht;
-        .site-branding-container {
-            display: flex;
-            align-self: flex-end;
-            height: 100px;
-            margin-bottom: -2em;
-            @media all and (max-width: 992px) {
-                height: 85px;
-                margin-bottom: 0;
-            }
-            .site-branding {
-                display: flex;
-                align-self: flex-end;
-                align-items: center;
-                height: 100%;
-                .site-logo {
-                    display: flex;
-                    align-content: flex-end;
-                    width: 100px;
-                    * {
-                        display: flex;
-                        align-items: center;
-                    }
-                    img {
-                        height: auto;
-                        max-width: 100%;
-                    }
-                    @media all and (max-width: 1200px) {
-                        width: 60px;
-                    }
-                    @media all and (max-width: 992px) {
-                        width: 75px;
-                    }
-                    @media all and (max-width: 500px) {
-                        width: 55px;
-                    }
-                }
-                .site-title {
-                    display: inline-block;
-                    margin: auto;
-                    font-size: 32px;
-                    @media all and (max-width: 1200px) {
-                        font-size: 26px;
-                    }
-                    @media all and (max-width: 992px) {
-                        font-size: 32px;
-                    }
-                    @media all and (max-width: 500px) {
-                        font-size: 20px;
-                    }
-                    span {
-                        font-size: 20px;
-                    }
-                }
-            }
-        }
-    }
-    a {
-        color: $wht;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+	position: relative;
+	z-index: 4;
+	grid-area: head;
+	width: 100%;
+	&:before {
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.6) 0%,
+			rgba(45, 45, 45, 0.2) 60%,
+			rgba(0, 0, 0, 0.9) 100%
+		);
+		@media all and(max-width: 992px) {
+			background: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.6) 0%,
+				rgba(45, 45, 45, 0.7) 60%,
+				rgba(0, 0, 0, 1) 100%
+			);
+		}
+	}
+	.site-header-inner {
+		z-index: 5;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		@media all and (min-width: 992px) {
+			height: 187px;
+		}
+		align-content: end;
+		margin: auto;
+		color: $wht;
+		.site-branding-container {
+			display: flex;
+			align-self: flex-end;
+			height: 100px;
+			margin-bottom: -2em;
+			@media all and (max-width: 992px) {
+				height: 85px;
+				margin-bottom: 0;
+			}
+			.site-branding {
+				display: flex;
+				align-self: flex-end;
+				align-items: center;
+				height: 100%;
+				.site-logo {
+					display: flex;
+					align-content: flex-end;
+					width: 100px;
+					* {
+						display: flex;
+						align-items: center;
+					}
+					img {
+						height: auto;
+						max-width: 100%;
+					}
+					@media all and (max-width: 1200px) {
+						width: 60px;
+					}
+					@media all and (max-width: 992px) {
+						width: 75px;
+					}
+					@media all and (max-width: 500px) {
+						width: 55px;
+					}
+				}
+				.site-title {
+					display: inline-block;
+					margin: auto;
+					font-size: 32px;
+					@media all and (max-width: 1200px) {
+						font-size: 26px;
+					}
+					@media all and (max-width: 992px) {
+						font-size: 32px;
+					}
+					@media all and (max-width: 500px) {
+						font-size: 20px;
+					}
+					span {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+	a {
+		color: $wht;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 .single-attorney {
-    .site-header {
-        flex-flow: column nowrap;
-        // min-height: 85vh;
-        height: auto;
-        justify-content: end;
-        @media all and (max-width: 992px) {
-            height: auto;
-        }
-        #breadcrumbs {
-            text-align: right;
-        }
-        .attorney-hero {
-            display: flex;
-            flex-flow: row;
-            width: 70%;
-            z-index: 1;
-            align-self: end;
-            margin: 2em auto 0;
-            padding: 0;
-            overflow: hidden;
-            @media all and (max-width: 992px) {
-                flex-flow: column-reverse;
-            }
-            .title-contact-box {
-                color: $wht;
-                width: 350px;
-                height: auto;
-                align-self: end;
-                margin: auto 0 0;
-                background: linear-gradient(
-                    135deg,
-                    rgba(171, 171, 171, 0.5662640056022409) 0%,
-                    rgba(64, 64, 64, 0.5858718487394958) 70%
-                );
-                @media all and (max-width: 992px) {
-                    width: 100%;
-                }
-                > * {
-                    padding-left: 1em;
-                    padding-right: 1em;
-                }
-                header {
-                    color: $blk;
-                    height: auto;
-                    background: $lightergray;
-                    h1 {
-                        margin: 0;
-                        padding: 2px 0 5px;
-                        @media all and (max-width: 992px) {
-                            text-align: center;
-                        }
-                    }
-                }
-                .contact-details {
-                    list-style: none;
-                    margin-top: 1.25em;
-                    li {
-                        font-size: 18px;
-                        align-items: center;
-                        grid-template-columns: 50px auto;
-                        .inline-icon {
-                            margin-top: 0.25em;
-                            height: 18px;
-                            justify-self: start;
-                        }
-                    }
-                }
-            }
-            .attorney-full-hero {
-                min-height: 400px;
-                height: 571px;
-                margin-left: 15%;
-                margin-right: auto;
-                @media all and (max-width: 992px) {
-                    height: 50vh;
-                    min-height: initial;
-                    margin-left: auto;
-                }
-            }
-        }
-    }
+	.site-header {
+		flex-flow: column nowrap;
+		// min-height: 85vh;
+		height: auto;
+		justify-content: end;
+		@media all and (max-width: 992px) {
+			height: auto;
+		}
+		#breadcrumbs {
+			text-align: right;
+		}
+		.attorney-hero {
+			display: flex;
+			flex-flow: row;
+			width: 70%;
+			z-index: 1;
+			align-self: end;
+			margin: 2em auto 0;
+			padding: 0;
+			overflow: hidden;
+			align-items: flex-end;
+			@media all and (max-width: 992px) {
+				flex-flow: column-reverse;
+			}
+			.title-contact-box {
+				color: $wht;
+				width: 350px;
+				height: auto;
+				align-self: end;
+				margin: auto 0 0;
+				background: linear-gradient(
+					135deg,
+					rgba(171, 171, 171, 0.5662640056022409) 0%,
+					rgba(64, 64, 64, 0.5858718487394958) 70%
+				);
+				@media all and (max-width: 992px) {
+					width: 100%;
+				}
+				> * {
+					padding-left: 1em;
+					padding-right: 1em;
+				}
+				header {
+					color: $blk;
+					height: auto;
+					background: $lightergray;
+					h1 {
+						margin: 0;
+						padding: 2px 0 5px;
+						@media all and (max-width: 992px) {
+							text-align: center;
+						}
+					}
+				}
+				.contact-details {
+					list-style: none;
+					margin-top: 1.25em;
+					li {
+						font-size: 18px;
+						align-items: center;
+						grid-template-columns: 50px auto;
+						.inline-icon {
+							margin-top: 0.25em;
+							height: 18px;
+							justify-self: start;
+						}
+					}
+				}
+			}
+			.attorney-full-hero {
+				min-height: 400px;
+				height: 571px;
+				margin-left: 15%;
+				margin-right: auto;
+				@media all and (max-width: 992px) {
+					height: 50vh;
+					min-height: initial;
+					margin-left: auto;
+				}
+			}
+		}
+	}
 }
 
 .entry-header.text-center {
-    h1:after {
-        right: 0;
-        margin: auto;
-    }
+	h1:after {
+		right: 0;
+		margin: auto;
+	}
 }

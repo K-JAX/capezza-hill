@@ -84,7 +84,7 @@ b,strong,.bold{font-weight:700}
 .spaced{letter-spacing:0.2em}
 .entry-title{margin-top:0.25em;margin-bottom:0.65em}
 .entry-title:after{width:80px;left:0;bottom:-0.35em;border-bottom:1px solid #0077b6}
-.feature-attorney-title{font-size:2.25em;white-space:nowrap}
+.feature-attorney-title{font-size:2.25em}
 .small-title{font-size:0.65em}
 .last-name-remainder{white-space:pre-line}
 .block-cap{display:inline-block;color:#fff;background-color:#10153f;padding:0.1em 5px}
@@ -242,7 +242,7 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .single-attorney .site-header{flex-flow:column nowrap;height:auto;justify-content:end}
 @media all and (max-width: 992px){.single-attorney .site-header{height:auto}}
 .single-attorney .site-header #breadcrumbs{text-align:right}
-.single-attorney .site-header .attorney-hero{display:flex;flex-flow:row;width:70%;z-index:1;align-self:end;margin:2em auto 0;padding:0;overflow:hidden}
+.single-attorney .site-header .attorney-hero{display:flex;flex-flow:row;width:70%;z-index:1;align-self:end;margin:2em auto 0;padding:0;overflow:hidden;align-items:flex-end}
 @media all and (max-width: 992px){.single-attorney .site-header .attorney-hero{flex-flow:column-reverse}}
 .single-attorney .site-header .attorney-hero .title-contact-box{color:#fff;width:350px;height:auto;align-self:end;margin:auto 0 0;background:linear-gradient(135deg, rgba(171,171,171,0.566264) 0%, rgba(64,64,64,0.585872) 70%)}
 @media all and (max-width: 992px){.single-attorney .site-header .attorney-hero .title-contact-box{width:100%}}
@@ -267,8 +267,8 @@ textarea{resize:none;padding:10px;box-shadow:0 1px 10px 2px rgba(0,0,0,0.45) ins
 .ngg-galleryoverview.default-view{text-align:left !important;margin:10px 0 !important}
 .ngg-galleryoverview.default-view .ngg-gallery-thumbnail img{width:120px}
 .gallery-container{width:100%}
+.gallery-container p{display:none}
 .wp-block-image img{object-fit:cover;height:400px}
-.wp-block-image:after{position:absolute;content:'';bottom:-25px;right:10px;width:50px;height:50px;border:7px solid #10153f}
 .list-none{list-style:none}
 .custom-icon-list{list-style:none;margin:0;padding:0}
 .custom-icon-list li{display:flex;justify-content:start;align-items:start;flex-wrap:wrap;font-size:20px;margin-bottom:1em}
