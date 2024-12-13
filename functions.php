@@ -283,3 +283,4 @@ if ( class_exists('WP_Customize_Control') ) {
 }
 
 
+remove_filter('the_content', 'wpautop'); // Disable wpautop for all content
