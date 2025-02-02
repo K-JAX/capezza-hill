@@ -3,33 +3,33 @@
 // elements
 
 label {
-    font-size: 14px;
-    font-weight: 100;
-    text-transform: uppercase;
-    color: $navy;
+	font-size: 14px;
+	font-weight: 100;
+	text-transform: uppercase;
+	color: $navy;
 }
 
 input {
-
 }
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 textarea {
-    position: relative;
-    width: 100%;
-    font-size: 1.5em;
-    border: 0;
-    border-bottom: 2px solid $lightgray;
-    &.valid {
-        border-bottom: 2px solid $lightblue;
-    }
+	position: relative;
+	width: 100%;
+	font-size: 1.5em;
+	border: 0;
+	border-bottom: 2px solid $lightgray;
+	&.valid {
+		border-bottom: 2px solid $lightblue;
+	}
 }
 
 textarea {
-    resize: none;
-    padding: 10px;
-    box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.45) inset;
+	resize: none;
+	padding: 10px;
+	box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.45) inset;
 }
 
 // // elements
@@ -37,49 +37,49 @@ textarea {
 // classes
 
 .wpcf7-form {
-    p {
-        width: 100%;
-    }
+	p {
+		width: 100%;
+	}
 }
 
 .wpcf7-form-control-wrap {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    input,
-    textarea {
-        &:focus {
-            outline: none;
-        }
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        right: 0;
-        bottom: 1px;
-        margin: auto;
-        width: 0;
-        height: 3px;
-        transition: 0.25s;
-        background-color: $navy;
-    }
-    &.active {
-        &:before {
-            width: 100%;
-        }
-    }
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	input,
+	textarea {
+		&:focus {
+			outline: none;
+		}
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		right: 0;
+		bottom: 1px;
+		margin: auto;
+		width: 0;
+		height: 3px;
+		transition: 0.25s;
+		background-color: $navy;
+	}
+	&.active {
+		&:before {
+			width: 100%;
+		}
+	}
 }
 
 .required {
-    color: red;
+	color: red;
 }
 
 .wpcf7-not-valid-tip {
-    position: absolute;
-    top: -20px;
-    right: 0;
+	position: absolute;
+	top: -20px;
+	right: 0;
 }
 
 // // classes

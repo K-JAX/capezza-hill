@@ -178,3 +178,88 @@ if (! function_exists('register_attorney_cpt') ){
 //     fclose($file);
 // }
 // add_action( 'save_post', 'attorney_create_vCard' );
+
+
+if (! function_exists('register_testimonial_cpt') ){
+    add_action('init', 'register_testimonial_cpt', 0); 
+    function register_testimonial_cpt () {
+        // labels
+        $labels = array(
+            'name'              =>  _x('Testimonials', 'Name of the post type', 'capezzahill'),
+            'singular_name'     =>  _x('Testimonial', 'Singular name', 'capezzahill'),
+            'menu_name'         =>  _x('Testimonials', 'Display in menu bar', 'capezzahill'),
+            'name_admin_bar'    =>  _x('Testimonial', 'Add new on toolbar', 'capezzahill'),
+            'add_new'           =>  __('Add new'),
+            'add_new_item'           =>  __('Add new Testimonial'),
+            'new_item'           =>  __('New Testimonial'),
+            'edit_item'           =>  __('Edit Testimonial'),
+            'view_item'           =>  __('View Testimonial'),
+            'all_items'           =>  __('All Testimonials'),
+            'search_items'           =>  __('Search Testimonials'),
+            'parent_item_colon'           =>  __('Parent Testimonial'),
+            'not_found'           =>  __('No Testimonial found'),
+            'not_found_in_trash'           =>  __('No Testimonial found in trash'),
+            'featured_image'           =>  _x('Full scale testimonial image', ''),
+            'set_featured_image'           =>  _x('Set Testimonial full screen image', ''),
+            'remove_featured_image'           =>  _x('Remove Testimonial image', ''),
+            'use_featured_image'           =>  _x('Use as Testimonial image', ''),
+            'archives'           =>  _x('All Testimonials', ''),
+            'insert_into_item'           =>  _x('Insert into Testimonial bio', ''),
+            'uploaded_to_this_item'           =>  _x('Uploaded to this Testimonial bio', ''),
+            'filter_items_list'           =>  _x('Filter Testimonials list', ''),
+            'items_list_navigation'           =>  _x('Testimonial list navigation', ''),
+            'items_list'           =>  _x('Testimonial list', ''),
+        );
+        // args
+        $args = array(
+            'label'     => 'Testimonial',
+            'labels'    =>  $labels,
+            'description'           => 'Testimonial member
+            bios',
+            'public'    =>  true,
+            'capability_type'   => 'post',
+            'publicly_queryable'    =>  true,
+            'show_ui'  => true,
+            'show_in_menu'  => true,
+            'show_in_rest'  => true,
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'query_var'  => true,
+            'rewrite' =>  array( 'slug' => 'testimonials' ),
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-format-quote',
+        );
+
+        register_post_type( 'testimonial', $args );
+    }
+}            
+
+if ( !function_exists( 'register_testimonial_tag_taxonomy' ) ) {
+    add_action( 'init', 'register_testimonial_tag_taxonomy', 0 );
+    function register_testimonial_tag_taxonomy() {
+        $labels = array(
+            'name'              => _x( 'Testimonial Tags', 'taxonomy general name', 'capezzahill' ),
+            'singular_name'     => _x( 'Testimonial Tag', 'taxonomy singular name', 'capezzahill' ),
+            'search_items'      => __( 'Search Testimonial Tags', 'capezzahill' ),
+            'all_items'         => __( 'All Testimonial Tags', 'capezzahill' ),
+            'parent_item'       => __( 'Parent Testimonial Tag', 'capezzahill' ),
+            'parent_item_colon' => __( 'Parent Testimonial Tag:', 'capezzahill' ),
+            'edit_item'         => __( 'Edit Testimonial Tag', 'capezzahill' ),
+            'update_item'       => __( 'Update Testimonial Tag', 'capezzahill' ),
+            'add_new_item'      => __( 'Add New Testimonial Tag', 'capezzahill' ),
+            'new_item_name'     => __( 'New Testimonial Tag Name', 'capezzahill' ),
+            'menu_name'         => __( 'Testimonial Tags', 'capezzahill' ),
+        );
+
+        $args = array(
+            'hierarchical'      => false,
+            'labels'            => $labels,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'testimonial-tag' ),
+        );
+
+        register_taxonomy( 'testimonial_tag', array( 'testimonial' ), $args );
+    }
+}

@@ -51,10 +51,20 @@
 			.portrait {
 				z-index: 0;
 				width: 100%;
+				max-width: 400px;
 				height: 400px;
 				background-repeat: no-repeat;
 				background-size: auto 100%;
 				background-position-y: bottom;
+				img {
+					height: 100%;
+					width: auto;
+					object-fit: cover;
+					transform: translateX(0) translateY(2px);
+
+					transition: 0.2s filter, 0.2s transform;
+					transition-timing-function: ease-in-out;
+				}
 			}
 			&.odd {
 				&:before {
@@ -76,6 +86,17 @@
 				@media all and (min-width: 767px) {
 					height: auto;
 					width: 50%;
+				}
+			}
+		}
+		&:hover {
+			.portrait {
+				opacity: 1;
+				img {
+					filter: grayscale(0) brightness(1.075);
+					transform: translateX(1px) translateY(0);
+					transition: 0.25s filter, 0.35s transform;
+					transition-timing-function: ease-in-out;
 				}
 			}
 		}
