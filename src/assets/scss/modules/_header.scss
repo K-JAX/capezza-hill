@@ -1,0 +1,80 @@
+// header style
+.site-header{
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 11;
+  transition: 0.25s;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  &.active-header{
+    background-color: #000000E0;
+    border-bottom: 1px solid rgba(255,255,255,0);
+
+  }
+}
+
+.header-placeholder{
+  padding-top: 3.75em;
+  background: black;
+}
+
+.top-bar{
+    background-color: initial;
+}
+.svg-logo{
+    .logo-text{
+        font-family: "Roboto", sans-serif;
+        font-size: 60px;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 4px;
+      }
+      
+      #rect1 { 
+        fill: url(#Gradient1); 
+      }
+      .stop1 { 
+        stop-color: #7DDEFC; 
+      }
+      .stop3 { 
+        stop-color: #9B9B9B;
+        transition: 0.25s;
+      }
+      &:hover{
+        .stop3{
+            stop-color: #7DDEFC; 
+        }
+      }
+}
+
+.custom-logo-link{
+  display: inline-block;
+  img{
+    width: 50px;
+    margin-top:-4px;
+    @media all and(max-width: 1200px){
+      width: 20px;
+      margin-top:-6px;
+
+    }
+  }
+}
+
+.logo-heading{
+  display: inline-block;
+  font-weight: 100;
+  width: 300px;
+  text-align: left;
+  @media all and(max-width: 1200px){
+    width: 240px;
+    
+  }
+}
+
+.lt360-podcast{
+  .entry-title{
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}

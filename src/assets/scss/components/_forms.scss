@@ -1,0 +1,49 @@
+input{
+    &::placeholder{
+        color: black;
+    }
+    &[type="text"], &[type="email"]{
+        padding: 1.7em 1em !important;
+    }
+
+    @media all and (max-width: 768px){
+        width: 100%;
+    }
+
+}
+// label{
+//     @media all and (max-width: 768px){
+//         width: 100%;
+//     }
+// }
+
+// form{
+//     @media all and (max-width: 768px){
+//         display: flex;
+//         flex-direction: column;
+//     }
+// }
+
+
+.subscription-form{
+    .wpcf7{
+      width: 100%;
+      form{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        @media all and (max-width: 768px){
+            flex-direction: column;
+        }
+        input{
+            margin-left: .25em;
+            margin-right: .25em;
+            margin-bottom: 0;
+        }
+        .wpcf7-response-output{
+            position: absolute;
+            top: 100%;
+        }
+      }
+    }
+  }

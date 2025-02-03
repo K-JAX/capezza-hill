@@ -1,0 +1,94 @@
+.sites-button {
+  background: $primary-color;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+  border: none;
+}
+
+.btn{
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  padding: 1.0em 1.25em !important;
+  &-primary{
+    background-color: $blue !important;
+    border: none !important;
+  }
+  &-secondary{
+    position: relative;
+    color: $blue !important;
+    background-color: transparent !important;
+    &.black{ background-color: black !important;}
+    border: 1px solid white;
+    span{
+      position: relative;
+      transition: 0.25s;
+    }
+    &:before{
+      z-index: 0;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0;
+      left: 0;
+      bottom: 0;
+      transition: 0.25s;
+      background: white;
+    }
+    &:hover{
+      span{
+        color: black !important;
+      }
+      &:before{
+        height: 100%;
+      }
+    }
+  }
+}
+
+// .btn-primary{
+//     background-color: $blue !important;
+//     border: none !important;
+// }
+
+.cta-price-tag{
+  display: flex;
+  align-content: center;
+  width: 100px;
+  height: 100px;
+  margin-top: -20px;
+  margin-left: -76px;
+  background: $blue;
+  border-radius: 300px;
+  flex-shrink: 0;
+  span{
+    color: white;
+  }
+}
+
+.kt-tabs-title-list{
+  .kt-title-item {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    a{
+      border-radius: 0 !important;
+    }
+    &.kt-tab-title-active a{
+      background: $blue !important;
+      border: 1px solid $blue !important;
+    }
+    &.kt-tab-title-inactive a{
+      color: #000 !important;
+      border: 1px solid #cdcdcd !important;
+      background: #cdcdcd !important;
+    }
+  }
+}
+
+.wp-block-kadence-tabs{
+  .wp-block-kadence-tab{
+    border-width: 1px !important;
+    border-color: #ddd !important;
+  }
+}

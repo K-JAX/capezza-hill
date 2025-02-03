@@ -1,0 +1,82 @@
+.distant-shadow{
+    box-shadow: 0 0 50px 5px rgba(0,0,0,0.25);
+}
+
+
+.lightsaber{
+    width: 10em;
+    border-top: 5px solid $blue;
+}
+
+
+.short-line-offset{
+    &.left{
+        margin-left: -3em;
+    }
+}
+
+.section-overlay{
+    &.overlay-fade-right{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, rgba(153,153,153,0) 0%,rgba(249,244,237,1) 100%);
+        }
+        *{
+            z-index: 1;
+            position: relative;
+        }
+    }
+} 
+
+.list-overlay{
+    &.overlay-fade-right{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, rgba(153,153,153,0) 0%,rgba(249,244,237,0.25) 100%);
+        }
+        *{
+            z-index: 1;
+            position: relative;
+        }
+    }
+} 
+
+.light-overlay{
+    &.overlay-fade-right{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, rgba(153,153,153,0) 0%,rgba(249,244,237,0.15) 100%);
+        }
+        *{
+            z-index: 1;
+            position: relative;
+        }
+    }
+} 
+
+
+.wp-block-media-text{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}

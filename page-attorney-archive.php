@@ -30,7 +30,11 @@ get_header();
                         <figcaption class="<?php echo $count % 2 == 1 ? 'odd' : 'even'; ?> relative">
                             <a class="relative no-underline notranslate" href="<?php echo get_permalink(); ?>"><h2 class="feature-attorney-title formal white-txt mb-1"><?php echo get_the_title(); ?></h2></a>
                             <hr class="short blue left mb-1" />
-                            <h3 class="formal my-1 ">Partner</h3>
+                            <?php if( have_rows('attorney_title_section') ): while( have_rows('attorney_title_section') ): the_row(); ?>
+                                <?php if( get_sub_field('title') ): ?>
+                                    <h3 class="formal my-1 "><?php echo get_sub_field('title'); ?></h3>
+                                <?php endif; ?>
+                            <?php endwhile; endif; ?>
                             <a class="relative informal" style="color: <?php echo get_field('link_color'); ?>" href="<?php echo get_permalink(); ?>">Learn about <?php echo get_field('informal_name'); ?> <?php echo capezzahill_get_icon_svg('chevron_right', 26); ?></a>
                         </figcaption>
                     </figure>

@@ -1,0 +1,227 @@
+.vertical-space{
+    line-height: 2.5 !important;
+}
+
+.spaced{
+    letter-spacing: 5px;
+}
+
+.spaced-tf-out{
+    letter-spacing: 10px;
+}
+
+.text-gray{
+    color: $gray !important;
+}
+
+.text-blue{
+    color: $blue !important;
+}
+
+.zoom-social_icons-list__item{
+    border: 2px solid #fff !important;
+}
+
+.text-white{
+    blockquote, blockquote *{
+        color: #ccc !important;
+        
+    }
+    blockquote{
+        padding: 1em;
+        background-color: rgba(0,0,0,0.25);
+    }
+}
+
+.entry-title{
+    color: #8B8B8B;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 300;
+}
+
+.indent-line{
+    padding-left: 3em;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-color: gray;
+}
+
+.chain-list-item{
+    position: relative;
+    align-content: start;
+    margin: 3em 0;
+    padding: 1em 0;
+    .icon-container{
+        position: relative;
+        display: flex;
+        align-self: start;
+        align-content: center;
+        img{
+            flex-shrink: 1;
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 1px solid red;
+            border-radius: 100px;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 50px;
+            left: 0;
+            right: 0;
+            top: 130%;
+            margin: 0 auto;
+            background: red;          
+        }
+    }
+    span{
+        display: flex;
+        align-self: center;
+    }
+    &:first-of-type{
+        margin-top:0;
+    }
+    @media all and (min-width: 768px){
+        &:first-of-type{
+            margin-top:0;
+            padding-top: 0;
+        }
+        &:last-of-type{
+            .icon-container{
+                &:after{
+                     display: none;
+                } 
+    
+            }
+        }
+    }
+}
+
+@media all and (max-width: 768px){
+    .chain-list:last-of-type{
+        .chain-list-item:last-of-type{
+            .icon-container:after{
+                display: none;
+            }
+        }
+    }
+}
+
+.caption-offset-overlay{
+    .wp-block-media-text__content{
+        background-color: white;
+        margin-right: -5em;
+    }
+}
+
+.number-huge{
+    font-size: 4em;
+}
+.specialty-number-list {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    .list-number-huge {
+      counter-increment: my-awesome-counter;
+      display: flex;
+      width: 50%;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      &::before{
+          content: "0" counter(my-awesome-counter);
+          font-weight: lighter;
+          font-size: 3rem;
+          margin-right: 0.5rem;
+          line-height: 1;
+
+      }
+    }
+  }
+
+  .mini-disc-chain-list{
+      list-style: circle;
+      .mini-chain-item{
+        position: relative;
+        font-size: 36px;
+        span{
+            color: #33718D;
+        }
+        &.big-shot{
+            position:relative;
+            font-size: 72px;
+            // height: 100px;
+            &:before{
+                content: '';
+                position: absolute;
+                left: -1.025em;
+                top: 0;
+                bottom: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 48px;
+                height: 48px;
+                border-radius: 100px;
+                border: 1px solid #33718D;
+            }
+            &:after{
+                height: 0.75em;
+                top: 1.225em;
+            }
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1em;
+            left: -0.7em;
+            top: 1.25em;
+            margin: 0 auto;
+            background: #33718D;          
+        }
+        &:last-of-type{
+            &:after{
+                display:none;
+            }
+        }
+      }
+  }
+ 
+  
+.team-square{
+    img{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+    }
+    figcaption{
+        box-shadow: 0 -35px 15px 0 rgba(0 ,0,0,0.6) inset;
+
+    }
+}
+
+.hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+

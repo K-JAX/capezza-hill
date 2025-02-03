@@ -1,0 +1,111 @@
+.home.quickstart{
+    h2{
+        background: black;
+    }
+    h6{
+        color: $blue;
+        text-align: center;
+    }
+
+    #menu-quickstart-links{
+        width: 100%;
+        display: flex;
+        flex-direction: row nowrap !important;
+        flex-shrink: 1;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        li{
+            width: auto;
+            flex-basis: 31%;
+            flex-shrink: 1;
+            text-align: center;
+            transition: 0.5s;
+            a{
+                display: flex;
+                flex-direction: column-reverse;
+                background: transparent !important;
+                *{
+                    margin: 1em 0;
+                }
+            }
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.sidebar{
+    .menu{
+        list-style: none;
+        &>.menu-item {
+            text-transform: uppercase;
+            width: 100%;
+            transition: 0.25s;
+            margin: 0.25em 0;
+            a{
+                color: black;
+                background: #ddd;
+            }
+            &.is-active > a{
+                color: white;
+                background: black;
+            }
+        }
+    }
+    .sub-menu{
+        list-style: none;
+        &>.menu-item {
+            text-transform: uppercase;
+            transition: 0.25s;
+            margin: 0.5em 0;
+            a{
+                color: black;
+                background: #ddd;
+            }
+            &.is-active > a{
+                color: #ffbd43;
+                background: black;
+            }
+            &:hover{
+                letter-spacing: 1px;
+                a{
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+.widget_product_categories{
+    border: 1px solid #ddd;
+    padding: 1em;
+    h6{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border-bottom: 1px solid #ddd;
+        padding: 1em 0;
+    }
+    .product-categories{
+        list-style: none;
+        &>.cat-item {
+            text-transform: uppercase;
+            transition: 0.25s;
+            margin: 1.25em 0;
+            a{
+                display: block;
+                padding: 0.75em;
+                width: 50%;
+                color: black;
+                background: #ddd;
+                @media all and (max-width: 1200px){
+                    width: 100%;
+                }
+            }
+            &.current-cat > a{
+                color: white;
+                background: black;
+            }
+        }
+    }
+}
